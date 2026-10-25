@@ -626,8 +626,8 @@
         padding: 20px;
       }
       .print-title { font-size: 1.4rem; font-weight: 800; text-align: center; margin-bottom: 12px; border-bottom: 2px solid #000; padding-bottom: 8px; }
-      .print-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-      .print-card { border: 1px solid #ccc; padding: 10px; border-radius: 4px; page-break-inside: avoid; }
+      .print-grid { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+      .print-card { border: 1px solid #cbd5e1; padding: 14px 18px; border-radius: 6px; page-break-inside: avoid; width: 100%; margin-bottom: 8px; line-height: 1.6; }
     }
 
     #confettiCanvas {
@@ -1473,8 +1473,12 @@
             <div class="print-card">
               <div style="font-weight:bold; margin-bottom:6px;">${idx+1}. ${q.stem}</div>
               <div style="font-size:0.9rem; margin-left:10px;">
-                (A) ${optDict.A} &nbsp;&nbsp;&nbsp; (B) ${optDict.B}<br>
-                (C) ${optDict.C} &nbsp;&nbsp;&nbsp; (D) ${optDict.D}
+                <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:6px;">
+                  <span>(A) ${optDict.A}</span>
+                  <span>(B) ${optDict.B}</span>
+                  <span>(C) ${optDict.C}</span>
+                  <span>(D) ${optDict.D}</span>
+                </div>
               </div>
             </div>
           `;

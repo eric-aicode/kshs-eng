@@ -272,8 +272,8 @@
         background: white; color: black; font-family: serif; padding: 20px;
       }
       .print-title { font-size: 1.4rem; font-weight: 800; text-align: center; margin-bottom: 12px; border-bottom: 2px solid #000; padding-bottom: 8px; }
-      .print-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-      .print-card { border: 1px solid #ccc; padding: 10px; border-radius: 4px; page-break-inside: avoid; }
+      .print-grid { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+      .print-card { border: 1px solid #cbd5e1; padding: 14px 18px; border-radius: 6px; page-break-inside: avoid; width: 100%; margin-bottom: 8px; line-height: 1.6; }
     }
   </style>
 </head>
@@ -578,9 +578,11 @@
             <div class="print-card">
               <div style="font-weight:bold; margin-bottom:6px;">${idx+1}. ${item.stem}</div>
               ${item.type === 'real' ? `
-                <div style="font-size:0.9rem; margin-left:10px;">
-                  (A) ${item.options.A} &nbsp;&nbsp;&nbsp; (B) ${item.options.B}<br>
-                  (C) ${item.options.C} &nbsp;&nbsp;&nbsp; (D) ${item.options.D}
+                <div style="font-size:0.95rem; margin-left:8px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:6px;">
+                  <span>(A) ${item.options.A}</span>
+                  <span>(B) ${item.options.B}</span>
+                  <span>(C) ${item.options.C}</span>
+                  <span>(D) ${item.options.D}</span>
                 </div>
               ` : `
                 <div style="font-size:0.85rem; color:#666; font-style:italic;">[請寫出填空處核心單字與搭配片語]</div>
