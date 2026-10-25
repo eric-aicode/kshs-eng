@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-
     :root {
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
@@ -35,8 +34,6 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-
-    /* Top Sticky HUD Strip (Ultra-Compact 52px) */
     .top-hud {
       position: sticky;
       top: 0;
@@ -59,11 +56,7 @@
       justify-content: space-between;
       gap: 12px;
     }
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .brand-group { display: flex; align-items: center; gap: 10px; }
     .brand-title {
       font-size: 1.05rem;
       font-weight: 800;
@@ -82,11 +75,7 @@
       font-weight: 700;
       white-space: nowrap;
     }
-    .hud-stats {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .hud-stats { display: flex; align-items: center; gap: 14px; }
     .level-badge {
       background: #1e293b;
       border: 1px solid #334155;
@@ -129,11 +118,7 @@
       border-radius: 6px;
       white-space: nowrap;
     }
-    .hud-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .hud-actions { display: flex; align-items: center; gap: 8px; }
     .btn-icon {
       background: #1e293b;
       color: #cbd5e1;
@@ -150,12 +135,8 @@
       text-decoration: none;
       white-space: nowrap;
     }
-    .btn-icon:hover {
-      background: #334155;
-      color: white;
-    }
+    .btn-icon:hover { background: #334155; color: white; }
 
-    /* Quest Bar (Compact Daily Navigation) */
     .quest-bar {
       background: white;
       border-bottom: 1px solid var(--border);
@@ -173,11 +154,7 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-    .day-selector-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .day-selector-wrap { display: flex; align-items: center; gap: 8px; }
     .day-btn {
       background: #f1f5f9;
       border: 1px solid #cbd5e1;
@@ -192,11 +169,7 @@
       justify-content: center;
     }
     .day-btn:hover { background: #e2e8f0; }
-    .day-label {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #0f172a;
-    }
+    .day-label { font-size: 0.95rem; font-weight: 800; color: #0f172a; }
     .btn-warmup {
       background: linear-gradient(135deg, #f59e0b, #d97706);
       color: white;
@@ -212,10 +185,7 @@
       box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
       transition: all 0.2s;
     }
-    .btn-warmup:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4);
-    }
+    .btn-warmup:hover { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4); }
     .mode-toggle-group {
       display: flex;
       background: #f1f5f9;
@@ -240,7 +210,6 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
-    /* Main Focus Arena */
     .app-main {
       flex: 1;
       max-width: 900px;
@@ -249,7 +218,6 @@
       padding: 24px 16px 80px;
     }
 
-    /* Floating XP and Combo Popups */
     .fx-container {
       position: fixed;
       top: 70px;
@@ -294,7 +262,6 @@
       100% { opacity: 0; transform: translateY(-20px) scale(0.9); }
     }
 
-    /* Single Question Progress Bar */
     .progress-strip {
       display: flex;
       align-items: center;
@@ -323,7 +290,6 @@
       text-align: right;
     }
 
-    /* Question Focus Card */
     .focus-card {
       background: var(--card-bg);
       border-radius: 16px;
@@ -331,7 +297,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.06);
       padding: 32px 36px;
       position: relative;
-      transition: transform 0.2s;
     }
     .card-meta {
       display: flex;
@@ -341,14 +306,10 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-    .meta-tags {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .meta-tags { display: flex; align-items: center; gap: 8px; }
     .badge-qno {
       background: #eff6ff;
-      color: #2563eb;
+      color: var(--primary);
       font-size: 0.8rem;
       font-weight: 800;
       padding: 4px 10px;
@@ -394,7 +355,7 @@
     .btn-speak-inline {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
-      color: #2563eb;
+      color: var(--primary);
       width: 28px;
       height: 28px;
       border-radius: 50%;
@@ -408,12 +369,11 @@
       transition: all 0.2s;
     }
     .btn-speak-inline:hover {
-      background: #2563eb;
+      background: var(--primary);
       color: white;
       transform: scale(1.1);
     }
 
-    /* 4-Choice Options */
     .options-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -421,9 +381,7 @@
       margin-bottom: 28px;
     }
     @media (min-width: 640px) {
-      .options-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .options-grid { grid-template-columns: 1fr 1fr; }
     }
     .option-btn {
       background: #ffffff;
@@ -461,30 +419,21 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    .opt-text {
-      flex: 1;
-    }
+    .opt-text { flex: 1; }
     .option-btn.correct {
       border-color: var(--success);
       background: #f0fdf4;
       color: #065f46;
     }
-    .option-btn.correct .opt-key {
-      background: var(--success);
-      color: white;
-    }
+    .option-btn.correct .opt-key { background: var(--success); color: white; }
     .option-btn.wrong {
       border-color: var(--error);
       background: #fef2f2;
       color: #991b1b;
       opacity: 0.9;
     }
-    .option-btn.wrong .opt-key {
-      background: var(--error);
-      color: white;
-    }
+    .option-btn.wrong .opt-key { background: var(--error); color: white; }
 
-    /* Explanation & Writing Drawer */
     .answer-drawer {
       display: none;
       margin-top: 24px;
@@ -540,21 +489,20 @@
       color: #475569;
       line-height: 1.6;
     }
-
     .writing-highlight {
       background: #f0fdf4;
       border-left-color: #10b981;
     }
 
-    /* Next Button Strip */
     .action-strip {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: 28px;
+      gap: 12px;
     }
     .btn-next-action {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
       border: none;
       padding: 14px 28px;
@@ -581,7 +529,6 @@
       border-radius: 4px;
     }
 
-    /* Modal Styles */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -617,11 +564,7 @@
       color: #64748b;
     }
 
-    /* Warm-up Flashcards */
-    .flip-card-arena {
-      perspective: 1000px;
-      margin: 20px 0;
-    }
+    .flip-card-arena { perspective: 1000px; margin: 20px 0; }
     .flip-card-inner {
       background: #ffffff;
       border: 2px solid #e2e8f0;
@@ -637,9 +580,7 @@
       justify-content: center;
       align-items: center;
     }
-    .flip-card-inner:hover {
-      border-color: #38bdf8;
-    }
+    .flip-card-inner:hover { border-color: #38bdf8; }
     .warmup-controls {
       display: flex;
       align-items: center;
@@ -648,7 +589,6 @@
       margin-top: 16px;
     }
 
-    /* Victory Celebration Modal */
     .victory-badge {
       font-size: 3.5rem;
       margin-bottom: 12px;
@@ -671,7 +611,6 @@
       transform: rotate(-2deg);
     }
 
-    /* Print Area & Media Print */
     #printArea { display: none; }
     @media print {
       body * { visibility: hidden; }
@@ -691,14 +630,12 @@
       .print-card { border: 1px solid #ccc; padding: 10px; border-radius: 4px; page-break-inside: avoid; }
     }
 
-    /* Canvas for Confetti */
     #confettiCanvas {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none;
       z-index: 5000;
     }
-
   </style>
 </head>
 <body>
@@ -726,6 +663,7 @@
       </div>
 
       <div class="hud-actions">
+        <button class="btn-icon" id="btnMistakesMode" onclick="openMistakesMode()" style="background:#fef2f2; border-color:#fecaca; color:#b91c1c; display:none; font-weight:800;">❌ 錯題特訓 (<span id="mistakesCount">0</span>)</button>
         <button class="btn-icon" id="btnAudioToggle" onclick="toggleAudio()" title="音效開關">🔊 音效</button>
         <button class="btn-icon" onclick="openPrintModal()">🖨️ 列印</button>
         <button class="btn-icon" onclick="exportProgress()">💾 匯出</button>
@@ -735,14 +673,16 @@
     </div>
   </header>
 
-  <!-- Daily Quest Navigator Bar -->
+  <!-- Quest Bar -->
   <div class="quest-bar">
     <div class="quest-container">
+      
       <div class="day-selector-wrap">
         <button class="day-btn" onclick="prevDay()">◀</button>
         <span class="day-label" id="dayLabel">📅 今日任務：Day 1 (10題)</span>
         <button class="day-btn" onclick="nextDay()">▶</button>
       </div>
+
 
       <button class="btn-warmup" onclick="startWarmup()">
         <span>⚡</span> 考前 3 分鐘暖身翻卡 (先背再測驗)
@@ -771,9 +711,9 @@
       <div class="card-meta">
         <div class="meta-tags">
           <span class="badge-qno" id="qNoBadge">第 1 題</span>
-          <span class="badge-pos" id="qPosBadge">動詞 v.</span>
-          <span class="badge-level" id="qLevelBadge">Level 4</span>
-          <span id="qYearBadge" style="font-size:0.8rem; color:#64748b; font-weight:700;">106 學測</span>
+          <span class="badge-pos" id="qPosBadge">詞性</span>
+          <span class="badge-level" id="qLevelBadge">等級</span>
+          <span id="qExtraBadge" style="font-size:0.8rem; color:#64748b; font-weight:700;">年份</span>
         </div>
         <button class="btn-star" id="btnStar" onclick="toggleStarActive()" title="收藏題號">★</button>
       </div>
@@ -783,32 +723,35 @@
       </div>
 
       <div class="options-grid" id="optionsGrid">
-        <!-- 4 Options populated dynamically -->
+        <!-- 4 Options -->
       </div>
 
       <!-- Explanation Drawer -->
       <div class="answer-drawer" id="answerDrawer">
         <div class="feedback-banner" id="feedbackBanner">
-          <span id="feedbackText">答對了！太厲害了！</span>
+          <span id="feedbackText">答對了！</span>
           <span id="feedbackExp">+15 EXP</span>
         </div>
 
         <div class="drawer-section">
           <div class="drawer-title">📌 大考中心命題解析與語意線索</div>
-          <div class="drawer-body" id="expClue"></div>
+          <div class="drawer-body" id="expSec1"></div>
         </div>
 
         <div class="drawer-section">
           <div class="drawer-title">⚠️ 混淆誘答項與常考陷阱</div>
-          <div class="drawer-body" id="expTrap"></div>
+          <div class="drawer-body" id="expSec2"></div>
         </div>
 
         <div class="drawer-section writing-highlight">
           <div class="drawer-title">✍️ 頂標作文應用手帳 (句型架構)</div>
-          <div class="drawer-body" id="expWriting"></div>
+          <div class="drawer-body" id="expSec3"></div>
         </div>
 
         <div class="action-strip">
+          <button class="btn-icon" id="btnRetrySingle" style="display:none; background:#fef2f2; color:#b91c1c; border-color:#fecaca; font-weight:800; padding:10px 16px;" onclick="retryCurrentCard()">
+            🔄 再做一次本題
+          </button>
           <button class="btn-next-action" onclick="nextCard()">
             <span>下一題</span> <span class="key-hint">Enter / Space</span> ➔
           </button>
@@ -826,14 +769,12 @@
     <div class="modal-card">
       <button class="modal-close" onclick="closeWarmup()">✕</button>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-        <span style="font-size:0.85rem; font-weight:800; color:#2563eb; background:#eff6ff; padding:3px 8px; border-radius:6px;">⚡ 今日暖身翻卡 (<span id="wmCardNum">1</span>/10)</span>
+        <span style="font-size:0.85rem; font-weight:800; color:var(--primary); background:#eff6ff; padding:3px 8px; border-radius:6px;">⚡ 今日暖身翻卡 (<span id="wmCardNum">1</span>/10)</span>
         <span style="font-size:0.8rem; color:#94a3b8;">點擊卡片或按 Space 翻面</span>
       </div>
 
       <div class="flip-card-arena" onclick="flipWarmupCard()">
-        <div class="flip-card-inner" id="wmBody">
-          <!-- Dynamic Flashcard Content -->
-        </div>
+        <div class="flip-card-inner" id="wmBody"></div>
       </div>
 
       <div class="warmup-controls">
@@ -851,7 +792,7 @@
     <div class="modal-card" style="text-align:center;">
       <div class="victory-badge">🎉</div>
       <h2 style="font-size:1.5rem; font-weight:900; color:#0f172a; margin-bottom:6px;">恭喜完成今日任務！</h2>
-      <p style="color:#64748b; font-size:0.95rem;">你已經攻克了今日所有學測真題，實力再次大幅升級！</p>
+      <p style="color:#64748b; font-size:0.95rem;">你已經攻克了今日所有題目，實力再次大幅升級！</p>
 
       <div class="stamp-box" id="victoryStamp">
         💮 DAY 1 滿級分通關
@@ -869,8 +810,11 @@
       </div>
 
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="btn-next-action" id="btnSweepMistakes" style="background:#ea580c; padding:10px 20px; display:none;" onclick="startMistakesSweep()">
+          🔄 立即消滅今日錯題 (<span id="vicMistakeNum">0</span> 題)
+        </button>
         <button class="btn-next-action" style="background:#059669; padding:10px 20px;" onclick="closeVictoryAndReview()">
-          🔄 強化複習錯題
+          📖 查看題目解析
         </button>
         <button class="btn-next-action" style="padding:10px 20px;" onclick="closeVictoryAndNextDay()">
           🚀 挑戰下一天 ➔
@@ -879,7 +823,7 @@
     </div>
   </div>
 
-  <!-- Reset Confirmation Modal (100% UTF-8 DOM Modal) -->
+  <!-- Reset Confirmation Modal -->
   <div class="modal-overlay" id="resetModal">
     <div class="modal-card" style="max-width:480px; text-align:center;">
       <div style="font-size:2.5rem; margin-bottom:12px;">⚠️</div>
@@ -930,11 +874,15 @@
     </div>
   </div>
 
-  <!-- Print Output Area (Target for window.print()) -->
+  <!-- Print Output Area -->
   <div id="printArea"></div>
 
   <script>
     const QUESTIONS = [{"id": "106-01", "year": 106, "question_no": 1, "stem": "John's clock is not functioning ______. The alarm rings even when it's not set to go off.", "options": {"A": "tenderly", "B": "properly", "C": "solidly", "D": "favorably"}, "answer": "B", "answer_word": "properly", "pos": "adv.", "levels": {"A": 3, "B": 2, "C": 3, "D": 4}, "clue": "與 not functioning 連用，修飾時鐘正常運轉", "gloss": {"A": "溫柔地", "B": "適當地、正常地", "C": "堅固地", "D": "贊同地、順利地"}, "trans": "約翰的時鐘運作不正常。即使沒有設定鬧鐘，它也會響起。", "idx": 0, "day": 1, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue properly, the overall outcome will be greatly improved.", "example": "Only when students manage their time properly can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-02", "year": 106, "question_no": 2, "stem": "Michael has decided to ______ a career in physics and has set his mind on becoming a professor.", "options": {"A": "pursue", "B": "swear", "C": "reserve", "D": "draft"}, "answer": "A", "answer_word": "pursue", "pos": "v.", "levels": {"A": 4, "B": 3, "C": 3, "D": 4}, "clue": "與 career (職業生涯) 連用，追求事業用 pursue", "gloss": {"A": "追求、從事", "B": "發誓、咒罵", "C": "預約、保留", "D": "初稿、草案"}, "trans": "麥可決定從事物理學的職業生涯，並下定決心要成為一名教授。", "idx": 1, "day": 1, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to pursue [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should pursue every valuable opportunity to broaden our horizons.", "trap": "pursue (追求事業/學位) 常與 persuade (說服) 混淆；選項 draft (草擬/徵兵/草稿) 為大考高頻字。"}}, {"id": "106-03", "year": 106, "question_no": 3, "stem": "Peter plans to hike in a ______ part of Africa, where he might not meet another human being for days.", "options": {"A": "native", "B": "tricky", "C": "remote", "D": "vacant"}, "answer": "C", "answer_word": "remote", "pos": "adj.", "levels": {"A": 3, "B": 3, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 remote", "gloss": {"A": "本土的、天生的", "B": "棘手的、狡猾的", "C": "偏遠的、遙遠的", "D": "空缺的、空著的"}, "trans": "彼得計畫在非洲的一個偏遠地區徒步旅行，在那裡他可能好幾天都遇不到其他人。", "idx": 2, "day": 1, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining remote in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a remote attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-04", "year": 106, "question_no": 4, "stem": "People in this community tend to ______ with the group they belong to, and often put group interests before personal ones.", "options": {"A": "appoint", "B": "eliminate", "C": "occupy", "D": "identify"}, "answer": "D", "answer_word": "identify", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 identify", "gloss": {"A": "指派、任命", "B": "消除、淘汰", "C": "佔據、佔用", "D": "認同、辨認"}, "trans": "這個社區的人們往往會認同他們所屬的團體，且常常把團體利益置於個人利益之上。", "idx": 3, "day": 1, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to identify [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should identify every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-05", "year": 106, "question_no": 5, "stem": "I mistook the man for a well-known actor and asked for his autograph; it was really ______.", "options": {"A": "relaxing", "B": "embarrassing", "C": "appealing", "D": "defending"}, "answer": "B", "answer_word": "embarrassing", "pos": "adj.", "levels": {"A": 3, "B": 4, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 embarrassing", "gloss": {"A": "令人放鬆的", "B": "令人尷尬的", "C": "吸引人的", "D": "防禦的"}, "trans": "我把那名男子誤認成知名演員並向他要簽名，那實在是太尷尬了。", "idx": 4, "day": 1, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining embarrassing in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a embarrassing attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-06", "year": 106, "question_no": 6, "stem": "After spending most of her salary on rent and food, Amelia ______ had any money left for entertainment and other expenses.", "options": {"A": "barely", "B": "fairly", "C": "merely", "D": "readily"}, "answer": "A", "answer_word": "barely", "pos": "adv.", "levels": {"A": 3, "B": 3, "C": 4, "D": 1}, "clue": "空格前後與句意關鍵詞搭配，答案為 barely", "gloss": {"A": "幾乎不、勉強", "B": "相當地、公正地", "C": "僅僅、只不過", "D": "欣然地、容易地"}, "trans": "愛蜜莉亞在把大部分薪水花在房租和伙食之後，幾乎沒有剩下任何錢可用於娛樂與其他開銷。", "idx": 5, "day": 1, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue barely, the overall outcome will be greatly improved.", "example": "Only when students manage their time barely can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-07", "year": 106, "question_no": 7, "stem": "In the Bermuda Triangle, a region in the western part of the North Atlantic Ocean, some airplanes and ships were reported to have mysteriously disappeared without a ______.", "options": {"A": "guide", "B": "trace", "C": "code", "D": "print"}, "answer": "B", "answer_word": "trace", "pos": "n.", "levels": {"A": 2, "B": 3, "C": 4, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 trace", "gloss": {"A": "指南、導遊", "B": "痕跡、蹤跡", "C": "密碼、規範", "D": "印記、印刷"}, "trans": "在北大西洋西部的百慕達三角洲，據報導有些飛機和船隻神秘失蹤，未留下任何蹤跡。", "idx": 6, "day": 1, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of trace in [Topic].", "example": "Developing a sense of trace enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-08", "year": 106, "question_no": 8, "stem": "Shouting greetings and waving a big sign, Tony ______ the passing shoppers to visit his shop and buy the freshly baked bread.", "options": {"A": "accessed", "B": "edited", "C": "imposed", "D": "urged"}, "answer": "D", "answer_word": "urged", "pos": "v.", "levels": {"A": 4, "B": 3, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 urged", "gloss": {"A": "進入、存取", "B": "編輯", "C": "強制實行", "D": "力勸、催促"}, "trans": "東尼大聲呼喊問候並揮舞著大招牌，力勸經過的顧客參觀他的店鋪並購買新鮮出爐的麵包。", "idx": 7, "day": 1, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to urged [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should urged every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-09", "year": 106, "question_no": 9, "stem": "With a continuous 3 km stretch of golden sand, the beach attracts artists around the world each summer to create amazing ______ with its fine soft sand.", "options": {"A": "constitutions", "B": "objections", "C": "sculptures", "D": "adventures"}, "answer": "C", "answer_word": "sculptures", "pos": "n.", "levels": {"A": 4, "B": 4, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 sculptures", "gloss": {"A": "憲法、體質", "B": "反對", "C": "雕塑品", "D": "冒險"}, "trans": "憑藉著長達三公里的金色沙灘，這座海灘每年夏天吸引世界各地的藝術家用細軟的沙子創作驚人的雕塑作品。", "idx": 8, "day": 1, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of sculptures in [Topic].", "example": "Developing a sense of sculptures enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-10", "year": 106, "question_no": 10, "stem": "The clouds parted and a ______ of light fell on the church, through the windows, and onto the floor.", "options": {"A": "dip", "B": "beam", "C": "spark", "D": "path"}, "answer": "B", "answer_word": "beam", "pos": "n.", "levels": {"A": 3, "B": 3, "C": 4, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 beam", "gloss": {"A": "下沉、沾浸", "B": "光束、橫樑", "C": "火花", "D": "小徑、路線"}, "trans": "雲層散開，一道光束透過窗戶灑在教堂的地面上。", "idx": 9, "day": 1, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of beam in [Topic].", "example": "Developing a sense of beam enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-11", "year": 106, "question_no": 11, "stem": "Instead of a gift, Tim's grandmother always ______ some money in the birthday card she gave him.", "options": {"A": "enclosed", "B": "installed", "C": "preserved", "D": "rewarded"}, "answer": "A", "answer_word": "enclosed", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 enclosed", "gloss": {"A": "隨函附上、包圍", "B": "安裝", "C": "保存", "D": "獎勵"}, "trans": "提姆的祖母總是在給他的生日賀卡裡附上一些錢，而不是禮物。", "idx": 10, "day": 2, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to enclosed [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should enclosed every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-12", "year": 106, "question_no": 12, "stem": "While winning a gold ______ is what every Olympic athlete dreams of, it becomes meaningless if it is achieved by cheating.", "options": {"A": "signal", "B": "glory", "C": "medal", "D": "profit"}, "answer": "C", "answer_word": "medal", "pos": "n.", "levels": {"A": 3, "B": 3, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 medal", "gloss": {"A": "信號", "B": "榮耀", "C": "獎牌", "D": "利潤"}, "trans": "雖然贏得金牌是每位奧運選手的夢想，但如果是靠作弊得來的，就變得毫無意義了。", "idx": 11, "day": 2, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of medal in [Topic].", "example": "Developing a sense of medal enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-13", "year": 106, "question_no": 13, "stem": "The thief went into the apartment building and stole some jewelry. He then ______ himself as a security guard and walked out the front gate.", "options": {"A": "balanced", "B": "calculated", "C": "disguised", "D": "registered"}, "answer": "C", "answer_word": "disguised", "pos": "v.", "levels": {"A": 2, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 disguised", "gloss": {"A": "平衡", "B": "計算", "C": "偽裝、喬裝", "D": "註冊、登記"}, "trans": "小偷潛入公寓大樓偷走了一些珠寶。隨後他將自己偽裝成保全人員，從大門大搖大擺地走了出去。", "idx": 12, "day": 2, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to disguised [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should disguised every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-14", "year": 106, "question_no": 14, "stem": "Due to numerous accidents that occurred while people were playing Pokémon GO, players were advised to be ______ of possible dangers in the environment.", "options": {"A": "aware", "B": "ashamed", "C": "doubtful", "D": "guilty"}, "answer": "A", "answer_word": "aware", "pos": "adj.", "levels": {"A": 3, "B": 4, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 aware", "gloss": {"A": "意識到的、知曉的", "B": "羞愧的", "C": "懷疑的", "D": "內疚的、有罪的"}, "trans": "由於人們在玩《精靈寶可夢 GO》時發生了多起意外事故，玩家被建議要留心環境中的潛在危險。", "idx": 13, "day": 2, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining aware in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a aware attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "106-15", "year": 106, "question_no": 15, "stem": "Sherlock Holmes, a detective in a popular fiction series, has impressed readers with his amazing powers of ______ and his knowledge of trivial facts.", "options": {"A": "innocence", "B": "estimation", "C": "assurance", "D": "observation"}, "answer": "D", "answer_word": "observation", "pos": "n.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 observation", "gloss": {"A": "清白、天真", "B": "估計", "C": "保證、自信", "D": "觀察、觀察力"}, "trans": "知名小說系列中的偵探福爾摩斯，以其驚人的觀察力與對瑣碎細節的豐富知識給讀者留下了深刻印象。", "idx": 14, "day": 2, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of observation in [Topic].", "example": "Developing a sense of observation enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-01", "year": 107, "question_no": 1, "stem": "Mangoes are a ______ fruit here in Taiwan; most of them reach their peak of sweetness in July.", "options": {"A": "mature", "B": "usual", "C": "seasonal", "D": "particular"}, "answer": "C", "answer_word": "seasonal", "pos": "adj.", "levels": {"A": 2, "B": 2, "C": 3, "D": 2}, "clue": "水果在特定季節成熟，形容盛產/受歡迎", "gloss": {"A": "成熟的", "B": "通常的", "C": "季節性的", "D": "特別的、講究的"}, "trans": "芒果在台灣是當季水果；大多數芒果在七月份達到甜度的最高峰。", "idx": 15, "day": 2, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining seasonal in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a seasonal attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-02", "year": 107, "question_no": 2, "stem": "Writing term papers and giving oral reports are typical course ______ for college students.", "options": {"A": "requirements", "B": "techniques", "C": "situations", "D": "principles"}, "answer": "A", "answer_word": "requirements", "pos": "n.", "levels": {"A": 2, "B": 3, "C": 3, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 requirements", "gloss": {"A": "要求、必修條件", "B": "技巧", "C": "情況", "D": "原則"}, "trans": "撰寫期末報告與進行口頭報告是大學生典型的大學課程修習要求。", "idx": 16, "day": 2, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of requirements in [Topic].", "example": "Developing a sense of requirements enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-03", "year": 107, "question_no": 3, "stem": "If we work hard to ______ our dreams when we are young, we will not feel that we missed out on something when we get old.", "options": {"A": "distribute", "B": "fulfill", "C": "convince", "D": "monitor"}, "answer": "B", "answer_word": "fulfill", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 fulfill", "gloss": {"A": "分發、分配", "B": "實現、履行", "C": "說服", "D": "監控"}, "trans": "如果我們年輕時努力實現夢想，年老時就不會覺得自己錯過了什麼。", "idx": 17, "day": 2, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to fulfill [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should fulfill every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-04", "year": 107, "question_no": 4, "stem": "Few people will trust you if you continue making ______ promises and never make efforts to keep them.", "options": {"A": "chilly", "B": "liberal", "C": "hollow", "D": "definite"}, "answer": "C", "answer_word": "hollow", "pos": "adj.", "levels": {"A": 3, "B": 2, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 hollow", "gloss": {"A": "寒冷的", "B": "開明的、慷慨的", "C": "空洞的、虛偽的", "D": "明確的"}, "trans": "如果你一直做出空洞的承諾卻從不努力實踐，很少有人會再信任你。", "idx": 18, "day": 2, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining hollow in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a hollow attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-05", "year": 107, "question_no": 5, "stem": "Becky ______ her ankle while she was playing tennis last week. Now it still hurts badly.", "options": {"A": "slipped", "B": "dumped", "C": "twisted", "D": "recovered"}, "answer": "C", "answer_word": "twisted", "pos": "v.", "levels": {"A": 2, "B": 3, "C": 3, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 twisted", "gloss": {"A": "滑倒", "B": "傾倒、拋棄", "C": "扭傷、扭曲", "D": "康復、復原"}, "trans": "貝琪上週打網球時扭傷了腳踝。現在依然痛得很厲害。", "idx": 19, "day": 2, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to twisted [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should twisted every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-06", "year": 107, "question_no": 6, "stem": "Research shows that men and women usually think differently. For example, they have quite different ______ about what marriage means in their life.", "options": {"A": "decisions", "B": "beliefs", "C": "styles", "D": "degrees"}, "answer": "B", "answer_word": "beliefs", "pos": "n.", "levels": {"A": 2, "B": 2, "C": 2, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 beliefs", "gloss": {"A": "決定", "B": "信念、看法", "C": "風格", "D": "學位、程度"}, "trans": "研究顯示男女思考方式通常不同。例如，對於婚姻在人生中的意義，他們有著相當不同的看法。", "idx": 20, "day": 3, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of beliefs in [Topic].", "example": "Developing a sense of beliefs enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-07", "year": 107, "question_no": 7, "stem": "The new manager is very ______. For instance, the employees are given much shorter deadlines for the same tasks than before.", "options": {"A": "persuasive", "B": "tolerable", "C": "suspicious", "D": "demanding"}, "answer": "D", "answer_word": "demanding", "pos": "adj.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 demanding", "gloss": {"A": "有說服力的", "B": "可忍受的", "C": "懷疑的", "D": "要求嚴格的"}, "trans": "新主管非常要求嚴格。舉例來說，員工在相同任務上被給予的截止期限比以前短得多。", "idx": 21, "day": 3, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining demanding in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a demanding attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-08", "year": 107, "question_no": 8, "stem": "While the couple were looking ______ for their missing children, the kids were actually having fun in the woods nearby.", "options": {"A": "anxiously", "B": "precisely", "C": "evidently", "D": "distinctly"}, "answer": "A", "answer_word": "anxiously", "pos": "adv.", "levels": {"A": 3, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 anxiously", "gloss": {"A": "焦慮地", "B": "精確地", "C": "顯然地", "D": "清楚地"}, "trans": "當這對夫妻焦急地尋找走失的孩子時，孩子們實際上正在附近的樹林裡開心地玩耍。", "idx": 22, "day": 3, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue anxiously, the overall outcome will be greatly improved.", "example": "Only when students manage their time anxiously can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-09", "year": 107, "question_no": 9, "stem": "After delivering a very powerful speech, the award winner was ______ by a group of fans asking for her signature.", "options": {"A": "deposited", "B": "reserved", "C": "vanished", "D": "surrounded"}, "answer": "D", "answer_word": "surrounded", "pos": "v.", "levels": {"A": 3, "B": 3, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 surrounded", "gloss": {"A": "存入、放置", "B": "預約、保留", "C": "消失", "D": "圍繞、環繞"}, "trans": "發表了一場極具感染力的演講後，獲獎者被一群索取簽名的粉絲團團圍住。", "idx": 23, "day": 3, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to surrounded [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should surrounded every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-10", "year": 107, "question_no": 10, "stem": "The interviewees were trying very hard to ______ the interviewers that they were very capable and should be given the job.", "options": {"A": "credit", "B": "impress", "C": "relieve", "D": "acquire"}, "answer": "B", "answer_word": "impress", "pos": "v.", "levels": {"A": 3, "B": 3, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 impress", "gloss": {"A": "歸功於、信用", "B": "給…深刻印象、使銘記", "C": "減輕、解除", "D": "獲得、習得"}, "trans": "面試者極力想要讓面試官留下深刻印象，證明自己很有能力且應該獲得這份工作。", "idx": 24, "day": 3, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to impress [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should impress every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-11", "year": 107, "question_no": 11, "stem": "After the first snow of the year, the entire grassland disappeared under a ______ of snow.", "options": {"A": "flake", "B": "blossom", "C": "blanket", "D": "flash"}, "answer": "C", "answer_word": "blanket", "pos": "n.", "levels": {"A": 6, "B": 4, "C": 2, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 blanket", "gloss": {"A": "薄片、碎片", "B": "花朵", "C": "厚層、毯子", "D": "閃光"}, "trans": "迎來當年的第一場雪後，整片草原消失在白雪覆蓋的厚毯之下。", "idx": 25, "day": 3, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of blanket in [Topic].", "example": "Developing a sense of blanket enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-12", "year": 107, "question_no": 12, "stem": "Peter likes books with wide ______, which provide him with enough space to write notes.", "options": {"A": "angles", "B": "margins", "C": "exceptions", "D": "limitations"}, "answer": "B", "answer_word": "margins", "pos": "n.", "levels": {"A": 2, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 margins", "gloss": {"A": "角度", "B": "頁邊空白、邊緣", "C": "例外", "D": "限制"}, "trans": "彼得喜歡版面邊緣空白較大的書籍，這能提供他充足的空間寫筆記。", "idx": 26, "day": 3, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of margins in [Topic].", "example": "Developing a sense of margins enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-13", "year": 107, "question_no": 13, "stem": "At the beginning of the semester, the teacher told the students that late assignments would receive a low grade as a ______.", "options": {"A": "hardship", "B": "comment", "C": "bargain", "D": "penalty"}, "answer": "D", "answer_word": "penalty", "pos": "n.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 penalty", "gloss": {"A": "苦難", "B": "評論", "C": "划算的交易", "D": "懲罰、處罰"}, "trans": "開學初，老師就告訴學生遲交作業將會被打低分作為處罰。", "idx": 27, "day": 3, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of penalty in [Topic].", "example": "Developing a sense of penalty enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-14", "year": 107, "question_no": 14, "stem": "Various studies have been ______ in this hospital to explore the link between a high-fat diet and cancer.", "options": {"A": "conducted", "B": "confirmed", "C": "implied", "D": "improved"}, "answer": "A", "answer_word": "conducted", "pos": "v.", "levels": {"A": 5, "B": 3, "C": 5, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 conducted", "gloss": {"A": "實施、進行", "B": "證實", "C": "暗示", "D": "改善"}, "trans": "這家醫院已進行了各項研究，以探索高脂肪飲食與癌症之間的關聯。", "idx": 28, "day": 3, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to conducted [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should conducted every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "107-15", "year": 107, "question_no": 15, "stem": "Intense, fast-moving fires raged across much of California last week. The ______ fi restorm has claimed the lives of thirty people.", "options": {"A": "efficient", "B": "reliable", "C": "massive", "D": "adequate"}, "answer": "C", "answer_word": "massive", "pos": "adj.", "levels": {"A": 3, "B": 3, "C": 5, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 massive", "gloss": {"A": "有效率的", "B": "可靠的", "C": "巨大的、大規模的", "D": "充足的"}, "trans": "猛烈且蔓延迅速的大火上週席捲了加州大部分地區。這場巨大的火風暴已奪走了三十人的生命。", "idx": 29, "day": 3, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining massive in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a massive attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-01", "year": 108, "question_no": 1, "stem": "Bobby cared a lot about his ______ at home and asked his parents not to go through his things without his permission.", "options": {"A": "discipline", "B": "facility", "C": "privacy", "D": "representation"}, "answer": "C", "answer_word": "privacy", "pos": "n.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 privacy", "gloss": {"A": "紀律、自律", "B": "設施", "C": "隱私", "D": "代表"}, "trans": "巴比在家裡非常注重個人隱私，並要求父母未經許可不得翻看他的東西。", "idx": 30, "day": 4, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of privacy in [Topic].", "example": "Developing a sense of privacy enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-02", "year": 108, "question_no": 2, "stem": "The new manager is a real gentleman. He is kind and humble, totally different from the former manager, who was ______ and bossy.", "options": {"A": "eager", "B": "liberal", "C": "mean", "D": "inferior"}, "answer": "C", "answer_word": "mean", "pos": "adj.", "levels": {"A": 3, "B": 2, "C": 1, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 mean", "gloss": {"A": "渴望的", "B": "開明的、慷慨的", "C": "刻薄的、卑鄙的", "D": "次等的、劣質的"}, "trans": "新主管是位真正的紳士。他仁慈又謙遜，與前任刻薄且愛耍威風的主管截然不同。", "idx": 31, "day": 4, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining mean in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a mean attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-03", "year": 108, "question_no": 3, "stem": "The weather bureau ______ that the typhoon would bring strong winds and heavy rains, and warned everyone of the possible danger.", "options": {"A": "conveyed", "B": "associated", "C": "interpreted", "D": "predicted"}, "answer": "D", "answer_word": "predicted", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 predicted", "gloss": {"A": "傳達", "B": "聯想、關聯", "C": "詮釋、口譯", "D": "預測"}, "trans": "氣象局預測颱風將帶來強風豪雨，並警告大眾注意可能的危險。", "idx": 32, "day": 4, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to predicted [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should predicted every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-04", "year": 108, "question_no": 4, "stem": "Different airlines have different ______ for carry-on luggage, but many international airlines limit a carry-on piece to 7 kilograms.", "options": {"A": "landmarks", "B": "restrictions", "C": "percentages", "D": "circumstances"}, "answer": "B", "answer_word": "restrictions", "pos": "n.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 restrictions", "gloss": {"A": "地標", "B": "限制規定", "C": "百分比", "D": "情況、情勢"}, "trans": "各家航空公司對隨身手提行李有不同的限制規定，但許多國際航班限制單件手提行李不超過 7 公斤。", "idx": 33, "day": 4, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of restrictions in [Topic].", "example": "Developing a sense of restrictions enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-05", "year": 108, "question_no": 5, "stem": "Many people were happy that the government had finally ______ Children's Day as a national holiday.", "options": {"A": "appointed", "B": "declared", "C": "performed", "D": "involved"}, "answer": "B", "answer_word": "declared", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 declared", "gloss": {"A": "任命", "B": "宣布、聲明", "C": "執行、表演", "D": "涉及、牽涉"}, "trans": "許多人對政府終於宣布兒童節為國定假日感到非常高興。", "idx": 34, "day": 4, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to declared [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should declared every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-06", "year": 108, "question_no": 6, "stem": "To reach the goal of making her company a market leader, Michelle ______ a plan to open ten new stores around the country this year.", "options": {"A": "advised", "B": "occupied", "C": "proposed", "D": "recognized"}, "answer": "C", "answer_word": "proposed", "pos": "v.", "levels": {"A": 3, "B": 4, "C": 2, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 proposed", "gloss": {"A": "建議", "B": "佔據", "C": "提議、提出", "D": "認可、辨認出"}, "trans": "為了達到讓公司成為市場龍頭的目標，蜜雪兒提出了一項今年在全國開設十家新門市的計畫。", "idx": 35, "day": 4, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to proposed [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should proposed every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-07", "year": 108, "question_no": 7, "stem": "Silence in some way is as ______ as speech. It can be used to show, for example, di sagreement or lack of interest.", "options": {"A": "sociable", "B": "expressive", "C": "reasonable", "D": "objective"}, "answer": "B", "answer_word": "expressive", "pos": "adj.", "levels": {"A": 6, "B": 3, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 expressive", "gloss": {"A": "好交際的", "B": "富有表情的、富於表現的", "C": "合理的", "D": "客觀的"}, "trans": "沉默在某種程度上就像言語一樣富於表現。舉例來說，它可用來表示反對或缺乏興趣。", "idx": 36, "day": 4, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining expressive in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a expressive attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-08", "year": 108, "question_no": 8, "stem": "This TV program is designed for children, ______ for those under five. It contains no violence or strong language.", "options": {"A": "particularly", "B": "sensibly", "C": "moderately", "D": "considerably"}, "answer": "A", "answer_word": "particularly", "pos": "adv.", "levels": {"A": 2, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 particularly", "gloss": {"A": "特別地、尤其", "B": "明智地", "C": "適度地", "D": "相當大地"}, "trans": "這個電視節目是專為孩童設計的，特別是五歲以下的幼兒。它不含任何暴力或不雅用語。", "idx": 37, "day": 4, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue particularly, the overall outcome will be greatly improved.", "example": "Only when students manage their time particularly can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-09", "year": 108, "question_no": 9, "stem": "Tommy, please put away the toys in the box, or you might ______ on them and hurt yourself.", "options": {"A": "stumble", "B": "graze", "C": "navigate", "D": "dwell"}, "answer": "A", "answer_word": "stumble", "pos": "v.", "levels": {"A": 5, "B": 6, "C": 6, "D": 6}, "clue": "空格前後與句意關鍵詞搭配，答案為 stumble", "gloss": {"A": "絆倒", "B": "擦傷、吃草", "C": "導航、駕駛", "D": "居住、沉思"}, "trans": "湯米，請把盒子裡的玩具收好，否則你可能會被玩具絆倒而受傷。", "idx": 38, "day": 4, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to stumble [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should stumble every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-10", "year": 108, "question_no": 10, "stem": "The ______ costume party, held every September, is one of the biggest events of the school year.", "options": {"A": "initial", "B": "annual", "C": "evident", "D": "occasional"}, "answer": "B", "answer_word": "annual", "pos": "adj.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 annual", "gloss": {"A": "最初的", "B": "每年的、年度的", "C": "明顯的", "D": "偶爾的"}, "trans": "每年九月舉辦的年度變裝派對，是整學年中最重大的活動之一。", "idx": 39, "day": 4, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining annual in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a annual attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-11", "year": 108, "question_no": 11, "stem": "In a job interview, attitude and personality are usually important ______ that influence the decision of the interviewers.", "options": {"A": "factors", "B": "outcomes", "C": "missions", "D": "identities"}, "answer": "A", "answer_word": "factors", "pos": "n.", "levels": {"A": 2, "B": 4, "C": 3, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 factors", "gloss": {"A": "因素", "B": "結果", "C": "任務", "D": "身分"}, "trans": "在求職面試中，態度與個性通常是影響面試官決定的重要因素。", "idx": 40, "day": 5, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of factors in [Topic].", "example": "Developing a sense of factors enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-12", "year": 108, "question_no": 12, "stem": "The snow-capped mountain is described so ______ in the book that the scene seems to come alive in front of the reader's eyes.", "options": {"A": "distantly", "B": "meaningfully", "C": "cheerfully", "D": "vividly"}, "answer": "D", "answer_word": "vividly", "pos": "adv.", "levels": {"A": 2, "B": 3, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 vividly", "gloss": {"A": "遙遠地", "B": "意味深長地", "C": "愉快地", "D": "生動地、歷歷在目地"}, "trans": "書中對白雪覆蓋的山景描寫得如此生動，以至於該景象彷彿鮮活地呈現在讀者眼前。", "idx": 41, "day": 5, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue vividly, the overall outcome will be greatly improved.", "example": "Only when students manage their time vividly can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-13", "year": 108, "question_no": 13, "stem": "Surrounded by flowers blooming and birds ______ merrily, the Wangs had a good ti me hiking in the national park.", "options": {"A": "napping", "B": "scooping", "C": "flipping", "D": "chirping"}, "answer": "D", "answer_word": "chirping", "pos": "v.", "levels": {"A": 3, "B": 4, "C": 5, "D": 6}, "clue": "空格前後與句意關鍵詞搭配，答案為 chirping", "gloss": {"A": "小睡", "B": "舀起", "C": "翻轉", "D": "鳥鳴、啾啾叫"}, "trans": "被盛開的鮮花與歡快鳴叫的鳥兒所環繞，王家人在國家公園裡度過了一段愉快的健行時光。", "idx": 42, "day": 5, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to chirping [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should chirping every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-14", "year": 108, "question_no": 14, "stem": "It is essential for us to maintain constant ______ with our friends to ensure that we have someone to talk to in times of need.", "options": {"A": "benefit", "B": "contact", "C": "gesture", "D": "favor"}, "answer": "B", "answer_word": "contact", "pos": "n.", "levels": {"A": 3, "B": 2, "C": 3, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 contact", "gloss": {"A": "好處、利益", "B": "聯繫、接觸", "C": "手勢、姿態", "D": "恩惠、幫忙"}, "trans": "我們必須與朋友保持經常性的聯繫，以確保在需要時有人可以傾訴。", "idx": 43, "day": 5, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of contact in [Topic].", "example": "Developing a sense of contact enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "108-15", "year": 108, "question_no": 15, "stem": "The young generation in this country has shown less interest in factory work and other ______ labor jobs, such as house construction and fruit picking.", "options": {"A": "causal", "B": "durable", "C": "manual", "D": "violent"}, "answer": "C", "answer_word": "manual", "pos": "adj.", "levels": {"A": 5, "B": 4, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 manual", "gloss": {"A": "因果的", "B": "耐用的", "C": "體力的、手工的", "D": "暴力的"}, "trans": "這個國家的年輕世代對工廠作業以及建築、採果等體力勞動工作表現出較少的興趣。", "idx": 44, "day": 5, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining manual in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a manual attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-01", "year": 109, "question_no": 1, "stem": "After hours of discussion, our class finally reached the ______ that we would go to Hualien for our graduation trip.", "options": {"A": "balance", "B": "conclusion", "C": "definition", "D": "harmony"}, "answer": "B", "answer_word": "conclusion", "pos": "n.", "levels": {"A": 2, "B": 3, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 conclusion", "gloss": {"A": "平衡", "B": "結論", "C": "定義", "D": "和諧"}, "trans": "經過數小時的討論，我們班級終於達成了畢業旅行要去花蓮的結論。", "idx": 45, "day": 5, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of conclusion in [Topic].", "example": "Developing a sense of conclusion enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-02", "year": 109, "question_no": 2, "stem": "Jane ______ her teacher by passing the exam with a nearly perfect score; she almost failed the course last semester.", "options": {"A": "bored", "B": "amazed", "C": "charmed", "D": "informed"}, "answer": "B", "answer_word": "amazed", "pos": "v.", "levels": {"A": 1, "B": 3, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 amazed", "gloss": {"A": "使無聊", "B": "使驚訝、使讚嘆", "C": "使陶醉", "D": "通知"}, "trans": "珍以接近滿分的成績通過考試讓老師大為驚嘆；她上學期這門課差點被當掉。", "idx": 46, "day": 5, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to amazed [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should amazed every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-03", "year": 109, "question_no": 3, "stem": "The vacuum cleaner is not working. Let's send it back to the ______ to have it inspected and repaired.", "options": {"A": "lecturer", "B": "publisher", "C": "researcher", "D": "manufacturer"}, "answer": "D", "answer_word": "manufacturer", "pos": "n.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 manufacturer", "gloss": {"A": "講師", "B": "出版商", "C": "研究員", "D": "製造商"}, "trans": "吸塵器壞了。我們把它送回製造商那裡進行檢查與維修吧。", "idx": 47, "day": 5, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of manufacturer in [Topic].", "example": "Developing a sense of manufacturer enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-04", "year": 109, "question_no": 4, "stem": "Due to the global financial crisis, the country's exports ______ by 40 percent last month, the largest drop since 2000.", "options": {"A": "flattered", "B": "transformed", "C": "relieved", "D": "decreased"}, "answer": "D", "answer_word": "decreased", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 decreased", "gloss": {"A": "諂媚、感到榮幸", "B": "轉變", "C": "緩解、使放心", "D": "減少、下降"}, "trans": "由於全球金融危機，該國上個月的出口額減少了40%，是自 2000 年以來的最大跌幅。", "idx": 48, "day": 5, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to decreased [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should decreased every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-05", "year": 109, "question_no": 5, "stem": "The potato chips have been left uncovered on the table for such a long time that they no longer taste fresh and ______.", "options": {"A": "solid", "B": "crispy", "C": "original", "D": "smooth"}, "answer": "B", "answer_word": "crispy", "pos": "adj.", "levels": {"A": 3, "B": 3, "C": 3, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 crispy", "gloss": {"A": "堅固的、固體的", "B": "酥脆的", "C": "原本的、原創的", "D": "滑順的"}, "trans": "洋芋片未蓋好放在桌上太久了，吃起來不再新鮮酥脆。", "idx": 49, "day": 5, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining crispy in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a crispy attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-06", "year": 109, "question_no": 6, "stem": "The townspeople built a ______ in memory of the brave teacher who sacrificed her life to save her students from a burning bus.", "options": {"A": "monument", "B": "refugee", "C": "souvenir", "D": "firecracker"}, "answer": "A", "answer_word": "monument", "pos": "n.", "levels": {"A": 4, "B": 4, "C": 5, "D": 6}, "clue": "空格前後與句意關鍵詞搭配，答案為 monument", "gloss": {"A": "紀念碑", "B": "難民", "C": "紀念品", "D": "鞭炮"}, "trans": "鎮民建造了一座紀念碑，以紀念那位犧牲自己生命將學生從起火公車中救出的勇敢老師。", "idx": 50, "day": 6, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of monument in [Topic].", "example": "Developing a sense of monument enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-07", "year": 109, "question_no": 7, "stem": "The students in Professor Smith's classical Chinese class are required to ______ poems by famous Chinese poets.", "options": {"A": "construct", "B": "expose", "C": "recite", "D": "install"}, "answer": "C", "answer_word": "recite", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 5, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 recite", "gloss": {"A": "建造", "B": "暴露、揭露", "C": "背誦、朗誦", "D": "安裝"}, "trans": "史密斯教授中國古典文學課的學生被要求背誦中國知名詩人的詩作。", "idx": 51, "day": 6, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to recite [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should recite every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-08", "year": 109, "question_no": 8, "stem": "Although Mr. Tang claims that the house belongs to him, he has not offered any proof of ______.", "options": {"A": "convention", "B": "relationship", "C": "insurance", "D": "ownership"}, "answer": "D", "answer_word": "ownership", "pos": "n.", "levels": {"A": 4, "B": 2, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 ownership", "gloss": {"A": "傳統、大會", "B": "關係", "C": "保險", "D": "所有權"}, "trans": "雖然唐先生聲稱這棟房子歸他所有，但他並未提供任何所有權證明。", "idx": 52, "day": 6, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of ownership in [Topic].", "example": "Developing a sense of ownership enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-09", "year": 109, "question_no": 9, "stem": "Ancient Athens, famous for its early development of the democratic system, is often said to be the ______ of democracy.", "options": {"A": "mission", "B": "target", "C": "cradle", "D": "milestone"}, "answer": "C", "answer_word": "cradle", "pos": "n.", "levels": {"A": 3, "B": 2, "C": 3, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 cradle", "gloss": {"A": "任務", "B": "目標", "C": "搖籃、發源地", "D": "里程碑"}, "trans": "古雅典以其早期民主體制的發展而聞名，常被譽為民主的搖籃。", "idx": 53, "day": 6, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of cradle in [Topic].", "example": "Developing a sense of cradle enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-10", "year": 109, "question_no": 10, "stem": "The candy can no longer be sold because it was found to contain artificial ingredients far beyond the ______ level.", "options": {"A": "abundant", "B": "immense", "C": "permissible", "D": "descriptive"}, "answer": "C", "answer_word": "permissible", "pos": "adj.", "levels": {"A": 5, "B": 5, "C": 6, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 permissible", "gloss": {"A": "豐富的", "B": "巨大的", "C": "允許的、可容許的", "D": "描述性的"}, "trans": "這種糖果不能再販售了，因為被驗出人工添加物含量遠超過法規允許的標準。", "idx": 54, "day": 6, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining permissible in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a permissible attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-11", "year": 109, "question_no": 11, "stem": "Jack's excellent performance in last week's game has ______ all the doubts about his ability to play on our school basketball team.", "options": {"A": "erased", "B": "canceled", "C": "overlooked", "D": "replaced"}, "answer": "A", "answer_word": "erased", "pos": "v.", "levels": {"A": 3, "B": 2, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 erased", "gloss": {"A": "消除、抹去", "B": "取消", "C": "忽略", "D": "取代"}, "trans": "傑克在上週比賽中的優異表現，消除了所有人對他進入校籃球隊能力的疑慮。", "idx": 55, "day": 6, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to erased [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should erased every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-12", "year": 109, "question_no": 12, "stem": "It is bullying to ______ a foreign speaker's accent. No one deserves to be laughed at for their pronunciation.", "options": {"A": "mock", "B": "sneak", "C": "prompt", "D": "glare"}, "answer": "A", "answer_word": "mock", "pos": "v.", "levels": {"A": 5, "B": 5, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 mock", "gloss": {"A": "嘲弄、嘲笑", "B": "偷偷進行", "C": "促使、推動", "D": "怒視"}, "trans": "嘲弄外國人的口音是一種霸凌行為。沒有人應該因為發音而遭受嘲笑。", "idx": 56, "day": 6, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to mock [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should mock every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-13", "year": 109, "question_no": 13, "stem": "Mary lost ten kilograms in three months, so her ______ skin-tight jeans are now hanging off her hips.", "options": {"A": "barely", "B": "evenly", "C": "currently", "D": "formerly"}, "answer": "D", "answer_word": "formerly", "pos": "adv.", "levels": {"A": 3, "B": 1, "C": 2, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 formerly", "gloss": {"A": "幾乎不、勉強", "B": "", "C": "目前", "D": "以前、從前"}, "trans": "瑪莉在三個月內減重了十公斤，因此她以前緊繃的牛仔褲現在鬆垮地掛在臀部上。", "idx": 57, "day": 6, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue formerly, the overall outcome will be greatly improved.", "example": "Only when students manage their time formerly can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-14", "year": 109, "question_no": 14, "stem": "The police officer showed us pictures of drunk driving accidents to highlight the importance of staying ______ on the road.", "options": {"A": "sober", "B": "majestic", "C": "vigorous", "D": "noticeable"}, "answer": "A", "answer_word": "sober", "pos": "adj.", "levels": {"A": 5, "B": 6, "C": 6, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 sober", "gloss": {"A": "清醒的、未喝醉的", "B": "雄偉的", "C": "精力充沛的", "D": "顯著的"}, "trans": "警察向我們展示了酒駕事故的照片，以強調在路上保持清醒駕駛的重要性。", "idx": 58, "day": 6, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining sober in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a sober attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "109-15", "year": 109, "question_no": 15, "stem": "The claim that eating chocolate can prevent heart disease is ______ because there is not enough scientific evidence to support it.", "options": {"A": "creative", "B": "disputable", "C": "circular", "D": "magnificent"}, "answer": "B", "answer_word": "disputable", "pos": "adj.", "levels": {"A": 3, "B": 5, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 disputable", "gloss": {"A": "有創意的", "B": "有爭議的", "C": "圓形的", "D": "壯麗的"}, "trans": "吃巧克力可以預防心臟病的說法是有爭議的，因為沒有足夠的科學證據支持它。", "idx": 59, "day": 6, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining disputable in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a disputable attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-01", "year": 110, "question_no": 1, "stem": "Tom is really a naughty boy. He likes to ______ and play jokes on his younger sister when their parents are not around.", "options": {"A": "alert", "B": "spare", "C": "tease", "D": "oppose"}, "answer": "C", "answer_word": "tease", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 tease", "gloss": {"A": "警惕的", "B": "饒恕、騰出", "C": "戲弄、逗弄", "D": "反對"}, "trans": "湯姆真是個調皮的男孩。爸媽不在時，他喜歡戲弄妹妹並捉弄她。", "idx": 60, "day": 7, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to tease [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should tease every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-02", "year": 110, "question_no": 2, "stem": "Elderly shoppers in this store are advised to take the elevator rather than the ______, which may move too fast for them to keep their balance.", "options": {"A": "airway", "B": "operator", "C": "escalator", "D": "instrument"}, "answer": "C", "answer_word": "escalator", "pos": "n.", "levels": {"A": 6, "B": 2, "C": 5, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 escalator", "gloss": {"A": "氣道、航線", "B": "操作員", "C": "電扶梯", "D": "儀器、樂器"}, "trans": "建議這家店的老年顧客搭乘電梯而非電扶梯，因為電扶梯速度可能太快使他們難以保持平衡。", "idx": 61, "day": 7, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of escalator in [Topic].", "example": "Developing a sense of escalator enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-03", "year": 110, "question_no": 3, "stem": "Upon hearing its master's call, the dog wagged its tail, and followed her out of the room ______.", "options": {"A": "obediently", "B": "apparently", "C": "logically", "D": "thoroughly"}, "answer": "A", "answer_word": "obediently", "pos": "adv.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 obediently", "gloss": {"A": "順從地", "B": "顯然地", "C": "合邏輯地", "D": "徹底地"}, "trans": "聽到主人的呼喚，狗狗搖了搖尾巴，順從地跟隨她走出房間。", "idx": 62, "day": 7, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue obediently, the overall outcome will be greatly improved.", "example": "Only when students manage their time obediently can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-04", "year": 110, "question_no": 4, "stem": "Since many of our house plants are from humid jungle environments, they need ______ air to keep them green and healthy.", "options": {"A": "moist", "B": "stale", "C": "crisp", "D": "fertile"}, "answer": "A", "answer_word": "moist", "pos": "adj.", "levels": {"A": 3, "B": 3, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 moist", "gloss": {"A": "潮濕的、濕潤的", "B": "不新鮮的", "C": "脆的、涼爽的", "D": "肥沃的"}, "trans": "由於我們的許多室內植物來自潮濕的叢林環境，它們需要濕潤的空氣以保持翠綠與健康。", "idx": 63, "day": 7, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining moist in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a moist attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-05", "year": 110, "question_no": 5, "stem": "The skydiver managed to land safely after jumping out of the aircraft, even though her ______ failed to open in midair.", "options": {"A": "glimpse", "B": "latitude", "C": "segment", "D": "parachute"}, "answer": "D", "answer_word": "parachute", "pos": "n.", "levels": {"A": 4, "B": 6, "C": 5, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 parachute", "gloss": {"A": "瞥見", "B": "緯度", "C": "部分、片段", "D": "降落傘"}, "trans": "跳傘員從飛機跳下後成功安全著陸，儘管她的降落傘在空中未能順利打開。", "idx": 64, "day": 7, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of parachute in [Topic].", "example": "Developing a sense of parachute enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-06", "year": 110, "question_no": 6, "stem": "The invention of the steam engine, which was used to power heavy machines, brought about a ______ change in society.", "options": {"A": "persuasive", "B": "harmonious", "C": "conventional", "D": "revolutionary"}, "answer": "D", "answer_word": "revolutionary", "pos": "adj.", "levels": {"A": 4, "B": 5, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 revolutionary", "gloss": {"A": "有說服力的", "B": "和諧的", "C": "傳統的", "D": "革命性的、突破性的"}, "trans": "用於驅動重型機械的蒸汽機發明，給社會帶來了突破性的變革。", "idx": 65, "day": 7, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining revolutionary in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a revolutionary attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-07", "year": 110, "question_no": 7, "stem": "To encourage classroom ______, the teacher divided the class into groups and asked them to solve a problem together with their partners.", "options": {"A": "operation", "B": "interaction", "C": "adjustment", "D": "explanation"}, "answer": "B", "answer_word": "interaction", "pos": "n.", "levels": {"A": 3, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 interaction", "gloss": {"A": "運作、手術", "B": "互動", "C": "調整", "D": "解釋"}, "trans": "為了促進課堂互動，老師將全班分組，並要求他們與夥伴一起合作解決問題。", "idx": 66, "day": 7, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of interaction in [Topic].", "example": "Developing a sense of interaction enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-08", "year": 110, "question_no": 8, "stem": "Lisa ______ onto the ground and injured her ankle while she was playing basketball yesterday.", "options": {"A": "buried", "B": "punched", "C": "scattered", "D": "tumbled"}, "answer": "D", "answer_word": "tumbled", "pos": "v.", "levels": {"A": 3, "B": 3, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 tumbled", "gloss": {"A": "埋葬", "B": "用拳擊打", "C": "散落", "D": "跌倒、滾落"}, "trans": "麗莎昨天打籃球時摔倒在地，扭傷了腳踝。", "idx": 67, "day": 7, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to tumbled [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should tumbled every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-09", "year": 110, "question_no": 9, "stem": "Hundreds of residents received free testing ______ from the city government to find out if their water contained any harmful chemicals.", "options": {"A": "kits", "B": "trials", "C": "zones", "D": "proofs"}, "answer": "A", "answer_word": "kits", "pos": "n.", "levels": {"A": 3, "B": 2, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 kits", "gloss": {"A": "套件、工具包", "B": "試驗、審判", "C": "區域", "D": "證據"}, "trans": "數百名居民收到了市政府發放的免費水質檢測套件，以查明水中是否含有有害化學物質。", "idx": 68, "day": 7, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of kits in [Topic].", "example": "Developing a sense of kits enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-10", "year": 110, "question_no": 10, "stem": "The 2011 Nobel Peace Prize was awarded ______ to three women for the efforts they made in fighting for women's rights.", "options": {"A": "actively", "B": "earnestly", "C": "jointly", "D": "naturally"}, "answer": "C", "answer_word": "jointly", "pos": "adv.", "levels": {"A": 2, "B": 4, "C": 2, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 jointly", "gloss": {"A": "積極地", "B": "認真地", "C": "共同地、聯合地", "D": "自然地"}, "trans": "2011 年諾貝爾和平獎共同授予三位女性，以表彰她們為爭取女性權益所做的努力。", "idx": 69, "day": 7, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue jointly, the overall outcome will be greatly improved.", "example": "Only when students manage their time jointly can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-11", "year": 110, "question_no": 11, "stem": "The company is ______ and making great profits under the wise leadership of the chief executive officer.", "options": {"A": "applauding", "B": "flourishing", "C": "circulating", "D": "exceeding"}, "answer": "B", "answer_word": "flourishing", "pos": "v.", "levels": {"A": 6, "B": 6, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 flourishing", "gloss": {"A": "鼓掌", "B": "繁榮、蓬勃發展", "C": "流傳、循環", "D": "超過"}, "trans": "在執行長的英明領導下，這家公司蓬勃發展並創造了豐厚的利潤。", "idx": 70, "day": 8, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to flourishing [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should flourishing every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-12", "year": 110, "question_no": 12, "stem": "It is absolutely ______ to waste your money on an expensive car when you cannot even get a driver's license.", "options": {"A": "absurd", "B": "cautious", "C": "vigorous", "D": "obstinate"}, "answer": "A", "answer_word": "absurd", "pos": "adj.", "levels": {"A": 5, "B": 5, "C": 6, "D": 6}, "clue": "空格前後與句意關鍵詞搭配，答案為 absurd", "gloss": {"A": "荒謬的", "B": "謹慎的", "C": "精力充沛的", "D": "固執的"}, "trans": "當你連駕照都考不到時，把錢浪費在昂貴的名車上絕對是荒謬至極的。", "idx": 71, "day": 8, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining absurd in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a absurd attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-13", "year": 110, "question_no": 13, "stem": "The problem of illegal drug use is very complex and cannot be traced to merely one ______ reason.", "options": {"A": "singular", "B": "countable", "C": "favorable", "D": "defensive"}, "answer": "A", "answer_word": "singular", "pos": "adj.", "levels": {"A": 4, "B": 3, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 singular", "gloss": {"A": "單一的、非凡的", "B": "可數的", "C": "有利的", "D": "防禦的"}, "trans": "非法濫用藥物的問題非常複雜，無法歸咎於單一原因。", "idx": 72, "day": 8, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining singular in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a singular attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-14", "year": 110, "question_no": 14, "stem": "The non-profit organization has ______ $1 million over five years to finance the construction of the medical center.", "options": {"A": "equipped", "B": "resolved", "C": "committed", "D": "associated"}, "answer": "C", "answer_word": "committed", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 committed", "gloss": {"A": "裝備", "B": "解決、決心", "C": "承諾投入、奉獻", "D": "聯想、關聯"}, "trans": "該非營利組織承諾在五年內投入一百萬美元，用於資助該醫療中心的興建。", "idx": 73, "day": 8, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to committed [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should committed every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "110-15", "year": 110, "question_no": 15, "stem": "One week after the typhoon, some bridges were finally opened and bus service ______ in the country's most severely damaged areas.", "options": {"A": "departed", "B": "resumed", "C": "transported", "D": "corresponded"}, "answer": "B", "answer_word": "resumed", "pos": "v.", "levels": {"A": 4, "B": 5, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 resumed", "gloss": {"A": "啟程、離開", "B": "恢復、重新開始", "C": "運送", "D": "符合、通信"}, "trans": "颱風過後一週，部分橋樑終於重新開放，該國受災最嚴重地區的公車服務也得以恢復。", "idx": 74, "day": 8, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to resumed [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should resumed every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-01", "year": 111, "question_no": 1, "stem": "When Jeffery doesn't feel like cooking, he often orders pizza online and has it ______ to his house.", "options": {"A": "advanced", "B": "delivered", "C": "offered", "D": "stretched"}, "answer": "B", "answer_word": "delivered", "pos": "v.", "levels": {"A": 3, "B": 2, "C": 2, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 delivered", "gloss": {"A": "先進的、晉升", "B": "運送、送達", "C": "提供", "D": "伸展"}, "trans": "當傑佛瑞不想做飯時，他經常在網上訂購比薩並外送到家。", "idx": 75, "day": 8, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to delivered [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should delivered every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-02", "year": 111, "question_no": 2, "stem": "Jane is the best ______ I have ever had. I cannot imagine running my office without her help.", "options": {"A": "assistant", "B": "influence", "C": "contribution", "D": "politician"}, "answer": "A", "answer_word": "assistant", "pos": "n.", "levels": {"A": 3, "B": 2, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 assistant", "gloss": {"A": "助理、助手", "B": "", "C": "貢獻", "D": "政治人物"}, "trans": "珍是我遇過最棒的助理。我無法想像沒有她的協助該如何管理辦公室。", "idx": 76, "day": 8, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of assistant in [Topic].", "example": "Developing a sense of assistant enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-03", "year": 111, "question_no": 3, "stem": "The temple celebrated Mazu Festival by hosting ten days of lion dances, Taiwanese operas, and traditional hand ______ shows.", "options": {"A": "chat", "B": "quiz", "C": "puppet", "D": "variety"}, "answer": "C", "answer_word": "puppet", "pos": "n.", "levels": {"A": 3, "B": 2, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 puppet", "gloss": {"A": "閒聊", "B": "測驗", "C": "木偶、布袋戲", "D": "多樣化、綜藝"}, "trans": "這座寺廟舉辦了為期十天的舞獅、歌仔戲和傳統掌中布袋戲表演來慶祝媽祖誕辰。", "idx": 77, "day": 8, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of puppet in [Topic].", "example": "Developing a sense of puppet enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-04", "year": 111, "question_no": 4, "stem": "The new vaccine was banned by the Food and Drug Administration due to its ______ fatal side effects.", "options": {"A": "potentially", "B": "delicately", "C": "ambiguously", "D": "optionally"}, "answer": "A", "answer_word": "potentially", "pos": "adv.", "levels": {"A": 4, "B": 4, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 potentially", "gloss": {"A": "潛在地、可能地", "B": "精緻地、微妙地", "C": "含糊地", "D": "隨意地、可選擇地"}, "trans": "這款新疫苗因其可能致命的副作用而被美國食品藥物管理局禁用。", "idx": 78, "day": 8, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue potentially, the overall outcome will be greatly improved.", "example": "Only when students manage their time potentially can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-05", "year": 111, "question_no": 5, "stem": "______ the photos with dates and keywords help you sort them easily in your file.", "options": {"A": "Tagging", "B": "Flocking", "C": "Rolling", "D": "Snapping"}, "answer": "A", "answer_word": "Tagging", "pos": "v.", "levels": {"A": 3, "B": 3, "C": 1, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 Tagging", "gloss": {"A": "", "B": "", "C": "", "D": ""}, "trans": "給照片加上日期和關鍵字標籤，能幫助你在檔案中輕鬆整理分類它們。", "idx": 79, "day": 8, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to Tagging [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should Tagging every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-06", "year": 111, "question_no": 6, "stem": "An ______ person is usually pleasant and easy to get along with, but don't expect that he or she will always say \"yes\" to everything.", "options": {"A": "enormous", "B": "intimate", "C": "agreeable", "D": "ultimate"}, "answer": "C", "answer_word": "agreeable", "pos": "adj.", "levels": {"A": 4, "B": 4, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 agreeable", "gloss": {"A": "巨大的", "B": "親密的", "C": "令人愉快的、隨和的", "D": "最終的"}, "trans": "隨和的人通常令人愉快且容易相處，但別期望他或她總是對所有事情百依百順。", "idx": 80, "day": 9, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining agreeable in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a agreeable attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-07", "year": 111, "question_no": 7, "stem": "Hidden deep in a small alley among various tiny shops, the entrance of the Michelin star restaurant is barely ______ to passersby.", "options": {"A": "identical", "B": "visible", "C": "available", "D": "remarkable"}, "answer": "B", "answer_word": "visible", "pos": "adj.", "levels": {"A": 4, "B": 3, "C": 2, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 visible", "gloss": {"A": "完全相同的", "B": "看得見的、明顯的", "C": "可取得的", "D": "非凡的"}, "trans": "深藏在各家狹小店鋪之間的小巷中，這家米其林星級餐廳的入口對路人來說幾乎看不見。", "idx": 81, "day": 9, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining visible in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a visible attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-08", "year": 111, "question_no": 8, "stem": "The original budget for my round-island trip was NT$5,000, but the ______ cost is likely to be 50 percent higher.", "options": {"A": "moderate", "B": "absolute", "C": "promising", "D": "eventual"}, "answer": "D", "answer_word": "eventual", "pos": "adj.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 eventual", "gloss": {"A": "適度的", "B": "絕對的", "C": "有前途的", "D": "最終的"}, "trans": "我環島旅行的原始預算是五千台幣，但最終的花費可能會高出百分之五十。", "idx": 82, "day": 9, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining eventual in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a eventual attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-09", "year": 111, "question_no": 9, "stem": "After watching a TV program on natural history, Adam decided to go on a ______ for dinosaur fossils in South Dakota.", "options": {"A": "trial", "B": "route", "C": "strike", "D": "quest"}, "answer": "D", "answer_word": "quest", "pos": "n.", "levels": {"A": 2, "B": 4, "C": 2, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 quest", "gloss": {"A": "試驗", "B": "路線", "C": "罷工、打擊", "D": "探索、尋求"}, "trans": "看了一部關於自然歷史的電視節目後，亞當決定前往南達科他州探索恐龍化石。", "idx": 83, "day": 9, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of quest in [Topic].", "example": "Developing a sense of quest enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "111-10", "year": 111, "question_no": 10, "stem": "With pink cherry blossoms blooming everywhere, the valley ______ like a young bride under the bright spring sunshine.", "options": {"A": "bounces", "B": "blushes", "C": "polishes", "D": "transfers"}, "answer": "B", "answer_word": "blushes", "pos": "v.", "levels": {"A": 4, "B": 5, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 blushes", "gloss": {"A": "彈跳", "B": "臉紅、泛紅", "C": "磨光、擦亮", "D": "轉移"}, "trans": "粉紅色的櫻花處處綻放，整個山谷在明媚的春日陽光下宛如一位嬌羞泛紅的年輕新娘。", "idx": 84, "day": 9, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to blushes [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should blushes every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-01", "year": 112, "question_no": 1, "stem": "The bus driver often complains about chewing gum found under passenger seats because it is ______ and very hard to remove.", "options": {"A": "sticky", "B": "greasy", "C": "clumsy", "D": "mighty"}, "answer": "A", "answer_word": "sticky", "pos": "adj.", "levels": {"A": 3, "B": 4, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 sticky", "gloss": {"A": "黏膩的", "B": "油膩的", "C": "笨拙的", "D": "強大的"}, "trans": "公車司機經常抱怨在乘客座位下發現的口香糖，因為它非常黏膩且極難清除。", "idx": 85, "day": 9, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining sticky in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a sticky attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-02", "year": 112, "question_no": 2, "stem": "Jesse is a talented model. He can easily adopt an elegant ______ for a camera shoot.", "options": {"A": "clap", "B": "toss", "C": "pose", "D": "snap"}, "answer": "C", "answer_word": "pose", "pos": "n.", "levels": {"A": 2, "B": 3, "C": 2, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 pose", "gloss": {"A": "拍手", "B": "拋擲", "C": "姿勢", "D": "快照"}, "trans": "傑西是個很有天賦的模特兒。他能輕易地為相機拍攝擺出優雅的姿勢。", "idx": 86, "day": 9, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of pose in [Topic].", "example": "Developing a sense of pose enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-03", "year": 112, "question_no": 3, "stem": "In order to draw her family tree, Mary tried to trace her ______ back to their arrival in North America.", "options": {"A": "siblings", "B": "commuters", "C": "ancestors", "D": "instructors"}, "answer": "C", "answer_word": "ancestors", "pos": "n.", "levels": {"A": 5, "B": 5, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 ancestors", "gloss": {"A": "兄弟姊妹", "B": "通勤者", "C": "祖先", "D": "指導員"}, "trans": "為了繪製族譜，瑪莉試著將她的祖先追溯到他們抵達北美洲的時期。", "idx": 87, "day": 9, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of ancestors in [Topic].", "example": "Developing a sense of ancestors enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-04", "year": 112, "question_no": 4, "stem": "Upon the super typhoon warning, Nancy rushed to the supermarket—only to find the shelves almost ______ and the stock nearly gone.", "options": {"A": "blank", "B": "bare", "C": "hollow", "D": "queer"}, "answer": "B", "answer_word": "bare", "pos": "adj.", "levels": {"A": 2, "B": 3, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 bare", "gloss": {"A": "空白的", "B": "空蕩蕩的、赤裸的", "C": "空洞的、虛偽的", "D": "古怪的"}, "trans": "一接到強烈颱風警報，南希便衝向超市——結果發現貨架幾乎空空如也，存貨幾乎售罄。", "idx": 88, "day": 9, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining bare in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a bare attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-05", "year": 112, "question_no": 5, "stem": "Even though Jack said \"Sorry!\" to me in person, I did not feel any ______ in his apology.", "options": {"A": "liability", "B": "generosity", "C": "integrity", "D": "sincerity"}, "answer": "D", "answer_word": "sincerity", "pos": "n.", "levels": {"A": 5, "B": 4, "C": 5, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 sincerity", "gloss": {"A": "責任、負擔", "B": "慷慨", "C": "正直、誠實", "D": "真誠、誠意"}, "trans": "雖然傑克當面向我說了「對不起！」，但在他的道歉中我感受不到任何誠意。", "idx": 89, "day": 9, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of sincerity in [Topic].", "example": "Developing a sense of sincerity enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-06", "year": 112, "question_no": 6, "stem": "My grandfather has astonishing powers of ______. He can still vividly describe his first day at school as a child.", "options": {"A": "resolve", "B": "fraction", "C": "privilege", "D": "recall"}, "answer": "D", "answer_word": "recall", "pos": "n.", "levels": {"A": 4, "B": 5, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 recall", "gloss": {"A": "決心", "B": "分數、片段", "C": "特權", "D": "記憶力、回想"}, "trans": "我的祖父擁有驚人的記憶力。他至今仍能生動地描述他兒時第一天上學的情景。", "idx": 90, "day": 10, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of recall in [Topic].", "example": "Developing a sense of recall enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-07", "year": 112, "question_no": 7, "stem": "Recent research has found lots of evidence to ______ the drug company's claims about its \"miracle\" tablets for curing cancer.", "options": {"A": "provoke", "B": "counter", "C": "expose", "D": "convert"}, "answer": "B", "answer_word": "counter", "pos": "v.", "levels": {"A": 5, "B": 4, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 counter", "gloss": {"A": "激怒、挑釁", "B": "反駁、對抗", "C": "暴露、揭露", "D": "轉變"}, "trans": "近期的研究發現了大量證據，反駁該藥廠關於其治療癌症「奇蹟藥丸」的宣稱。", "idx": 91, "day": 10, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to counter [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should counter every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-08", "year": 112, "question_no": 8, "stem": "Corrupt officials and misguided policies have ______ the country's economy and burdened its people with enormous foreign debts.", "options": {"A": "crippled", "B": "accelerated", "C": "rendered", "D": "ventured"}, "answer": "A", "answer_word": "crippled", "pos": "v.", "levels": {"A": 5, "B": 5, "C": 5, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 crippled", "gloss": {"A": "重創、使殘廢", "B": "加速", "C": "使得、給予", "D": "冒險"}, "trans": "貪腐的官員與錯誤的政策重創了該國經濟，並讓人民背負龐大的外債負擔。", "idx": 92, "day": 10, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to crippled [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should crippled every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-09", "year": 112, "question_no": 9, "stem": "As a record number of fans showed up for the baseball final, the highways around the stadium were ______ with traffic all day.", "options": {"A": "choked", "B": "disturbed", "C": "enclosed", "D": "injected"}, "answer": "A", "answer_word": "choked", "pos": "v.", "levels": {"A": 4, "B": 4, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 choked", "gloss": {"A": "塞滿、窒息", "B": "打擾", "C": "隨函附上、包圍", "D": "注射"}, "trans": "由於前來觀看棒球決賽的球迷創下新高紀錄，體育場周邊的高速公路整天都被車流塞爆。", "idx": 93, "day": 10, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to choked [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should choked every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "112-10", "year": 112, "question_no": 10, "stem": "Studies show that the ______ unbiased media are in fact often deeply influenced by political ideology.", "options": {"A": "undoubtedly", "B": "roughly", "C": "understandably", "D": "supposedly"}, "answer": "D", "answer_word": "supposedly", "pos": "adv.", "levels": {"A": 5, "B": 3, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 supposedly", "gloss": {"A": "毫無疑問地", "B": "大約地", "C": "可以理解地", "D": "據稱、理應"}, "trans": "研究顯示，理應客觀公正的媒體，實際上往往深受政治意識形態的深刻影響。", "idx": 94, "day": 10, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue supposedly, the overall outcome will be greatly improved.", "example": "Only when students manage their time supposedly can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-01", "year": 113, "question_no": 1, "stem": "People who desire a ______ figure should exercise regularly and maintain healthy eating habits.", "options": {"A": "spicy", "B": "slender", "C": "slight", "D": "slippery"}, "answer": "B", "answer_word": "slender", "pos": "adj.", "levels": {"A": 5, "B": 3, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 slender", "gloss": {"A": "辛辣的", "B": "苗條的", "C": "輕微的", "D": "滑溜的"}, "trans": "渴望擁有苗條身材的人應該規律運動並保持健康的飲食習慣。", "idx": 95, "day": 10, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining slender in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a slender attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-02", "year": 113, "question_no": 2, "stem": "Watching the sun ______ from a sea of clouds is a must-do activity for all visitors to Ali Mountain.", "options": {"A": "emerging", "B": "flashing", "C": "rushing", "D": "floating"}, "answer": "A", "answer_word": "emerging", "pos": "v.", "levels": {"A": 4, "B": 3, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 emerging", "gloss": {"A": "浮現、出現", "B": "閃爍", "C": "奔馳", "D": "漂浮"}, "trans": "觀賞太陽從雲海中浮現躍出，是所有造訪阿里山的遊客必備的體驗行程。", "idx": 96, "day": 10, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to emerging [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should emerging every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-03", "year": 113, "question_no": 3, "stem": "Do you know what time the next bus is ______? I've been waiting here for more than 30 minutes.", "options": {"A": "apt", "B": "due", "C": "bound", "D": "docked"}, "answer": "B", "answer_word": "due", "pos": "adj.", "levels": {"A": 5, "B": 2, "C": 5, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 due", "gloss": {"A": "易於…的", "B": "預期的、到期的", "C": "必定…的", "D": "停靠碼頭"}, "trans": "你知道下一班公車預計幾點會到嗎？我已經在這裡等了超過三十分鐘。", "idx": 97, "day": 10, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining due in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a due attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-04", "year": 113, "question_no": 4, "stem": "The roasting heat and high ______ made me feel hot and sticky, no matter what I did to cool off.", "options": {"A": "density", "B": "humidity", "C": "circulation", "D": "atmosphere"}, "answer": "B", "answer_word": "humidity", "pos": "n.", "levels": {"A": 5, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 humidity", "gloss": {"A": "密度", "B": "濕度", "C": "循環、發行量", "D": "大氣、氣氛"}, "trans": "酷熱的高溫與極高的濕度讓我感到又熱又黏，無論怎麼做都無法消暑降溫。", "idx": 98, "day": 10, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of humidity in [Topic].", "example": "Developing a sense of humidity enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-05", "year": 113, "question_no": 5, "stem": "Artwork created by truly great artists such as Picasso and Monet will no doubt ______ the test of time.", "options": {"A": "stay", "B": "take", "C": "serve", "D": "stand"}, "answer": "D", "answer_word": "stand", "pos": "v.", "levels": {"A": 1, "B": 1, "C": 2, "D": 1}, "clue": "空格前後與句意關鍵詞搭配，答案為 stand", "gloss": {"A": "停留", "B": "拿取", "C": "服務", "D": "承受、經受"}, "trans": "由畢卡索和莫內等真正偉大藝術家創作的藝術品，毫無疑問能經受住時間的考驗。", "idx": 99, "day": 10, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to stand [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should stand every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-06", "year": 113, "question_no": 6, "stem": "In some countries, military service is ______ for men only; women do not have to serve in the military.", "options": {"A": "forceful", "B": "realistic", "C": "compulsory", "D": "distinctive"}, "answer": "C", "answer_word": "compulsory", "pos": "adj.", "levels": {"A": 4, "B": 4, "C": 5, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 compulsory", "gloss": {"A": "有力的", "B": "逼真的、現實的", "C": "義務的、強制的", "D": "獨特的"}, "trans": "在某些國家，兵役對男性是強制的；女性則無須在軍隊服役。", "idx": 100, "day": 11, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining compulsory in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a compulsory attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-07", "year": 113, "question_no": 7, "stem": "The team complained that its leader always took the ______ for all the hard work done by the team members.", "options": {"A": "advantage", "B": "revenge", "C": "remedy", "D": "credit"}, "answer": "D", "answer_word": "credit", "pos": "n.", "levels": {"A": 3, "B": 4, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 credit", "gloss": {"A": "優勢", "B": "報復", "C": "補救方法", "D": "歸功於、信用"}, "trans": "團隊抱怨他們的領導者總是把團隊成員辛勤工作的一切功勞據為己有。", "idx": 101, "day": 11, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of credit in [Topic].", "example": "Developing a sense of credit enables teenagers to navigate modern challenges more maturely.", "trap": "credit 常考搭配 have... to one's credit (值得讚許/擁有...成就)，與 debit (借方) 混淆。"}}, {"id": "113-08", "year": 113, "question_no": 8, "stem": "Located at the center of the city, the business hotel ______ not only good service but also convenient public transport.", "options": {"A": "proposes", "B": "contains", "C": "promises", "D": "confirms"}, "answer": "C", "answer_word": "promises", "pos": "v.", "levels": {"A": 2, "B": 2, "C": 2, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 promises", "gloss": {"A": "提議", "B": "包含", "C": "保證、承諾", "D": "證實"}, "trans": "座落於市中心，這家商務飯店不僅保證優質的服務，還提供便利的大眾交通。", "idx": 102, "day": 11, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to promises [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should promises every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-09", "year": 113, "question_no": 9, "stem": "As blood supplies have fallen to a critically low level, many hospitals are making an ______ for the public to donate blood.", "options": {"A": "appeal", "B": "approach", "C": "operation", "D": "observation"}, "answer": "A", "answer_word": "appeal", "pos": "n.", "levels": {"A": 3, "B": 2, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 appeal", "gloss": {"A": "呼籲、請求", "B": "方法、接近", "C": "運作、手術", "D": "觀察、觀察力"}, "trans": "由於血液庫存已降至危險的臨界低點，許多醫院正發出緊急呼籲，號召大眾踴躍捐血。", "idx": 103, "day": 11, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of appeal in [Topic].", "example": "Developing a sense of appeal enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "113-10", "year": 113, "question_no": 10, "stem": "David felt disappointed when he found out that he could not choose his study partners, but would be ______ placed in a study group.", "options": {"A": "eligibly", "B": "randomly", "C": "apparently", "D": "consequently"}, "answer": "B", "answer_word": "randomly", "pos": "adv.", "levels": {"A": 6, "B": 5, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 randomly", "gloss": {"A": "合格地", "B": "隨機地", "C": "顯然地", "D": "因此、結果"}, "trans": "大衛感到很失望，因為他發現自己不能自選研習夥伴，而是會被隨機分配到學習小組中。", "idx": 104, "day": 11, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue randomly, the overall outcome will be greatly improved.", "example": "Only when students manage their time randomly can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-01", "year": 114, "question_no": 1, "stem": "If you put a ______ under a leaking faucet, you will be surprised at the amount of water collected in 24 hours.", "options": {"A": "border", "B": "timer", "C": "container", "D": "marker"}, "answer": "C", "answer_word": "container", "pos": "n.", "levels": {"A": 2, "B": 2, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 container", "gloss": {"A": "邊界", "B": "計時器", "C": "容器", "D": "標記"}, "trans": "如果你在漏水的水龍頭下方放置一個容器，你會驚訝於 24 小時內所收集的水量。", "idx": 105, "day": 11, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of container in [Topic].", "example": "Developing a sense of container enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-02", "year": 114, "question_no": 2, "stem": "The local farmers' market is popular as it offers a variety of fresh seasonal ______ to people in the community.", "options": {"A": "produce", "B": "fashion", "C": "brand", "D": "trend"}, "answer": "A", "answer_word": "produce", "pos": "n.", "levels": {"A": 2, "B": 2, "C": 2, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 produce", "gloss": {"A": "農產品", "B": "時尚", "C": "品牌", "D": "趨勢"}, "trans": "當地的農夫市集很受歡迎，因為它為社區居民提供了各式各樣新鮮的當季農產品。", "idx": 106, "day": 11, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of produce in [Topic].", "example": "Developing a sense of produce enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-03", "year": 114, "question_no": 3, "stem": "As the years have passed by, many of my childhood memories are already ______; I can no longer recall clearly what happened back then.", "options": {"A": "blurring", "B": "trimming", "C": "draining", "D": "glaring"}, "answer": "A", "answer_word": "blurring", "pos": "adj.", "levels": {"A": 5, "B": 5, "C": 3, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 blurring", "gloss": {"A": "模糊", "B": "修剪", "C": "排出、耗盡", "D": "怒視、耀眼"}, "trans": "隨著歲月流逝，我的許多童年記憶已經逐漸模糊；我已無法清楚回想起當年發生的事情。", "idx": 107, "day": 11, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining blurring in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a blurring attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-04", "year": 114, "question_no": 4, "stem": "Racist remarks are by nature ______ and hurtful, and should be avoided on all occasions.", "options": {"A": "excessive", "B": "furious", "C": "offensive", "D": "stubborn"}, "answer": "C", "answer_word": "offensive", "pos": "adj.", "levels": {"A": 5, "B": 4, "C": 4, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 offensive", "gloss": {"A": "過度的", "B": "狂怒的", "C": "冒犯的、令人不快的", "D": "頑固的"}, "trans": "種族歧視的言論本質上是具冒犯性且傷人的，在任何場合都應當加以避免。", "idx": 108, "day": 11, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining offensive in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a offensive attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-05", "year": 114, "question_no": 5, "stem": "Not satisfied with the first ______ of her essay, Mary revised it several times before turning it in to the teacher.", "options": {"A": "text", "B": "brush", "C": "draft", "D": "plot"}, "answer": "C", "answer_word": "draft", "pos": "n.", "levels": {"A": 2, "B": 2, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 draft", "gloss": {"A": "正文", "B": "刷子", "C": "初稿、草案", "D": "情節、計謀"}, "trans": "瑪莉對她散文的初稿不滿意，在呈交給老師之前修改了數次。", "idx": 109, "day": 11, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of draft in [Topic].", "example": "Developing a sense of draft enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-06", "year": 114, "question_no": 6, "stem": "Left ______ for years, the deserted house was filled with a thick coating of dust and a smell of old damp wood.", "options": {"A": "casual", "B": "fragile", "C": "remote", "D": "vacant"}, "answer": "D", "answer_word": "vacant", "pos": "adj.", "levels": {"A": 3, "B": 4, "C": 3, "D": 3}, "clue": "空格前後與句意關鍵詞搭配，答案為 vacant", "gloss": {"A": "隨意的", "B": "脆弱的", "C": "偏遠的、遙遠的", "D": "空缺的、空著的"}, "trans": "這棟廢棄的房屋被閒置空置了數年，裡面堆滿了厚厚的灰塵並散發著陳舊潮濕的木頭味。", "idx": 110, "day": 12, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining vacant in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a vacant attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-07", "year": 114, "question_no": 7, "stem": "The high school student showed ______ courage when she helped the old man escape from the fire.", "options": {"A": "gigantic", "B": "exclusive", "C": "multiple", "D": "enormous"}, "answer": "D", "answer_word": "enormous", "pos": "adj.", "levels": {"A": 4, "B": 5, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 enormous", "gloss": {"A": "", "B": "", "C": "", "D": "巨大的"}, "trans": "這名高中生在幫助那位老翁逃離火災現場時展現了無比巨大的勇氣。", "idx": 111, "day": 12, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining enormous in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a enormous attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-08", "year": 114, "question_no": 8, "stem": "Publicly financed projects are often ______ or delayed during tough economic times due to a lack of resources.", "options": {"A": "halted", "B": "hatched", "C": "possessed", "D": "reinforced"}, "answer": "A", "answer_word": "halted", "pos": "v.", "levels": {"A": 4, "B": 3, "C": 4, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 halted", "gloss": {"A": "停止、中斷", "B": "孵化", "C": "擁有", "D": "強化"}, "trans": "由於缺乏資源，由公共財政資助的工程計畫在經濟艱困時期往往會被迫中斷或延宕。", "idx": 112, "day": 12, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to halted [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should halted every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-09", "year": 114, "question_no": 9, "stem": "Despite his busy schedule, the President ______ the school's graduation ceremony with his presence and a heartwarming speech.", "options": {"A": "praised", "B": "graced", "C": "addressed", "D": "credited"}, "answer": "B", "answer_word": "graced", "pos": "v.", "levels": {"A": 2, "B": 4, "C": 2, "D": 3}, "clue": "與 schedule (行程) 連用，緊湊的行程用 tight schedule", "gloss": {"A": "讚美", "B": "使增光彩、蒞臨", "C": "演說、處理", "D": ""}, "trans": "儘管行程繁忙，總統依然親臨學校的畢業典禮使之蓬蓽生輝，並發表了一場溫馨感人的演說。", "idx": 113, "day": 12, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to graced [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should graced every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "114-10", "year": 114, "question_no": 10, "stem": "The manager of the company was sued for ______ abusing his colleagues, calling them \"hopeless losers.\"", "options": {"A": "verbally", "B": "dominantly", "C": "legitimately", "D": "relevantly"}, "answer": "A", "answer_word": "verbally", "pos": "adv.", "levels": {"A": 5, "B": 4, "C": 5, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 verbally", "gloss": {"A": "言語上地、口頭上地", "B": "支配地", "C": "合法地", "D": "相關地"}, "trans": "這家公司的經理因在言語上羞辱虐待同僚，罵他們是「無可救藥的失敗者」而被起訴。", "idx": 114, "day": 12, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue verbally, the overall outcome will be greatly improved.", "example": "Only when students manage their time verbally can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-01", "year": 115, "question_no": 1, "stem": "The mayor has such a ______ schedule that it takes weeks to arrange an interview with her.", "options": {"A": "hasty", "B": "tight", "C": "diligent", "D": "routine"}, "answer": "B", "answer_word": "tight", "pos": "adj.", "levels": {"A": 3, "B": 3, "C": 4, "D": 3}, "clue": "與 schedule (行程) 連用，緊湊的行程用 tight schedule", "gloss": {"A": "匆忙的", "B": "緊湊的、嚴格的", "C": "勤奮的", "D": "例行的"}, "trans": "市長的行程非常緊湊，要安排與她進行專訪需要花上數週的時間。", "idx": 115, "day": 12, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining tight in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a tight attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-02", "year": 115, "question_no": 2, "stem": "Jane started as an ______ art designer, but now she has a professional studio of her own.", "options": {"A": "official", "B": "instant", "C": "amateur", "D": "elementary"}, "answer": "C", "answer_word": "amateur", "pos": "adj.", "levels": {"A": 2, "B": 2, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 amateur", "gloss": {"A": "官方的", "B": "立即的", "C": "業餘的", "D": "初級的"}, "trans": "珍一開始是個業餘的藝術設計師，但現在她擁有屬於自己的專業工作室。", "idx": 116, "day": 12, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining amateur in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a amateur attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-03", "year": 115, "question_no": 3, "stem": "The teaching ______ at the famous high school soon attracted more than a dozen well-qualified applicants.", "options": {"A": "career", "B": "vacancy", "C": "expectation", "D": "inspiration"}, "answer": "B", "answer_word": "vacancy", "pos": "n.", "levels": {"A": 3, "B": 4, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 vacancy", "gloss": {"A": "生涯", "B": "空缺、職缺", "C": "期待", "D": "靈感"}, "trans": "那所知名高中的教師職缺很快就吸引了十幾位條件優秀的應徵者前來求職。", "idx": 117, "day": 12, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of vacancy in [Topic].", "example": "Developing a sense of vacancy enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-04", "year": 115, "question_no": 4, "stem": "Designed by a young engineer, the new product has created far more profit than ______ expected.", "options": {"A": "initially", "B": "genuinely", "C": "alternatively", "D": "fundamentally"}, "answer": "A", "answer_word": "initially", "pos": "adv.", "levels": {"A": 4, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 initially", "gloss": {"A": "最初、起初", "B": "真正地、真誠地", "C": "替代地", "D": "根本上地"}, "trans": "由一位年輕工程師設計的這項新產品，創造了遠超最初預期的豐厚利潤。", "idx": 118, "day": 12, "writing": {"scenario": "【情態修飾：精確描繪動作與狀態】", "scaffold": "If we can address this issue initially, the overall outcome will be greatly improved.", "example": "Only when students manage their time initially can they achieve a healthy balance between study and life.", "trap": "本題考查 adv. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-05", "year": 115, "question_no": 5, "stem": "It has been confirmed that a balanced ______ of fruit and vegetables is a key element to good health.", "options": {"A": "dimension", "B": "integration", "C": "provision", "D": "consumption"}, "answer": "D", "answer_word": "consumption", "pos": "n.", "levels": {"A": 5, "B": 5, "C": 5, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 consumption", "gloss": {"A": "維度、尺寸", "B": "整合", "C": "提供、條款", "D": "攝取、消費"}, "trans": "研究證實，均衡攝取蔬果是維持身體健康的關鍵要素。", "idx": 119, "day": 12, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of consumption in [Topic].", "example": "Developing a sense of consumption enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-06", "year": 115, "question_no": 6, "stem": "As a shy boy afraid of making public appearances, Timmy ______ the thought of speaking before large audiences.", "options": {"A": "dreads", "B": "stresses", "C": "wanders", "D": "escapes"}, "answer": "A", "answer_word": "dreads", "pos": "v.", "levels": {"A": 4, "B": 2, "C": 3, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 dreads", "gloss": {"A": "懼怕、畏懼", "B": "強調、緊張", "C": "遊蕩", "D": "逃脫"}, "trans": "作為一個害怕公開露面的害羞男孩，提米極度畏懼在大批觀眾面前講話的念頭。", "idx": 120, "day": 13, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to dreads [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should dreads every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-07", "year": 115, "question_no": 7, "stem": "To the newly-crowned winner of the piano competition, music is his life's ______, which he has devoted himself to whole-heartedly.", "options": {"A": "resource", "B": "impact", "C": "passion", "D": "emphasis"}, "answer": "C", "answer_word": "passion", "pos": "n.", "levels": {"A": 3, "B": 4, "C": 3, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 passion", "gloss": {"A": "資源", "B": "衝擊", "C": "熱情", "D": "強調"}, "trans": "對這位新加冕的鋼琴大賽得主而言，音樂是他一生的熱情，他為此全心全意地投入。", "idx": 121, "day": 13, "writing": {"scenario": "【社會議題：提升素養與觀念】", "scaffold": "It is of paramount importance to recognize the significance of passion in [Topic].", "example": "Developing a sense of passion enables teenagers to navigate modern challenges more maturely.", "trap": "本題考查 n. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-08", "year": 115, "question_no": 8, "stem": "The drunk driver who shouted at passers-by and ______ them with glass bottles was quickly arrested by the police.", "options": {"A": "shattered", "B": "assaulted", "C": "overturned", "D": "condemned"}, "answer": "B", "answer_word": "assaulted", "pos": "v.", "levels": {"A": 5, "B": 5, "C": 5, "D": 5}, "clue": "空格前後與句意關鍵詞搭配，答案為 assaulted", "gloss": {"A": "粉碎", "B": "襲擊、攻擊", "C": "推翻、翻覆", "D": "譴責"}, "trans": "這名對路人咆哮並拿玻璃瓶襲擊他們的酒駕司機，很快就被警方逮捕歸案。", "idx": 122, "day": 13, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to assaulted [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should assaulted every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-09", "year": 115, "question_no": 9, "stem": "There were so many people at the bus station that I had to ______ my way through the crowd to board the bus in time.", "options": {"A": "crash", "B": "tumble", "C": "elbow", "D": "struggle"}, "answer": "C", "answer_word": "elbow", "pos": "v.", "levels": {"A": 3, "B": 4, "C": 3, "D": 2}, "clue": "空格前後與句意關鍵詞搭配，答案為 elbow", "gloss": {"A": "碰撞", "B": "", "C": "用手肘推擠前進", "D": "奮鬥、掙扎"}, "trans": "公車站人潮非常多，我必須在人群中用手肘擠出一條路才能及時趕上公車。", "idx": 123, "day": 13, "writing": {"scenario": "【行動力：追求夢想與挑戰】", "scaffold": "[Subject] has decided to elbow [Target/Goal], setting a clear objective for [Future Plan].", "example": "In the face of adversity, we should elbow every valuable opportunity to broaden our horizons.", "trap": "本題考查 v. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}, {"id": "115-10", "year": 115, "question_no": 10, "stem": "Deadly shootings on US campuses have raised ______ concerns about how to prevent such tragic incidents from happening again.", "options": {"A": "swift", "B": "brutal", "C": "harsh", "D": "grave"}, "answer": "D", "answer_word": "grave", "pos": "adj.", "levels": {"A": 3, "B": 4, "C": 4, "D": 4}, "clue": "空格前後與句意關鍵詞搭配，答案為 grave", "gloss": {"A": "迅速的", "B": "殘忍的", "C": "嚴厲的", "D": "嚴重的、莊嚴的"}, "trans": "美國校園的致命槍擊案引發了各界嚴重的擔憂，關注如何防止此類悲劇事件再次發生。", "idx": 124, "day": 13, "writing": {"scenario": "【心態描摹：持守正面特質】", "scaffold": "Remaining grave in the midst of [Crisis/Difficulty] allows us to make rational decisions.", "example": "Maintaining a grave attitude is the cornerstone of overcoming setbacks in high school.", "trap": "本題考查 adj. 核心搭配語境。作答時需注意前後文動詞、受詞或修飾語搭配。"}}];
+    const STORAGE_KEY = 'ceec_vocab_user_state';
+    const IS_COLLOC = false;
+
+    let currentTheme = 1;
     let currentDay = 1;
     let currentDayQuestions = [];
     let currentCardIndex = 0;
@@ -943,7 +891,6 @@
     let audioCtx = null;
     let userState = {};
 
-    // Web Speech API Native Pronunciation
     function speak(text) {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
@@ -953,7 +900,6 @@
       window.speechSynthesis.speak(utter);
     }
 
-    // Web Audio Synthesizer
     function getAudioCtx() {
       if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -974,14 +920,13 @@
 
         if (type === 'correct') {
           osc.type = 'sine';
-          osc.frequency.setValueAtTime(587.33, now); // D5
-          osc.frequency.setValueAtTime(880.00, now + 0.08); // A5
+          osc.frequency.setValueAtTime(587.33, now);
+          osc.frequency.setValueAtTime(880.00, now + 0.08);
           gain.gain.setValueAtTime(0.25, now);
           gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
           osc.start(now);
           osc.stop(now + 0.35);
         } else if (type === 'combo') {
-          // Arpeggio Fanfare
           const freqs = [523.25, 659.25, 783.99, 1046.50];
           freqs.forEach((f, i) => {
             const o = ctx.createOscillator();
@@ -1026,21 +971,21 @@
       document.getElementById('btnAudioToggle').textContent = audioEnabled ? '🔊 音效' : '🔇 靜音';
     }
 
-    // State Management
     function loadState() {
       try {
-        const raw = localStorage.getItem('ceec_vocab_user_state');
+        const raw = localStorage.getItem(STORAGE_KEY);
         if (raw) userState = JSON.parse(raw);
       } catch(e) {}
       if (!userState.exp) userState.exp = 0;
       if (!userState.stars) userState.stars = [];
       if (!userState.history) userState.history = {};
+      if (!userState.currentTheme) userState.currentTheme = 1;
       if (!userState.currentDay) userState.currentDay = 1;
     }
 
     function saveState() {
       try {
-        localStorage.setItem('ceec_vocab_user_state', JSON.stringify(userState));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(userState));
       } catch(e) {}
     }
 
@@ -1048,97 +993,176 @@
       return userState.history[qid] || null;
     }
 
-    // Daily Quest Control
+    function updateMistakesCount() {
+      let count = 0;
+      for (const qid in userState.history) {
+        if (userState.history[qid] && !userState.history[qid].isCorrect) {
+          count++;
+        }
+      }
+      const el = document.getElementById('mistakesCount');
+      if (el) el.textContent = count;
+      const btn = document.getElementById('btnMistakesMode');
+      if (btn) btn.style.display = count > 0 ? 'inline-flex' : 'none';
+    }
+
+    function retryCurrentCard() {
+      const q = currentDayQuestions[currentCardIndex];
+      if (userState.history[q.id]) {
+        delete userState.history[q.id];
+        saveState();
+      }
+      updateMistakesCount();
+      loadActiveCard();
+    }
+
+    function startMistakesSweep() {
+      document.getElementById('victoryModal').classList.remove('active');
+      const wrongQs = currentDayQuestions.filter(q => {
+        const st = getQuestionState(q.id);
+        return st && !st.isCorrect;
+      });
+      if (wrongQs.length === 0) {
+        alert('🎉 今日題目已全部正確！');
+        return;
+      }
+      wrongQs.forEach(q => {
+        delete userState.history[q.id];
+      });
+      saveState();
+      currentDayQuestions = wrongQs;
+      currentCardIndex = 0;
+      document.getElementById('dayLabel').textContent = `🎯 錯題專項消滅模式 (${wrongQs.length} 題)`;
+      updateMistakesCount();
+      updateHUD();
+      loadActiveCard();
+    }
+
+    function openMistakesMode() {
+      const allMistakes = QUESTIONS.filter(q => {
+        const st = userState.history[q.id];
+        return st && !st.isCorrect;
+      });
+      if (allMistakes.length === 0) {
+        alert('🎉 太棒了！目前沒有任何累積的錯題！');
+        return;
+      }
+      allMistakes.forEach(q => {
+        delete userState.history[q.id];
+      });
+      saveState();
+      currentDayQuestions = allMistakes;
+      currentCardIndex = 0;
+      document.getElementById('dayLabel').textContent = `❌ 全局錯題特訓模式 (${allMistakes.length} 題)`;
+      updateMistakesCount();
+      updateHUD();
+      loadActiveCard();
+    }
+
+    function changeTheme(tid) {
+      currentTheme = parseInt(tid, 10);
+      userState.currentTheme = currentTheme;
+      setDay(1);
+    }
+
     function setDay(day) {
-      currentDay = Math.max(1, Math.min(13, day));
+      if (IS_COLLOC) {
+        currentDay = Math.max(1, Math.min(30, day));
+        currentDayQuestions = QUESTIONS.filter(q => q.theme_id === currentTheme && q.day === currentDay);
+        const sel = document.getElementById('themeSelect');
+        if (sel) sel.value = currentTheme;
+      } else {
+        currentDay = Math.max(1, Math.min(13, day));
+        currentDayQuestions = QUESTIONS.filter(q => q.day === currentDay);
+      }
       userState.currentDay = currentDay;
       saveState();
 
-      currentDayQuestions = QUESTIONS.filter(q => q.day === currentDay);
       currentCardIndex = 0;
-
-      // Update UI Header
-      document.getElementById('dayLabel').textContent = `📅 今日任務：Day ${currentDay} (${currentDayQuestions.length}題)`;
+      document.getElementById('dayLabel').textContent = `📅 Day ${currentDay} (${currentDayQuestions.length}題)`;
       updateHUD();
       loadActiveCard();
     }
 
     function prevDay() { if (currentDay > 1) setDay(currentDay - 1); }
-    function nextDay() { if (currentDay < 13) setDay(currentDay + 1); }
+    function nextDay() {
+      const maxD = IS_COLLOC ? 30 : 13;
+      if (currentDay < maxD) setDay(currentDay + 1);
+    }
 
     function loadActiveCard() {
       const q = currentDayQuestions[currentCardIndex];
       if (!q) return;
 
-      // Progress bar
       const pct = ((currentCardIndex + 1) / currentDayQuestions.length) * 100;
       document.getElementById('questProgressFill').style.width = `${pct}%`;
       document.getElementById('questCounter').textContent = `${currentCardIndex + 1} / ${currentDayQuestions.length}`;
 
-      // Badges
-      document.getElementById('qNoBadge').textContent = `第 ${q.question_no} 題`;
-      document.getElementById('qPosBadge').textContent = q.pos;
-      document.getElementById('qLevelBadge').textContent = `Level ${q.levels ? q.levels[q.answer] : 4}`;
-      document.getElementById('qYearBadge').textContent = `${q.year} 學測`;
+      document.getElementById('qNoBadge').textContent = `第 ${currentCardIndex + 1} 題`;
+      document.getElementById('qPosBadge').textContent = IS_COLLOC ? `${q.pattern} 搭配` : q.pos;
+      document.getElementById('qLevelBadge').textContent = IS_COLLOC ? q.theme : `Level ${q.levels ? q.levels[q.answer] : 4}`;
+      document.getElementById('qExtraBadge').textContent = IS_COLLOC ? `核心：${q.word}` : `${q.year} 學測`;
 
-      // Star
       const isStarred = userState.stars.includes(q.id);
       const starBtn = document.getElementById('btnStar');
       starBtn.classList.toggle('active', isStarred);
       starBtn.textContent = isStarred ? '★' : '☆';
 
-      // Stem with speak button
+      const readText = IS_COLLOC ? q.sentence : q.stem;
       document.getElementById('qStem').innerHTML = `
         ${q.stem}
-        <button class="btn-speak-inline" onclick="speak('${q.stem.replace(/'/g, "\\'")}')" title="朗讀題目">🔊</button>
+        <button class="btn-speak-inline" onclick="speak('${readText.replace(/'/g, "\\'")}')" title="朗讀題目">🔊</button>
       `;
 
-      // Options
       const grid = document.getElementById('optionsGrid');
       grid.innerHTML = '';
       const letters = ['A', 'B', 'C', 'D'];
       const st = getQuestionState(q.id);
+      const ansKey = IS_COLLOC ? q.ans : q.answer;
+      const optDict = IS_COLLOC ? q.opts : q.options;
 
       letters.forEach((l, idx) => {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         btn.innerHTML = `
           <span class="opt-key">${idx + 1}</span>
-          <span class="opt-text">${l}. ${q.options[l]}</span>
+          <span class="opt-text">${l}. ${optDict[l]}</span>
         `;
         btn.onclick = () => chooseOption(l);
 
         if (st) {
           btn.disabled = true;
-          if (l === q.answer) btn.classList.add('correct');
+          if (l === ansKey) btn.classList.add('correct');
           if (st.chosen === l && !st.isCorrect) btn.classList.add('wrong');
         }
 
         grid.appendChild(btn);
       });
 
-      // Explanation Drawer
       const drawer = document.getElementById('answerDrawer');
+      const rBtn = document.getElementById('btnRetrySingle');
+
       if (st) {
         drawer.classList.add('active');
+        if (rBtn) rBtn.style.display = st.isCorrect ? 'none' : 'inline-flex';
+
         const fb = document.getElementById('feedbackBanner');
         fb.className = `feedback-banner ${st.isCorrect ? 'correct' : 'wrong'}`;
-        document.getElementById('feedbackText').textContent = st.isCorrect ? '🎯 答對了！精準命中！' : `❌ 哎呀答錯了！正確答案是 (${q.answer}) ${q.options[q.answer]}`;
+        document.getElementById('feedbackText').textContent = st.isCorrect ? '🎯 答對了！精準命中！' : `❌ 哎呀答錯了！正確答案是 (${ansKey}) ${optDict[ansKey]}`;
         document.getElementById('feedbackExp').textContent = st.isCorrect ? '+15 EXP' : '+0 EXP';
 
-        document.getElementById('expClue').innerHTML = `
-          <div><strong>中譯：</strong>${q.stem_trans || ''}</div>
-          <div style="margin-top:6px;"><strong>線索錨點：</strong>${q.clue || '前後文語境搭配'}</div>
-        `;
-
-        document.getElementById('expTrap').textContent = q.writing ? q.writing.trap : '注意混淆同義詞辨析。';
-        document.getElementById('expWriting').innerHTML = `
-          <div style="font-weight:700; color:#065f46; margin-bottom:4px;">${q.writing ? q.writing.scenario : ''}</div>
-          <div style="margin-bottom:6px;"><code>${q.writing ? q.writing.scaffold : ''}</code></div>
-          <div style="color:#0f172a; font-style:italic;">範例：${q.writing ? q.writing.example : ''}</div>
-        `;
+        if (IS_COLLOC) {
+          document.getElementById('expSec1').innerHTML = `<div style="font-size:1.1rem; font-weight:900; color:#0284c7;">${q.phrase}</div><div style="font-size:0.95rem; font-weight:700; color:#334155; margin-top:4px;">中譯：${q.chinese}</div>`;
+          document.getElementById('expSec2').textContent = q.tip || '考查標準動名或形名搭配。';
+          document.getElementById('expSec3').innerHTML = `<div style="font-style:italic; margin-bottom:4px;">"${q.sentence}"</div><div style="color:#065f46; font-weight:600;">翻譯：${q.trans}</div>`;
+        } else {
+          document.getElementById('expSec1').innerHTML = `<div><strong>中譯：</strong>${q.stem_trans || ''}</div><div style="margin-top:6px;"><strong>線索錨點：</strong>${q.clue || '前後文語境搭配'}</div>`;
+          document.getElementById('expSec2').textContent = q.writing ? q.writing.trap : '注意混淆同義詞辨析。';
+          document.getElementById('expSec3').innerHTML = `<div style="font-weight:700; color:#065f46; margin-bottom:4px;">${q.writing ? q.writing.scenario : ''}</div><div style="margin-bottom:6px;"><code>${q.writing ? q.writing.scaffold : ''}</code></div><div style="color:#0f172a; font-style:italic;">範例：${q.writing ? q.writing.example : ''}</div>`;
+        }
       } else {
         drawer.classList.remove('active');
+        if (rBtn) rBtn.style.display = 'none';
       }
     }
 
@@ -1146,7 +1170,9 @@
       const q = currentDayQuestions[currentCardIndex];
       if (getQuestionState(q.id)) return;
 
-      const isCorrect = chosen === q.answer;
+      const ansKey = IS_COLLOC ? q.ans : q.answer;
+      const isCorrect = chosen === ansKey;
+
       userState.history[q.id] = {
         chosen: chosen,
         isCorrect: isCorrect,
@@ -1169,6 +1195,7 @@
       }
 
       saveState();
+      updateMistakesCount();
       updateHUD();
       loadActiveCard();
     }
@@ -1178,7 +1205,6 @@
         currentCardIndex++;
         loadActiveCard();
       } else {
-        // Finished Day!
         triggerVictory();
       }
     }
@@ -1193,17 +1219,30 @@
         if (st && st.isCorrect) correctCount++;
       });
 
+      const wrongCount = currentDayQuestions.length - correctCount;
       const acc = Math.round((correctCount / currentDayQuestions.length) * 100);
-      document.getElementById('victoryStamp').textContent = `💮 DAY ${currentDay} 滿級分通關`;
+
+      document.getElementById('victoryStamp').textContent = IS_COLLOC ? `💮 主題 ${currentTheme} Day ${currentDay} 滿級分通關` : `💮 DAY ${currentDay} 滿級分通關`;
       document.getElementById('vicAcc').textContent = `${acc}%`;
       document.getElementById('vicExp').textContent = `+${correctCount * 15} EXP`;
 
+      const sweepBtn = document.getElementById('btnSweepMistakes');
+      if (sweepBtn) {
+        if (wrongCount > 0) {
+          sweepBtn.style.display = 'inline-flex';
+          const numEl = document.getElementById('vicMistakeNum');
+          if (numEl) numEl.textContent = wrongCount;
+        } else {
+          sweepBtn.style.display = 'none';
+        }
+      }
+
+      updateMistakesCount();
       document.getElementById('victoryModal').classList.add('active');
     }
 
     function closeVictoryAndReview() {
       document.getElementById('victoryModal').classList.remove('active');
-      // Jump to first wrong answer
       const firstWrong = currentDayQuestions.findIndex(q => {
         const st = getQuestionState(q.id);
         return st && !st.isCorrect;
@@ -1216,7 +1255,8 @@
 
     function closeVictoryAndNextDay() {
       document.getElementById('victoryModal').classList.remove('active');
-      if (currentDay < 13) setDay(currentDay + 1);
+      const maxD = IS_COLLOC ? 30 : 13;
+      if (currentDay < maxD) setDay(currentDay + 1);
     }
 
     function toggleStarActive() {
@@ -1252,11 +1292,12 @@
     }
 
     function updateHUD() {
+      updateMistakesCount();
       const exp = userState.exp || 0;
       const level = Math.floor(exp / 100) + 1;
       const progress = exp % 100;
 
-      const titles = ['詞彙新兵', '實戰先鋒', '單字獵人', '閱讀高才', '頂標戰神', '滿級分宗師'];
+      const titles = ['詞彙先鋒', '實戰獵人', '閱讀神手', '頂標達人', '滿級分戰神'];
       const rankTitle = titles[Math.min(titles.length - 1, Math.floor(level / 3))];
 
       document.getElementById('hudLevelBadge').textContent = `Lv. ${level} ${rankTitle}`;
@@ -1265,7 +1306,7 @@
       document.getElementById('hudStreak').textContent = currentStreak;
     }
 
-    // Warmup Flashcard Logic
+    // Warmup Flashcards
     let warmupIndex = 0;
     let isFlipped = false;
 
@@ -1285,26 +1326,47 @@
       document.getElementById('wmCardNum').textContent = warmupIndex + 1;
       document.getElementById('wmNextBtnText').textContent = (warmupIndex === currentDayQuestions.length - 1) ? '🚀 暖身完畢，開始挑戰！' : '下一張 ➔';
       
-      const gloss = q.gloss ? q.gloss[q.answer] : '';
       const body = document.getElementById('wmBody');
 
-      if (!isFlipped) {
-        body.innerHTML = `
-          <div style="font-size:2.2rem; font-weight:900; color:#1e293b; margin-bottom:10px;">${q.answer_word}</div>
-          <div style="font-size:1.1rem; color:#64748b; font-weight:700; margin-bottom:16px;">[${q.pos}] ${q.levels ? 'Level ' + q.levels[q.answer] : ''}</div>
-          <div style="font-size:1.05rem; color:#2563eb; background:#eff6ff; padding:8px 16px; border-radius:8px;">
-            錨點例句：${q.clue || '點擊卡片查看解析'}
-          </div>
-        `;
+      if (IS_COLLOC) {
+        if (!isFlipped) {
+          body.innerHTML = `
+            <div style="font-size:2rem; font-weight:900; color:#0284c7; margin-bottom:10px;">${q.phrase}</div>
+            <div style="font-size:1.1rem; color:#64748b; font-weight:700; margin-bottom:16px;">[${q.pattern}] 核心：${q.word}</div>
+            <div style="font-size:1.05rem; color:#0f172a; background:#e0f2fe; padding:8px 16px; border-radius:8px;">
+              範句：${q.sentence}
+            </div>
+          `;
+        } else {
+          body.innerHTML = `
+            <div style="font-size:1.35rem; font-weight:900; color:#065f46; margin-bottom:8px;">${q.phrase}</div>
+            <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:12px;">中譯：${q.chinese}</div>
+            <div style="font-size:0.95rem; color:#475569; background:#f8fafc; padding:10px; border-radius:8px; text-align:left; line-height:1.6;">
+              <strong>📌 搭配考點：</strong>${q.tip}<br>
+              <strong>✍️ 例句翻譯：</strong>${q.trans}
+            </div>
+          `;
+        }
       } else {
-        body.innerHTML = `
-          <div style="font-size:1.35rem; font-weight:900; color:#065f46; margin-bottom:8px;">${q.answer_word} [${q.pos}]</div>
-          <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:12px;">中譯：${gloss}</div>
-          <div style="font-size:0.95rem; color:#475569; background:#f8fafc; padding:10px; border-radius:8px; text-align:left; line-height:1.6;">
-            <strong>⚠️ 混淆陷阱：</strong>${q.writing ? q.writing.trap : ''}<br>
-            <strong>✍️ 作文應用：</strong>${q.writing ? q.writing.example : ''}
-          </div>
-        `;
+        const gloss = q.gloss ? q.gloss[q.answer] : '';
+        if (!isFlipped) {
+          body.innerHTML = `
+            <div style="font-size:2.2rem; font-weight:900; color:#1e293b; margin-bottom:10px;">${q.answer_word}</div>
+            <div style="font-size:1.1rem; color:#64748b; font-weight:700; margin-bottom:16px;">[${q.pos}] ${q.levels ? 'Level ' + q.levels[q.answer] : ''}</div>
+            <div style="font-size:1.05rem; color:#2563eb; background:#eff6ff; padding:8px 16px; border-radius:8px;">
+              錨點線索：${q.clue || '點擊卡片查看解析'}
+            </div>
+          `;
+        } else {
+          body.innerHTML = `
+            <div style="font-size:1.35rem; font-weight:900; color:#065f46; margin-bottom:8px;">${q.answer_word} [${q.pos}]</div>
+            <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:12px;">中譯：${gloss}</div>
+            <div style="font-size:0.95rem; color:#475569; background:#f8fafc; padding:10px; border-radius:8px; text-align:left; line-height:1.6;">
+              <strong>⚠️ 混淆陷阱：</strong>${q.writing ? q.writing.trap : ''}<br>
+              <strong>✍️ 作文應用：</strong>${q.writing ? q.writing.example : ''}
+            </div>
+          `;
+        }
       }
     }
 
@@ -1320,7 +1382,6 @@
         renderWarmupCard();
       } else {
         closeWarmup();
-        // Ready to start quiz
       }
     }
 
@@ -1334,19 +1395,15 @@
 
     function speakCurrentWarmup() {
       const q = currentDayQuestions[warmupIndex];
-      if (q) speak(q.answer_word);
+      if (q) speak(IS_COLLOC ? q.phrase : q.answer_word);
     }
 
-    // Reset Modal Logic
-    function openResetModal() {
-      document.getElementById('resetModal').classList.add('active');
-    }
-    function closeResetModal() {
-      document.getElementById('resetModal').classList.remove('active');
-    }
+    // Reset Modal
+    function openResetModal() { document.getElementById('resetModal').classList.add('active'); }
+    function closeResetModal() { document.getElementById('resetModal').classList.remove('active'); }
     function confirmResetProgress() {
-      localStorage.removeItem('ceec_vocab_user_state');
-      userState = { exp: 0, stars: [], history: {}, currentDay: 1 };
+      localStorage.removeItem(STORAGE_KEY);
+      userState = { exp: 0, stars: [], history: {}, currentTheme: 1, currentDay: 1 };
       currentStreak = 0;
       closeResetModal();
       setDay(1);
@@ -1357,35 +1414,48 @@
       const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userState, null, 2));
       const dlAnchor = document.createElement('a');
       dlAnchor.setAttribute("href", dataStr);
-      dlAnchor.setAttribute("download", `ceec_vocab_progress_backup_${new Date().toISOString().slice(0,10)}.json`);
+      dlAnchor.setAttribute("download", `${STORAGE_KEY}_backup_${new Date().toISOString().slice(0,10)}.json`);
       document.body.appendChild(dlAnchor);
       dlAnchor.click();
       dlAnchor.remove();
     }
 
-    // Print Logic
-    function openPrintModal() {
-      document.getElementById('printModal').classList.add('active');
-    }
-    function closePrintModal() {
-      document.getElementById('printModal').classList.remove('active');
-    }
+    // Print Modal & Logic
+    function openPrintModal() { document.getElementById('printModal').classList.add('active'); }
+    function closePrintModal() { document.getElementById('printModal').classList.remove('active'); }
     function executePrint(mode) {
       closePrintModal();
       const pArea = document.getElementById('printArea');
-      let html = `<div class="print-title">學測英文 15 級分歷屆真題 - Day ${currentDay} 研讀卷</div>`;
+      let targetQs = currentDayQuestions;
+
+      if (mode === 'mistakes') {
+        targetQs = QUESTIONS.filter(q => {
+          const st = userState.history[q.id];
+          return (st && !st.isCorrect) || userState.stars.includes(q.id);
+        });
+        if (targetQs.length === 0) {
+          alert('目前沒有曾做錯或標記星星的題目！');
+          return;
+        }
+      }
+
+      let html = `<div class="print-title">${IS_COLLOC ? '學測英文 1,500 組滿級分搭配詞大典' : '學測英文 15 級分歷屆真題'} - Day ${currentDay} 離線研讀卷</div>`;
       html += `<div style="text-align:right; font-size:0.85rem; margin-bottom:12px;">姓名：_____________ 計分：_____ / 100</div>`;
       html += `<div class="print-grid">`;
 
-      currentDayQuestions.forEach((q, idx) => {
-        if (mode === 'study') {
+      targetQs.forEach((q, idx) => {
+        const ansKey = IS_COLLOC ? q.ans : q.answer;
+        const optDict = IS_COLLOC ? q.opts : q.options;
+        const ansWord = IS_COLLOC ? q.word : q.answer_word;
+
+        if (mode === 'study' || mode === 'mistakes') {
           html += `
             <div class="print-card">
-              <div style="font-weight:bold; margin-bottom:4px;">${idx+1}. [${q.year}年] ${q.stem}</div>
-              <div style="color:#059669; font-weight:bold;">★ 正確解答：(${q.answer}) ${q.answer_word} [${q.pos}]</div>
-              <div style="font-size:0.85rem; color:#444;">中譯：${q.gloss ? q.gloss[q.answer] : ''}</div>
-              <div style="font-size:0.8rem; color:#666; margin-top:4px;">線索：${q.clue || ''}</div>
-              <div style="font-size:0.8rem; color:#b91c1c;">陷阱：${q.writing ? q.writing.trap : ''}</div>
+              <div style="font-weight:bold; margin-bottom:4px;">${idx+1}. ${q.stem}</div>
+              <div style="color:#059669; font-weight:bold;">★ 解答：(${ansKey}) ${ansWord} ${IS_COLLOC ? '['+q.pattern+']' : '['+q.pos+']'}</div>
+              <div style="font-size:0.85rem; color:#444;">${IS_COLLOC ? '中譯：' + q.chinese : '中譯：' + (q.gloss ? q.gloss[q.answer] : '')}</div>
+              <div style="font-size:0.8rem; color:#666; margin-top:2px;">${IS_COLLOC ? '例句：' + q.sentence : '線索：' + (q.clue || '')}</div>
+              <div style="font-size:0.8rem; color:#b91c1c; margin-top:2px;">陷阱：${IS_COLLOC ? q.tip : (q.writing ? q.writing.trap : '')}</div>
             </div>
           `;
         } else if (mode === 'exam') {
@@ -1393,8 +1463,8 @@
             <div class="print-card">
               <div style="font-weight:bold; margin-bottom:6px;">${idx+1}. ${q.stem}</div>
               <div style="font-size:0.9rem; margin-left:10px;">
-                (A) ${q.options.A} &nbsp;&nbsp;&nbsp; (B) ${q.options.B}<br>
-                (C) ${q.options.C} &nbsp;&nbsp;&nbsp; (D) ${q.options.D}
+                (A) ${optDict.A} &nbsp;&nbsp;&nbsp; (B) ${optDict.B}<br>
+                (C) ${optDict.C} &nbsp;&nbsp;&nbsp; (D) ${optDict.D}
               </div>
             </div>
           `;
@@ -1406,7 +1476,7 @@
       setTimeout(() => window.print(), 100);
     }
 
-    // Confetti Animation Canvas
+    // Confetti Animation
     function launchConfetti() {
       const canvas = document.getElementById('confettiCanvas');
       const ctx = canvas.getContext('2d');
@@ -1433,7 +1503,7 @@
         particles.forEach(p => {
           p.x += p.vx;
           p.y += p.vy;
-          p.vy += 0.25; // gravity
+          p.vy += 0.25;
           p.alpha -= 0.012;
           if (p.alpha > 0) {
             activeCount++;
@@ -1454,12 +1524,9 @@
 
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
-      // Ignore if in inputs
-      if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
-
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
       const key = e.key.toUpperCase();
 
-      // Warmup Modal navigation
       if (document.getElementById('warmupModal').classList.contains('active')) {
         if (e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); flipWarmupCard(); }
         else if (e.key === 'ArrowRight' || e.key === 'Enter') { nextWarmup(); }
@@ -1468,7 +1535,6 @@
         return;
       }
 
-      // Option selection (1, 2, 3, 4 or A, B, C, D)
       const keyMap = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', 'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D' };
       if (keyMap[key]) {
         chooseOption(keyMap[key]);
@@ -1485,7 +1551,6 @@
       }
     });
 
-    // Set View Mode
     function setViewMode(mode) {
       const isFocus = mode === 'focus';
       document.getElementById('btnFocusView').classList.toggle('active', isFocus);
@@ -1493,9 +1558,7 @@
       document.getElementById('focusCard').style.display = isFocus ? 'block' : 'none';
       document.getElementById('fullListView').style.display = isFocus ? 'none' : 'block';
 
-      if (!isFocus) {
-        renderListView();
-      }
+      if (!isFocus) renderListView();
     }
 
     function renderListView() {
@@ -1504,17 +1567,20 @@
       currentDayQuestions.forEach((q, idx) => {
         const st = getQuestionState(q.id);
         const correct = st ? st.isCorrect : false;
+        const optDict = IS_COLLOC ? q.opts : q.options;
+        const ansKey = IS_COLLOC ? q.ans : q.answer;
+
         html += `
           <div style="background:white; border-radius:12px; padding:20px; margin-bottom:16px; border:1px solid #e2e8f0;">
             <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-              <span style="font-weight:800; color:#2563eb;">第 ${idx+1} 題 (${q.year}年)</span>
+              <span style="font-weight:800; color:var(--primary);">第 ${idx+1} 題</span>
               <span>${st ? (correct ? '✅ 答對' : '❌ 答錯') : '⏳ 未作答'}</span>
             </div>
             <div style="font-size:1.1rem; font-weight:700; margin-bottom:12px;">${q.stem}</div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
               ${['A','B','C','D'].map(l => `
-                <div style="padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0; font-size:0.95rem; background:${st && l === q.answer ? '#ecfdf5' : 'white'}">
-                  ${l}. ${q.options[l]}
+                <div style="padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0; font-size:0.95rem; background:${st && l === ansKey ? '#ecfdf5' : 'white'}">
+                  ${l}. ${optDict[l]}
                 </div>
               `).join('')}
             </div>
@@ -1524,9 +1590,9 @@
       cont.innerHTML = html;
     }
 
-    // Initialization
     window.addEventListener('DOMContentLoaded', () => {
       loadState();
+      currentTheme = userState.currentTheme || 1;
       setDay(userState.currentDay || 1);
     });
   </script>
