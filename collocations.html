@@ -613,22 +613,58 @@
 
     #printArea { display: none; }
     @media print {
-      body * { visibility: hidden; }
-      #printArea, #printArea * { visibility: visible; }
+      @page {
+        size: A4;
+        margin: 12mm 15mm;
+      }
+      html, body {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      /* Eliminate phantom body height to prevent extra blank pages */
+      body > *:not(#printArea) {
+        display: none !important;
+      }
       #printArea {
         display: block !important;
-        position: absolute;
-        left: 0; top: 0;
-        width: 100%;
-        background: white;
-        color: black;
-        font-family: serif;
-        padding: 20px;
+        position: static !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+        color: black !important;
+        font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, serif;
       }
-      .print-title { font-size: 1.4rem; font-weight: 800; text-align: center; margin-bottom: 12px; border-bottom: 2px solid #000; padding-bottom: 8px; }
-      .print-grid { display: block; width: 100%; }
-      .print-card { border: none !important; background: transparent !important; padding: 4px 0 8px 0 !important; margin: 0 0 8px 0 !important; page-break-inside: avoid; width: 100%; line-height: 1.5; border-bottom: 1px dashed #cbd5e1 !important; }
-      .print-card:last-child { border-bottom: none !important; }
+      .print-title {
+        font-size: 1.35rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #0f172a;
+        padding-bottom: 8px;
+        color: #0f172a;
+      }
+      .print-grid {
+        display: block;
+        width: 100%;
+      }
+      .print-card {
+        border: none !important;
+        background: transparent !important;
+        padding: 4px 0 8px 0 !important;
+        margin: 0 0 8px 0 !important;
+        page-break-inside: avoid;
+        width: 100%;
+        line-height: 1.5;
+        border-bottom: 1px dashed #cbd5e1 !important;
+      }
+      .print-card:last-child {
+        border-bottom: none !important;
+      }
     }
 
     #confettiCanvas {
@@ -1460,17 +1496,23 @@
         const ansWord = IS_COLLOC ? q.word : q.answer_word;
 
         if (mode === 'study' || mode === 'mistakes') {
+          const fullSentence = IS_COLLOC ? q.sentence : q.stem.replace(/______+/g, `<u><strong>${ansWord}</strong></u>`);
+          const posText = IS_COLLOC ? `[${q.pattern}]` : `[${q.pos}]`;
+          const chineseText = IS_COLLOC ? q.chinese : (q.gloss ? q.gloss[q.answer] : '');
+          const extraInfo = IS_COLLOC ? `<strong>範句翻譯：</strong>${q.trans} &nbsp;|&nbsp; <strong>搭配考點：</strong>${q.tip}` : `<strong>句意中譯：</strong>${q.stem_trans || ''} &nbsp;|&nbsp; <strong>考點陷阱：</strong>${q.writing ? q.writing.trap : ''}`;
+
           html += `
             <div class="print-card">
-              <div style="font-weight:bold; font-size:1.02rem; color:#000; margin-bottom:3px;">${idx+1}. ${q.stem}</div>
-              <div style="font-size:0.88rem; padding-left:12px; line-height:1.45;">
-                <span style="color:#059669; font-weight:bold;">★ 解答：(${ansKey}) ${ansWord} ${IS_COLLOC ? '['+q.pattern+']' : '['+q.pos+']'}</span>
-                &nbsp;&nbsp;|&nbsp;&nbsp;
-                <span style="color:#1e293b;"><strong>中譯：</strong>${IS_COLLOC ? q.chinese : (q.gloss ? q.gloss[q.answer] : '')}</span>
-                <div style="color:#475569; margin-top:2px;">
-                  <strong>${IS_COLLOC ? '範句：' : '線索：'}</strong>${IS_COLLOC ? q.sentence : (q.clue || '')}
-                  &nbsp;&nbsp;
-                  <span style="color:#b91c1c;"><strong>[考點]</strong> ${IS_COLLOC ? q.tip : (q.writing ? q.writing.trap : '')}</span>
+              <div style="font-size:1.05rem; font-weight:700; color:#0f172a; margin-bottom:4px; line-height:1.6;">
+                ${idx+1}. ${fullSentence}
+              </div>
+              <div style="font-size:0.88rem; padding-left:14px; line-height:1.5;">
+                <span style="color:#059669; font-weight:800; font-size:0.95rem;">★ 核心詞彙：${ansWord}</span>
+                <span style="color:#64748b; font-weight:700; margin-left:6px;">${posText}</span>
+                &nbsp;&nbsp;—&nbsp;&nbsp;
+                <span style="color:#1e293b; font-weight:700;">${chineseText}</span>
+                <div style="color:#475569; margin-top:3px; font-size:0.85rem;">
+                  ${extraInfo}
                 </div>
               </div>
             </div>
