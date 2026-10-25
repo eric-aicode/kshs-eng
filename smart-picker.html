@@ -260,8 +260,9 @@
         background: white; color: black; font-family: serif; padding: 20px;
       }
       .print-title { font-size: 1.4rem; font-weight: 800; text-align: center; margin-bottom: 14px; border-bottom: 2px solid #000; padding-bottom: 8px; }
-      .print-grid { display: flex; flex-direction: column; gap: 14px; width: 100%; }
-      .print-card { border: 1px solid #cbd5e1; padding: 14px 18px; border-radius: 6px; page-break-inside: avoid; width: 100%; margin-bottom: 8px; line-height: 1.6; }
+      .print-grid { display: block; width: 100%; }
+      .print-card { border: none !important; background: transparent !important; padding: 4px 0 8px 0 !important; margin: 0 0 8px 0 !important; page-break-inside: avoid; width: 100%; line-height: 1.5; border-bottom: 1px dashed #cbd5e1 !important; }
+      .print-card:last-child { border-bottom: none !important; }
     }
   </style>
 </head>
@@ -552,18 +553,24 @@
         if (mode === 'study') {
           html += `
             <div class="print-card">
-              <div style="font-weight:bold; font-size:1.05rem; color:#0f172a; margin-bottom:6px;">${idx+1}. ${item.stem}</div>
-              <div style="color:#059669; font-weight:bold; margin-bottom:3px;">★ 正確解答：(${item.answer}) ${item.word} [${item.pos}]</div>
-              <div style="font-size:0.9rem; color:#334155; margin-bottom:2px;"><strong>中譯：</strong>${item.type==='real' ? item.gloss : item.chinese}</div>
-              <div style="font-size:0.85rem; color:#666; margin-bottom:2px;"><strong>${item.type==='real' ? '線索：' : '搭配片語：'}</strong>${item.type==='real' ? (item.clue || '') : item.phrase + '（' + item.trans + '）'}</div>
-              <div style="font-size:0.85rem; color:#b91c1c;"><strong>命題考點：</strong>${item.type==='real' ? item.trap : item.tip}</div>
+              <div style="font-weight:bold; font-size:1.02rem; color:#000; margin-bottom:3px;">${idx+1}. ${item.stem}</div>
+              <div style="font-size:0.88rem; padding-left:12px; line-height:1.45;">
+                <span style="color:#059669; font-weight:bold;">★ 正確解答：(${item.answer}) ${item.word} [${item.pos}]</span>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <span style="color:#1e293b;"><strong>中譯：</strong>${item.type==='real' ? item.gloss : item.chinese}</span>
+                <div style="color:#475569; margin-top:2px;">
+                  <strong>${item.type==='real' ? '線索：' : '搭配：'}</strong>${item.type==='real' ? (item.clue || '') : item.phrase + '（' + item.trans + '）'}
+                  &nbsp;&nbsp;
+                  <span style="color:#b91c1c;"><strong>[考點]</strong> ${item.type==='real' ? item.trap : item.tip}</span>
+                </div>
+              </div>
             </div>
           `;
         } else {
           html += `
-            <div class="print-card">
-              <div style="font-weight:bold; font-size:1.05rem; margin-bottom:8px;">${idx+1}. ${item.stem}</div>
-              <div style="font-size:0.95rem; margin-left:8px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:6px;">
+            <div class="print-card" style="border-bottom:none !important; margin-bottom:10px !important;">
+              <div style="font-weight:bold; font-size:1.05rem; margin-bottom:4px; color:#000;">${idx+1}. ${item.stem}</div>
+              <div style="font-size:0.95rem; padding-left:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:2px;">
                 <span>(A) ${item.options.A}</span>
                 <span>(B) ${item.options.B}</span>
                 <span>(C) ${item.options.C}</span>
