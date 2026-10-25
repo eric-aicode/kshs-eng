@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學測英文歷屆文法考點完整大全 (106~115學年度全試題透視)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --accent: #d97706;
+      --success: #059669;
+      --purple: #7c3aed;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --code-bg: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 90px;
+    }
+
+    /* Header */
+    .header-bar {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: white;
+      padding: 30px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .header-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-title-box { max-width: 780px; }
+    .badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.15);
+      padding: 3px 12px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+    h1 { font-size: 1.95rem; font-weight: 900; line-height: 1.3; margin-bottom: 6px; }
+    .subtitle { font-size: 0.98rem; color: #cbd5e1; }
+
+    .print-btn {
+      background: #ffffff;
+      color: var(--primary);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .print-btn:hover { background: #f1f5f9; transform: translateY(-1px); }
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 1040px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Cards & Sections */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.05);
+      break-inside: avoid;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+    }
+    .section-title .num-badge {
+      background: var(--primary);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sub-block { margin-bottom: 26px; }
+    .sub-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Callout Boxes */
+    .rule-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--primary-light);
+      padding: 14px 20px;
+      border-radius: 6px;
+      margin: 10px 0 16px 0;
+      font-size: 0.94rem;
+    }
+    .rule-box strong { color: #1e3a8a; }
+
+    .exam-real {
+      background: #fdf2f8;
+      border-left: 4px solid #db2777;
+      padding: 14px 20px;
+      border-radius: 6px;
+      margin: 10px 0 16px 0;
+      font-size: 0.92rem;
+    }
+    .exam-real strong { color: #9d174d; }
+
+    .tip-box {
+      background: #fefce8;
+      border-left: 4px solid #eab308;
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 10px 0 14px 0;
+      font-size: 0.92rem;
+      color: #854d0e;
+    }
+
+    .code-box {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      background: var(--code-bg);
+      border: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #334155;
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    .code-box strong { color: #0f172a; }
+
+    /* Tables */
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.92rem;
+    }
+    .grammar-table th {
+      background: #f1f5f9;
+      text-align: left;
+      padding: 11px 14px;
+      border-bottom: 2px solid var(--border);
+      color: #334155;
+      font-weight: 700;
+    }
+    .grammar-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+      vertical-align: top;
+    }
+    .grammar-table tr:hover td { background: #f8fafc; }
+
+    /* Badges */
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 4px;
+    }
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-green { background: #dcfce7; color: #166534; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-red { background: #fee2e2; color: #991b1b; }
+    .tag-purple { background: #f3e8ff; color: #6b21a8; }
+
+    /* Print styles */
+    @media print {
+      body { background: white; color: black; padding-bottom: 0; }
+      .header-bar {
+        background: none;
+        color: black;
+        border-bottom: 2px solid black;
+        padding: 12px 0;
+        box-shadow: none;
+      }
+      .badge, .print-btn { display: none; }
+      h1 { font-size: 1.6rem; color: black; }
+      .subtitle { color: #444; }
+      .main-wrap { max-width: 100%; margin: 10px 0; padding: 0; }
+      .section-card {
+        border: none;
+        box-shadow: none;
+        padding: 12px 0;
+        margin-bottom: 18px;
+        border-bottom: 1px solid #ccc;
+        break-inside: avoid;
+      }
+      .section-title { color: black; border-bottom: 1px solid #999; }
+      .section-title .num-badge { background: black; color: white; }
+      .rule-box, .exam-real, .tip-box {
+        background: #f9f9f9;
+        border-left: 3px solid #333;
+        color: black;
+        padding: 8px 12px;
+      }
+      .code-box { background: #f4f4f4; border-color: #ccc; color: black; }
+      .grammar-table th { background: #eee; color: black; border-bottom: 1px solid black; }
+      .grammar-table td { border-bottom: 1px solid #ccc; color: black; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <div class="header-container">
+      <div class="header-title-box">
+        <span class="badge">學測英文 106~115 試題全語料庫深度透視</span>
+        <h1>學測英文歷屆文法考點完整大全（真題全收錄）</h1>
+        <p class="subtitle">全面盤點近 10 年大考「所有考過的語法要點與解題法門」：動詞時態、助動詞推測、分詞構句、複合子句、動詞片語、文意選填定位、中翻英 20 題詳解與作文升級。</p>
+      </div>
+      <div>
+        <button class="print-btn" onclick="window.print()">🖨️ 列印 / 另存 PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- 0. 導言與全卷文法分佈 -->
+    <div class="section-card" style="background: #f8fafc; border-left: 4px solid var(--primary);">
+      <h3 style="font-size: 1.08rem; font-weight: 800; color: var(--primary); margin-bottom: 8px;">
+        📌 為什麼要掌握「全盤考點」？學測英文文法命題真諦
+      </h3>
+      <p style="font-size: 0.94rem; color: #334155; margin-bottom: 6px;">
+        本講義不只整理高頻常客，而是<strong>將 106 至 115 學年度（共 10 年、125 題綜合測驗、10 篇文意選填、10 篇篇章結構、20 題中翻英）所有考過的文法要點全部抽絲剝繭完整列出</strong>。
+      </p>
+      <p style="font-size: 0.94rem; color: #334155;">
+        學測的文法不是死記規則，而是<strong>「語意功能導向」</strong>。掌握以下六大模組，孩子在面對長篇閱讀、克漏字與寫作時，能瞬間拆解長句、洞悉命題者意圖！
+      </p>
+    </div>
+
+    <!-- 模組一：動詞的核心世界 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">1</span> 動詞的核心世界：時態、時相、假設法與助動詞</h2>
+      
+      <!-- 1.1 時態 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-blue">考點 1.1</span> 歷屆常考四大時態與時相（Tenses & Aspects）</h3>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 20%;">時態名稱</th>
+              <th style="width: 35%;">大考觸發情境與時間副詞</th>
+              <th style="width: 45%;">歷屆真題還原</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>現在完成式<br>(have/has + p.p.)</strong></td>
+              <td>1. <code>Since + 過去時間 / 過去式子句</code><br>2. <code>In/Over/During the past/last few years</code></td>
+              <td>
+                • <strong>108年中翻英</strong>：<em>Since its operation in 2007, the HSR <strong>has become</strong>...</em><br>
+                • <strong>115年中翻英</strong>：<em>Teachers <strong>have already increased</strong> the percentage...</em>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>過去完成式<br>(had + p.p.)</strong></td>
+              <td>在過去某個時間點<strong>「之前就已經完成」</strong>的動作（過去的過去）</td>
+              <td>
+                • <strong>111年第12題</strong>：選項 <code>had sprung</code>（描述新模式出現前，舊現象早已發生）<br>
+                • <strong>114年第11題</strong>：選項 <code>had spread</code>（疫情在官方採取措施前早已擴散）
+              </td>
+            </tr>
+            <tr>
+              <td><strong>過去進行式<br>(was/were + V-ing)</strong></td>
+              <td>過去特定時刻<strong>「正在進行」</strong>的動作，或與 <code>when / while</code> 連用</td>
+              <td>
+                • <strong>109年第16題</strong>：選項 <code>were being</code>（描述過去某歷史時期正處於...狀態）<br>
+                • <strong>113年第16題</strong>：選項 <code>were mostly using</code>（當時大多正在使用...）
+              </td>
+            </tr>
+            <tr>
+              <td><strong>現在進行式<br>(is/are + V-ing)</strong></td>
+              <td>當前正在發展中的趨勢（常用於新聞、科技發展報導）</td>
+              <td>
+                • <strong>114年中翻英</strong>：Objects appearing in movies <strong>are now coming true</strong> one by one.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 1.2 助動詞過去推測與假設法 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-amber">考點 1.2</span> 情態助動詞對過去事實的推測與假設語氣</h3>
+        <p style="font-size: 0.93rem; color: #475569;">
+          助動詞加 <code>have + p.p.</code> 是學測區分 13 級分與 15 級分的超級題眼，考的是<strong>「說話者對過去事件的態度與把握度」</strong>：
+        </p>
+
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">句型結構</th>
+              <th style="width: 35%;">精確中文語意</th>
+              <th style="width: 40%;">大考歷屆真題紀錄</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>must have + p.p.</code></td>
+              <td><strong>當時必定已經...</strong><br>(99%把握的過去肯定推測)</td>
+              <td><strong>111年第17題</strong>：Ancient civilizations <em>must have been</em> aware of this phenomenon.</td>
+            </tr>
+            <tr>
+              <td><code>could have + p.p.</code></td>
+              <td><strong>當時本來可以...卻沒做</strong><br>(過去有能力但未實行)</td>
+              <td><strong>113年第16題</strong>：They <em>could have used</em> simpler tools, but opted for complex ones.</td>
+            </tr>
+            <tr>
+              <td><code>would have + p.p.</code></td>
+              <td><strong>當時本來會...</strong><br>(與過去事實相反的假設結果)</td>
+              <td><strong>110年第25題</strong>：Without proper care, the injury <em>would have been</em> much worse.</td>
+            </tr>
+            <tr>
+              <td><code>should have + p.p.</code></td>
+              <td><strong>當時本應該...卻沒做</strong><br>(表達遺憾、後悔、責怪)</td>
+              <td>常考於閱讀測驗與作文檢討反思中：<em>I should have managed my time better.</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 1.3 使役與留置動詞 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-green">考點 1.3</span> 使役動詞、感官動詞與留置動詞（O + OC）</h3>
+        <div class="rule-box">
+          <strong>【三大動詞受詞補語句型】</strong>：
+          <ul style="margin-left: 20px; margin-top: 6px;">
+            <li><strong>使役動詞</strong>：<code>make / have / let + O + [ 原形動詞 (主動) / p.p. (被動) ]</code><br>
+            例：<em>Jade Mountain is covered with snow, making the summit shine like jade.</em>（106年題1）</li>
+            <li><strong>留置/狀態動詞</strong>：<code>leave / keep / find + O + [ V-ing (主動) / p.p. (被動) / adj. ]</code><br>
+            例：<strong>110 年第 30 題真題</strong>：<em>...problems are <strong>left unchecked</strong></em>（任由問題未被檢驗解決）。</li>
+            <li><strong>感官動詞被動態</strong>：主動時 <code>see / watch / hear + O + V / V-ing</code>，轉為被動時必須<strong>加回 to</strong> 或保留 <strong>V-ing</strong>！<br>
+            例：<strong>113 年中翻英真題</strong>：<em>Politicians can always <strong>be seen visiting</strong> temples...</em>（總會看到政治人物造訪...）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 1.4 不定詞 vs 動名詞 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-purple">考點 1.4</span> 非限定動詞：不定詞 (to V) vs 動名詞 (V-ing)</h3>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">類型</th>
+              <th style="width: 45%;">大考必備動詞清單</th>
+              <th style="width: 30%;">解題關鍵與真題實例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>只能接 V-ing</strong></td>
+              <td><code>avoid</code>, <code>enjoy</code>, <code>finish</code>, <code>practice</code>, <code>suggest</code>, <code>consider</code>, <code>prevent</code>, <code>mind</code></td>
+              <td><strong>112年翻譯</strong>：<em><strong>Avoiding</strong> conflicts...</em><br><strong>111年翻譯</strong>：<em><strong>enjoying</strong> the joy...</em></td>
+            </tr>
+            <tr>
+              <td><strong>只能接 to V</strong></td>
+              <td><code>decide</code>, <code>hope</code>, <code>promise</code>, <code>refuse</code>, <code>learn</code>, <code>manage</code>, <code>afford</code>, <code>tend</code></td>
+              <td><strong>109年翻譯</strong>：<em>...should <strong>learn to stick to</strong> our principles.</em></td>
+            </tr>
+            <tr>
+              <td><strong>兩者皆可但意思不同</strong></td>
+              <td>
+                • <code>remember / forget to V</code>（記得/忘記要去作）<br>
+                • <code>remember / forget V-ing</code>（記得/忘記曾經作過）<br>
+                • <code>stop to V</code>（停下來去作） vs <code>stop V-ing</code>（停止作某事）
+              </td>
+              <td><strong>113年第20題</strong>：選項 <code>(A) forget (B) change (C) match (D) regret</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- 模組二：分詞構句與句型簡化 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">2</span> 分詞構句與句型簡化（大考每年必考霸主）</h2>
+
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-blue">考點 2.1</span> 四大分詞構句變形全覽</h3>
+        <p style="font-size: 0.93rem; color: #475569;">
+          分詞構句本質是<strong>「副詞子句省略連接詞與相同主詞後的簡化形式」</strong>。大考出題形式涵蓋以下四種：
+        </p>
+
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">構句型態</th>
+              <th style="width: 38%;">文法結構與公式</th>
+              <th style="width: 40%;">歷屆大考真題實例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. 句首主動分詞</strong></td>
+              <td><code>V-ing + O, S + V.</code><br>(主詞與分詞為主動關係)</td>
+              <td><strong>108年閱讀測驗</strong>：<em><strong>Standing</strong> proud in the savannah with their red blankets, the Maasai...</em></td>
+            </tr>
+            <tr>
+              <td><strong>2. 句首被動分詞</strong></td>
+              <td><code>(Being) p.p. + prep., S + V.</code><br>(主詞遭受該動作，Being 常省略)</td>
+              <td><strong>113年第17題</strong>：<em><strong>Equipped with</strong> high-tech sensors, the robot can detect...</em></td>
+            </tr>
+            <tr>
+              <td><strong>3. 保留連接詞分詞</strong></td>
+              <td><code>While / When / Although + V-ing/p.p., S + V.</code><br>(強調時間或轉折語氣)</td>
+              <td><strong>111年中翻英</strong>：<em><strong>While enjoying</strong> the pleasure brought by pets, we should not...</em></td>
+            </tr>
+            <tr>
+              <td><strong>4. 句尾伴隨分詞</strong></td>
+              <td><code>S + V + O, V-ing / p.p.</code><br>(補充說明伴隨狀況或自然結果)</td>
+              <td><strong>115年中翻英</strong>：<em>Teachers divide students into groups, <strong>conducting</strong> various activities.</em></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="exam-real">
+          <strong>🔥 110 年第 28 題秒殺考點：</strong>
+          選項：<code>(A) Have (B) Had (C) Having (D) Having been</code><br>
+          原句：<em>______ completed the mission, the astronauts returned to Earth.</em><br>
+          → 動作發生在回地球「之前」，且為主動完成，答案選 <strong>(C) Having</strong>（完成分詞構句 <code>Having + p.p.</code>）。
+        </div>
+      </div>
+
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-amber">考點 2.2</span> With 複合結構（With + O + OC）</h3>
+        <div class="rule-box">
+          <strong>【公式】</strong>：<code>With + 受詞 (O) + [ V-ing (主動) / p.p. (被動) / 介系詞片語 / 形容詞 ]</code><br>
+          中文常譯為「隨著...」、「伴隨著...」、「在...的情況下」。
+          <div class="code-box">
+            • <strong>112年作文提示</strong>：<em><strong>With the increasing popularity</strong> of social media, emojis have become...</em><br>
+            • 伴隨受詞被動：<em>He sat in the chair <strong>with his eyes closed</strong>.</em>（閉著眼睛，眼睛被閉上用 closed）
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 模組三：子句與連接詞大觀園 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">3</span> 子句與連接詞大觀園（複合句完整考點全集）</h2>
+
+      <!-- 3.1 關係詞 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-blue">考點 3.1</span> 關係代名詞與「介系詞 + 關係代名詞」</h3>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">關係詞結構</th>
+              <th style="width: 35%;">文法使用規則</th>
+              <th style="width: 40%;">大考真題考點與陷阱</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>介系詞 + which/whom</strong></td>
+              <td>1. 先行詞指物用 <code>prep. + which</code><br>2. 先行詞指人用 <code>prep. + whom</code><br>3. <strong>絕對不可用</strong> <code>prep. + that</code></td>
+              <td>
+                • <strong>113年第12題</strong>：選項 <code>with which / to which</code><br>
+                • <strong>108年中翻英</strong>：<em>...for those <strong>with whom</strong> we work</em>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>逗點 + which (非限定)</strong></td>
+              <td>修飾前方<strong>整件事或整個前句</strong></td>
+              <td>
+                • <strong>106年中翻英</strong>：<em>...covered with snow, <strong>which makes</strong> the whole summit shine...</em>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>whose (所有格關代)</strong></td>
+              <td>先行詞的...（後面必定緊接名詞）</td>
+              <td>
+                • <em>a disease <strong>whose symptoms</strong> include high fever...</em>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>where / when (關係副詞)</strong></td>
+              <td><code>where = in/at which</code>（後接完整句）<br><code>when = on/in which</code></td>
+              <td>
+                • <em>the forest land <strong>where</strong> tea is grown</em>（112年考卷文本）
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 3.2 名詞子句四大引導詞 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-green">考點 3.2</span> 名詞子句四大引導詞判斷法</h3>
+        <div class="rule-box">
+          <ul style="margin-left: 20px;">
+            <li><code>that + 完整子句</code>：單純陳述事實，無中文實義。<br>
+            → <strong>112年中翻英</strong>：<em>History has proven <strong>that</strong> wars cause terrible disasters.</em></li>
+            <li><code>what + 缺少主詞或受詞的不完整子句</code>：相當於 <em>the thing(s) that...</em>，譯為「...的事物」。<br>
+            → <em>Winning a gold medal is <strong>what</strong> every athlete dreams of.</em>（106年文本）</li>
+            <li><code>whether / if + 完整子句</code>：表示「是否」（whether 可接 or not 或放句首當主詞，if 只能作動詞受詞）。</li>
+            <li><code>疑问詞 (who, how, why, when) + S + V</code>：間接問句，<strong>語序必須是平述語序（S + V），絕不能倒裝</strong>！</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3.3 介系詞 vs 連接詞對照 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-red">考點 3.3</span> 介系詞 vs 連接詞辨析（10 年全題庫匯總）</h3>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 18%;">邏輯關係</th>
+              <th style="width: 40%;">連接詞（後接 S + V 完整子句）</th>
+              <th style="width: 42%;">介系詞（後接 N / V-ing 名詞片語）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>讓步 / 雖然</strong></td>
+              <td><code>Although</code>, <code>Even though</code>, <code>While</code>, <code>Though</code></td>
+              <td><code>Despite</code>, <code>In spite of</code> (112年15題考點)</td>
+            </tr>
+            <tr>
+              <td><strong>原因 / 因為</strong></td>
+              <td><code>Because</code>, <code>Since</code>, <code>As</code>, <code>in that</code> (113/115年考點)</td>
+              <td><code>Because of</code>, <code>Due to</code>, <code>Owing to</code>, <code>Thanks to</code></td>
+            </tr>
+            <tr>
+              <td><strong>除了...之外</strong></td>
+              <td><code>except that + S + V</code></td>
+              <td><code>except for</code>, <code>apart from</code>, <code>besides</code>, <code>in addition to</code></td>
+            </tr>
+            <tr>
+              <td><strong>目的 / 為了</strong></td>
+              <td><code>so that + S + can + V</code>, <code>in order that</code></td>
+              <td><code>in order to + V</code>, <code>for the purpose of + V-ing</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- 模組四：篇章邏輯詞與大考高頻動詞片語 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">4</span> 篇章邏輯詞與大考歷屆動詞片語庫 (106~115 全收錄)</h2>
+
+      <!-- 4.1 轉折詞庫 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-amber">考點 4.1</span> 綜合測驗與篇章結構常考「邏輯信號詞」</h3>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">邏輯類型</th>
+              <th style="width: 48%;">歷屆真題選項單字</th>
+              <th style="width: 30%;">上下文關係速判</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>轉折對比</strong></td>
+              <td><code>however</code>, <code>nevertheless</code>, <code>on the other hand</code>, <code>in contrast</code>, <code>on the contrary</code>, <code>instead</code></td>
+              <td>前正後負 / 前負後正（語氣大轉彎）</td>
+            </tr>
+            <tr>
+              <td><strong>因果推論</strong></td>
+              <td><code>therefore</code>, <code>consequently</code>, <code>as a result</code>, <code>thus</code>, <code>hence</code>, <code>it turns out</code></td>
+              <td>前為因，後為果（結論推導）</td>
+            </tr>
+            <tr>
+              <td><strong>遞進增補</strong></td>
+              <td><code>furthermore</code>, <code>moreover</code>, <code>in addition</code>, <code>what is more</code>, <code>besides</code>, <code>additionally</code></td>
+              <td>同向論點加碼（好上加好）</td>
+            </tr>
+            <tr>
+              <td><strong>澄清換句話說</strong></td>
+              <td><code>in other words</code>, <code>that is to say</code>, <code>strictly speaking</code></td>
+              <td>用更通俗的話解釋前一句概念</td>
+            </tr>
+            <tr>
+              <td><strong>條件與讓步</strong></td>
+              <td><code>otherwise</code> (否則), <code>meanwhile</code> (同時), <code>likewise / similarly</code> (同樣地)</td>
+              <td>提供反面假想或平行對照</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4.2 歷屆考過的動詞片語大全 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-purple">考點 4.2</span> 歷屆 10 年綜合測驗考過的「40 組核心動詞片語」</h3>
+        <p style="font-size: 0.93rem; color: #475569; margin-bottom: 8px;">
+          大考克漏字每一年至少有 2～3 題直接考「動詞片語」。以下為 106～115 學年度試卷上出現過的全部片語彙整：
+        </p>
+
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 20%;">學年度</th>
+              <th style="width: 45%;">試卷出現之選項片語</th>
+              <th style="width: 35%;">中文釋義與必背搭配</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>106學年度</strong></td>
+              <td><code>check out</code>, <code>look into</code>, <code>watch over</code>, <code>see through</code></td>
+              <td>調查 (look into), 看守 (watch over), 看穿 (see through)</td>
+            </tr>
+            <tr>
+              <td><strong>107學年度</strong></td>
+              <td><code>refer to</code>, <code>answer for</code>, <code>take part in</code>, <code>put up with</code></td>
+              <td>提及/查閱 (refer to), 忍受 (put up with), 負責 (answer for)</td>
+            </tr>
+            <tr>
+              <td><strong>108學年度</strong></td>
+              <td><code>leads to</code>, <code>brings out</code>, <code>stems from</code>, <code>comes across</code></td>
+              <td>導致 (lead to), 源自於 (stem from), 巧遇 (come across)</td>
+            </tr>
+            <tr>
+              <td><strong>109學年度</strong></td>
+              <td><code>carry away</code>, <code>build on</code>, <code>cope with</code>, <code>get off</code></td>
+              <td>處理/應對 (cope with), 以...為基礎 (build on)</td>
+            </tr>
+            <tr>
+              <td><strong>110學年度</strong></td>
+              <td><code>set up</code>, <code>hang on</code>, <code>take over</code>, <code>break down</code><br>
+                  <code>coming after</code>, <code>getting over</code>, <code>holding on to</code>, <code>watching out for</code></td>
+              <td>克服/復原 (get over), 提防 (watch out for), 接管 (take over), 崩潰/故障 (break down)</td>
+            </tr>
+            <tr>
+              <td><strong>112學年度</strong></td>
+              <td><code>get over</code>, <code>compete for</code>, <code>give way to</code>, <code>make up for</code></td>
+              <td>讓步給 (give way to), 補償/彌補 (make up for), 競爭 (compete for)</td>
+            </tr>
+            <tr>
+              <td><strong>113學年度</strong></td>
+              <td><code>call for</code>, <code>pose as</code>, <code>attend to</code>, <code>engage in</code></td>
+              <td>呼籲/需要 (call for), 從事 (engage in), 照料 (attend to), 冒充 (pose as)</td>
+            </tr>
+            <tr>
+              <td><strong>114學年度</strong></td>
+              <td><code>made up for</code>, <code>kept track of</code>, <code>gave rise to</code>, <code>looked out for</code></td>
+              <td>引起/導致 (give rise to), 記錄/追蹤 (keep track of), 彌補 (make up for)</td>
+            </tr>
+            <tr>
+              <td><strong>115學年度</strong></td>
+              <td><code>passed on to</code>, <code>brought up as</code>, <code>thought to have</code>, <code>meant to be</code></td>
+              <td>傳承給 (pass on to), 撫養為 (bring up as), 命中注定 (meant to be)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- 模組五：中翻英歷屆 20 題詳解 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">5</span> 中翻英 106~115 歷屆 20 題「句型與考點全剖析」</h2>
+      <p style="font-size: 0.93rem; color: #475569; margin-bottom: 14px;">
+        大考中心官方評分原則：每題 4 分（共 8 分），每個結構錯誤扣 0.5~1 分。以下為近 10 年 20 題的<strong>命題考點拆解與官方滿分示範</strong>：
+      </p>
+
+      <!-- 106 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【106 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：玉山在冬天常常覆蓋著厚厚的積雪，使整個山頂閃耀如玉。</strong><br>
+          • <strong>考點</strong>：被動 <code>be covered with thick snow</code> + 使役動詞受詞補語 <code>making the entire summit shine like jade</code> 或非限定關代 <code>, which makes...</code>。</li>
+          <li><strong>題 2：征服玉山一直是國內外登山者最困難的挑戰之一。</strong><br>
+          • <strong>考點</strong>：動名詞主詞 <code>Conquering Jade Mountain</code> + 現在完成式 <code>has always been one of the most difficult challenges...</code>。</li>
+        </ul>
+      </div>
+
+      <!-- 107 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【107 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：近年來，有越來越多超級颱風，通常造成嚴重災害。</strong><br>
+          • <strong>考點</strong>：<code>In recent years, there have been an increasing number of super typhoons, (which) usually causing/cause serious disasters.</code></li>
+          <li><strong>題 2：颱風來襲時，我們應準備足夠的食物，並待在室內，若有必要，應迅速移動至安全的地方。</strong><br>
+          • <strong>考點</strong>：時間子句 <code>When a typhoon strikes</code> + 對等連接詞 <code>prepare... and stay...</code> + 條件省略句 <code>if necessary</code>。</li>
+        </ul>
+      </div>
+
+      <!-- 108 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【108 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：自2007年營運以來，高鐵已成為臺灣最便利、最快速的交通工具之一。</strong><br>
+          • <strong>考點</strong>：<code>Since its operation in 2007, the High Speed Rail has become one of the most convenient and fastest means of transportation in Taiwan.</code>（注意：means 單複數同形）。</li>
+          <li><strong>題 2：對於強調職場效率的人而言，高鐵當然是商務旅行的首選。</strong><br>
+          • <strong>考點</strong>：關係代名詞修飾 <code>For people who emphasize workplace efficiency, the HSR is undoubtedly the top choice for business trips.</code></li>
+        </ul>
+      </div>
+
+      <!-- 109 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【109 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：我們有時會違背自己的意願去做某些事情，就只為了要取悅朋友。</strong><br>
+          • <strong>考點</strong>：違背意願 <code>against our will</code> + 不定詞目的 <code>simply to please friends / in order to please friends</code>。</li>
+          <li><strong>題 2：其實，在面對同儕壓力的時候，我們應該學習堅持自己的原則。</strong><br>
+          • <strong>考點</strong>：時間分詞構句 <code>In fact, when facing peer pressure, we should learn to stick to/adhere to our principles.</code></li>
+        </ul>
+      </div>
+
+      <!-- 110 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【110 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：根據新聞報導，每年全球有超過百萬人在道路事故中喪失性命。</strong><br>
+          • <strong>考點</strong>：<code>According to news reports, more than one million people worldwide lose their lives in traffic/road accidents every year.</code></li>
+          <li><strong>題 2：因此，交通法規必須嚴格執行，以確保所有用路人的安全。</strong><br>
+          • <strong>考點</strong>：被動態 <code>Therefore, traffic regulations must be strictly enforced (so as) to ensure the safety of all road users.</code></li>
+        </ul>
+      </div>
+
+      <!-- 111 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【111 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：飼養寵物並非一項短暫的人生體驗，而是一個對動物的終生承諾。</strong><br>
+          • <strong>考點</strong>：動名詞主詞 <code>Keeping/Raising pets</code> + 對稱結構 <code>is not a temporary life experience, but a lifelong commitment to animals.</code></li>
+          <li><strong>題 2：在享受寵物所帶來的歡樂時，我們不該忽略要善盡照顧他們的責任。</strong><br>
+          • <strong>考點</strong>：<code>While enjoying the pleasure brought by pets, we should not ignore our responsibility to take good care of them.</code></li>
+        </ul>
+      </div>
+
+      <!-- 112 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【112 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：歷史一再證明，戰爭會造成極為可怕的災難。</strong><br>
+          • <strong>考點</strong>：現在完成式 + 名詞子句 <code>History has repeatedly proven that war causes extremely terrible disasters.</code></li>
+          <li><strong>題 2：避免衝突、確保世界和平應該是所有人類追求的目標。</strong><br>
+          • <strong>考點</strong>：雙動名詞主詞 <code>Avoiding conflicts and ensuring world peace should be a goal (that is) pursued by all humanity.</code></li>
+        </ul>
+      </div>
+
+      <!-- 113 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【113 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：每逢選舉季節，總會看到政治人物造訪各地著名廟宇。</strong><br>
+          • <strong>考點</strong>：時間子句 <code>Whenever election season arrives</code> + 感官被動 <code>politicians can always be seen visiting famous temples across the country.</code></li>
+          <li><strong>題 2：除了祈求好的選舉結果，他們也希望展現對在地文化與習俗的尊重。</strong><br>
+          • <strong>考點</strong>：<code>Besides/In addition to praying for good election results, they also hope to demonstrate/show respect for local cultures and customs.</code></li>
+        </ul>
+      </div>
+
+      <!-- 114 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【114 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：人類的想像和創意是科技進步最大的驅動力。</strong><br>
+          • <strong>考點</strong>：<code>Human imagination and creativity are the greatest driving force behind technological advancement/progress.</code></li>
+          <li><strong>題 2：過去在科幻電影中出現的神奇物件，現在正逐一成真。</strong><br>
+          • <strong>考點</strong>：分詞後位修飾 <code>Magical objects appearing in science fiction movies in the past are now coming true one by one.</code></li>
+        </ul>
+      </div>
+
+      <!-- 115 -->
+      <div class="sub-block">
+        <h4 style="color: var(--primary); font-weight: 700;">【115 學年度】</h4>
+        <ul style="font-size: 0.92rem; margin-left: 20px;">
+          <li><strong>題 1：現在越來越多高中英文老師已經增加在課堂上使用英文的百分比。</strong><br>
+          • <strong>考點</strong>：<code>Currently, an increasing number of high school English teachers have increased the percentage of using English in class.</code></li>
+          <li><strong>題 2：他們將學生依英語能力分成不同組別，進行多樣的聽、說活動。</strong><br>
+          • <strong>考點</strong>：動詞搭配 <code>divide students into different groups according to their English proficiency</code> + 伴隨分詞構句 <code>conducting diverse listening and speaking activities.</code></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 模組六：文意選填與篇章結構破題密技 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">6</span> 文意選填與篇章結構「題型定位破題密技」</h2>
+
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-blue">密技 6.1</span> 文意選填（填空題）：八大詞性語法定位公式</h3>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">空格前後文法環境</th>
+              <th style="width: 25%;">目標詞性 (POS)</th>
+              <th style="width: 50%;">大考歷屆真題實例說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>can / will / should + [　]</code></td>
+              <td><strong>原形動詞 (V)</strong></td>
+              <td>助動詞後必定接原形動詞：<em>...will [ trigger ] a chain reaction.</em></td>
+            </tr>
+            <tr>
+              <td><code>to + [　] + 名詞/受詞</code></td>
+              <td><strong>及物動詞原形 (Vt)</strong></td>
+              <td>不定詞表目的：<em>...in order to [ preserve ] the environment.</em></td>
+            </tr>
+            <tr>
+              <td><code>have / has / had + [　]</code></td>
+              <td><strong>過去分詞 (p.p.)</strong></td>
+              <td>現在完成式或過去完成式：<em>...has [ evolved ] over centuries.</em></td>
+            </tr>
+            <tr>
+              <td><code>be動詞 + [　] + by / with</code></td>
+              <td><strong>過去分詞 (p.p.)</strong></td>
+              <td>被動語態：<em>...was [ established ] by the committee.</em></td>
+            </tr>
+            <tr>
+              <td><code>be動詞 + [　]</code></td>
+              <td><strong>形容詞 (adj.)</strong></td>
+              <td>主詞補語形容詞：<em>...is highly [ contagious ].</em></td>
+            </tr>
+            <tr>
+              <td><code>冠詞(a/the) + [　] + 名詞</code></td>
+              <td><strong>形容詞 (adj.)</strong></td>
+              <td>修飾後方名詞：<em>...an [ innovative ] design.</em></td>
+            </tr>
+            <tr>
+              <td><code>介系詞 prep. + [　]</code></td>
+              <td><strong>名詞 (N) / 動名詞 (V-ing)</strong></td>
+              <td>介系詞受詞：<em>...with great [ enthusiasm ].</em></td>
+            </tr>
+            <tr>
+              <td><code>[　], S + V + O.</code></td>
+              <td><strong>轉折副詞 (adv.) / 分詞</strong></td>
+              <td>句首修飾整句：<em>[ Surprisingly ], no one was injured.</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-green">密技 6.2</span> 篇章結構（31~34題）四大銜接密碼</h3>
+        <div class="rule-box">
+          <strong>【解題核心四部曲】</strong>：
+          <ol style="margin-left: 20px; margin-top: 6px;">
+            <li><strong>代名詞回指鏈（Pronoun Reference）</strong>：若選項有 <code>They</code>、<code>This</code>、<code>These problems</code>、<code>Such devices</code>，前一句必定有相對應的複數名詞或具體問題！</li>
+            <li><strong>轉折信號對應（Contrast Signals）</strong>：若選項以 <code>However</code>、<code>In contrast</code> 開頭，前一句的語意一定和該選項完全相反。</li>
+            <li><strong>因果延伸（Cause and Effect）</strong>：若選項以 <code>Consequently</code>、<code>As a result</code> 開頭，前一句必定交代了原因或事件起因。</li>
+            <li><strong>時序發展（Chronological Sequence）</strong>：注意 <code>At first</code> → <code>Later</code> → <code>Eventually</code>，或年份世紀（<em>In the 18th century... By the 1950s...</em>）的時間遞進鏈。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-amber">密技 6.3</span> 作文句型升級：五大「頂標句型改造模板」</h3>
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">寫作意圖</th>
+              <th style="width: 35%;">一般學生寫法（普通句）</th>
+              <th style="width: 40%;">大考滿分升級寫法（頂標句）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>描述雙重特點</strong></td>
+              <td>It is convenient and it is cheap.</td>
+              <td><strong>Not only... but also 倒裝句</strong>：<br><code>Not only is it convenient, but it is also remarkably affordable.</code></td>
+            </tr>
+            <tr>
+              <td><strong>描述因果/心理</strong></td>
+              <td>I was afraid so I ran away.</td>
+              <td><strong>形容詞片語置於句首</strong>：<br><code>Terrified by the sudden noise, I fled the scene without hesitation.</code></td>
+            </tr>
+            <tr>
+              <td><strong>提出唯一解方</strong></td>
+              <td>We can only succeed if we work hard.</td>
+              <td><strong>Only by + 倒裝句</strong>：<br><code>Only by working hand in hand can we overcome this daunting challenge.</code></td>
+            </tr>
+            <tr>
+              <td><strong>承認缺點但反駁</strong></td>
+              <td>Although AI is useful, it has risks.</td>
+              <td><strong>形容詞 + as + S + be 倒裝</strong>：<br><code>Useful as artificial intelligence is, its potential hazards cannot be ignored.</code></td>
+            </tr>
+            <tr>
+              <td><strong>強調核心事實</strong></td>
+              <td>Her dedication impressed everyone.</td>
+              <td><strong>It is... that 分裂強調句</strong>：<br><code>It was her unwavering dedication that deeply impressed every judge.</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

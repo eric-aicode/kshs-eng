@@ -1,0 +1,13 @@
+搭配此簡報
+https://docs.google.com/presentation/d/171o56ypghMDzsowJpBqJUQXTdQH0HjucXlCKIirSN2g/edit?slide=id.p1#slide=id.p1
+
+評分標準
+https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111569514236767793
+
+【學測英文滿級分必備專屬互動系統】
+1. 學測英文1500組滿級分搭配詞大典.html
+2. master_collocations_1500.json
+3. 學測英文歷屆詞彙題全解析資料庫.html
+4. vocab_questions_database.json
+5. 學測英文試卷架構與七大題型破題全攻略.html
+6. 學測英文高頻文法與考點破題講義.html

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學測英文滿級分神盾備考系統 | CEEC English Mastery Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-dark: #0f172a;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --success: #059669;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #090e17 0%, #0f172a 40%, #1e3a8a 100%);
+      color: white;
+      padding: 64px 24px 56px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fde047;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 760px;
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    /* Live Player Ribbon (Sticky or inside Hero) */
+    .live-status-bar {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .user-avatar {
+      font-size: 2rem;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+    .user-info-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .user-level-badge {
+      font-size: 0.8rem;
+      background: #ef4444;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 900;
+    }
+    .user-subtitle {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .status-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .due-pill {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+    .btn-hero-launch {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #0f172a;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      transition: all 0.2s;
+    }
+    .btn-hero-launch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+      color: white;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1140px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+    }
+
+    /* Section Titles */
+    .section-header {
+      margin-bottom: 24px;
+    }
+    .section-eyebrow {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary-light);
+      margin-bottom: 4px;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    /* Modules Grid */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 768px) {
+      .modules-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.1rem; }
+    }
+
+    .module-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      border-color: #cbd5e1;
+    }
+    .module-card.featured {
+      border: 2px solid #3b82f6;
+      background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+    }
+    .module-card.featured::after {
+      content: 'CORE SYSTEM';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .module-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+    .icon-blue { background: #eff6ff; color: #2563eb; }
+    .icon-amber { background: #fffbeb; color: #d97706; }
+    .icon-green { background: #ecfdf5; color: #059669; }
+    .icon-purple { background: #f5f3ff; color: #7c3aed; }
+
+    .module-name {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .module-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .module-features {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .module-features li {
+      font-size: 0.86rem;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .module-features li span { color: #10b981; font-weight: 900; }
+
+    .btn-module {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-module.primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-module.primary:hover { background: #1e40af; }
+    .btn-module.secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-module.secondary:hover { background: #e2e8f0; color: #0f172a; }
+
+    /* Timeline Roadmap Section */
+    .timeline-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 48px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (max-width: 900px) {
+      .stages-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .stages-grid { grid-template-columns: 1fr; }
+    }
+    .stage-box {
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 18px 16px;
+      border-top: 4px solid var(--primary);
+      transition: all 0.2s;
+    }
+    .stage-box:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .stage-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .stage-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .stage-duration {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #d97706;
+      background: #fef3c7;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .stage-desc {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    /* Big Data Highlight Box */
+    .insights-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 48px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .insights-header {
+      margin-bottom: 24px;
+    }
+    .insights-header h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .insights-grid { grid-template-columns: 1fr; }
+    }
+    .insight-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #38bdf8;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+    .stat-desc {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 32px;
+      color: #64748b;
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-tag">CEEC English Mastery Architecture</div>
+      <h1>學測英文滿級分神盾備考系統</h1>
+      <p class="hero-lead">專為「高二上學期學生」量身定制的 90 天極速掌握計畫。全面整合大考中心歷屆詞彙大數據、艾賓浩斯間隔重複演算法、1,500組滿級分搭配詞典與作文高分鷹架。</p>
+      
+      <!-- Live Status Bar -->
+      <div class="live-status-bar" id="liveStatusBar">
+        <div class="status-left">
+          <div class="user-avatar" id="portalAvatar">🎯</div>
+          <div>
+            <div class="user-info-title">
+              <span id="portalNick">學測戰士</span>
+              <span class="user-level-badge" id="portalLevel">Lv. 1 詞彙新兵</span>
+            </div>
+            <div class="user-subtitle">
+              累積 EXP: <strong id="portalExp" style="color:#fde047;">0</strong> ｜ 連勝紀錄: <strong id="portalStreak">0</strong> 題
+            </div>
+          </div>
+        </div>
+        
+        <div class="status-right">
+          <div class="due-pill" id="portalDuePill">🔥 今日待複習：0 題</div>
+          <a href="vocab-quiz.html" class="btn-hero-launch">⚔️ 進入 15 級分自測系統 →</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- 4 Modules Section -->
+    <section>
+      <div class="section-header">
+        <div class="section-eyebrow">Core Modules</div>
+        <h2 class="section-title">四大滿級分核心系統</h2>
+      </div>
+
+      <div class="modules-grid">
+        
+        <!-- Module 1: Vocab Quiz (Featured) -->
+        <div class="module-card featured">
+          <div>
+            <div class="module-icon-wrap icon-blue">🎯</div>
+            <h3 class="module-name">詞彙題 15 級分 RPG 測驗系統</h3>
+            <p class="module-desc">收錄 106~115 全 125 題大考中心官方真題，搭載艾賓浩斯 5 階記憶盒子演算法，錯題自動排程重現，邊玩邊升級。</p>
+            <ul class="module-features">
+              <li><span>✓</span> 15 級分天梯段位、EXP 經驗值與連勝加成</li>
+              <li><span>✓</span> Leitner 間隔重複排程（1天、3天、7天、14天、30天）</li>
+              <li><span>✓</span> 官方答案、考綱等級、題幹全翻譯與寫作鷹架</li>
+              <li><span>✓</span> LocalStorage 本地存檔 ＋ JSON 一鍵匯出/匯入</li>
+            </ul>
+          </div>
+          <a href="vocab-quiz.html" class="btn-module primary">啟動詞彙 RPG 測驗 →</a>
+        </div>
+
+        <!-- Module 2: Collocations -->
+        <div class="module-card">
+          <div>
+            <div class="module-icon-wrap icon-amber">📖</div>
+            <h3 class="module-name">1,500 組滿級分核心搭配詞大典</h3>
+            <p class="module-desc">學測詞彙題高達 84.8% 考查搭配詞！五大核心情境主題分類，秒殺 V+N、Adj+N、V+Prep 關鍵破題組合。</p>
+            <ul class="module-features">
+              <li><span>✓</span> 5 大生活與學術主題（300 組/主題）</li>
+              <li><span>✓</span> 動詞、形容詞、介係詞強搭配詞結構拆解</li>
+              <li><span>✓</span> 大考中心詞彙等級 (Level 3~5) 全標註</li>
+              <li><span>✓</span> 翻卡抽測模式與星號收藏功能</li>
+            </ul>
+          </div>
+          <a href="collocations.html" class="btn-module secondary">瀏覽 1500 組搭配詞典 →</a>
+        </div>
+
+        <!-- Module 3: Writing Guide -->
+        <div class="module-card">
+          <div>
+            <div class="module-icon-wrap icon-green">✍️</div>
+            <h3 class="module-name">學測英文作文滿級分自學講義</h3>
+            <p class="module-desc">從大考中心四大評分規準切入，提供看圖寫作、雙圖選擇、論說文滿分鷹架，將詞彙題所學無痛轉化為 20 分作文武器。</p>
+            <ul class="module-features">
+              <li><span>✓</span> 內容 (Content) & 組織 (Organization) 核心架構</li>
+              <li><span>✓</span> 高分轉折詞與複雜句型（分詞、倒裝、名詞子句）</li>
+              <li><span>✓</span> 各類題型滿分範文精選剖析</li>
+            </ul>
+          </div>
+          <a href="writing-guide.html" class="btn-module secondary">閱讀作文自學講義 →</a>
+        </div>
+
+        <!-- Module 4: Grammar Guide -->
+        <div class="module-card">
+          <div>
+            <div class="module-icon-wrap icon-purple">📐</div>
+            <h3 class="module-name">歷屆文法考點大全與試卷破題</h3>
+            <p class="module-desc">深度解析綜合測驗（克漏字）、文意選填、篇章結構與閱讀測驗。建立「語意結構＋文法規則」雙軌解題直覺。</p>
+            <ul class="module-features">
+              <li><span>✓</span> 克漏字常考 10 大文法盲點徹底破解</li>
+              <li><span>✓</span> 文意選填 10 秒定位詞性結構技術</li>
+              <li><span>✓</span> 篇章結構前後邏輯連貫信號詞全彙整</li>
+            </ul>
+          </div>
+          <a href="grammar-guide.html" class="btn-module secondary">查看文法考點大全 →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 90-Day Roadmap Section -->
+    <section>
+      <div class="section-header">
+        <div class="section-eyebrow">Study Syllabus</div>
+        <h2 class="section-title">高二上學期 90 天極速掌握進度表</h2>
+      </div>
+
+      <div class="timeline-card">
+        <p style="color:#64748b; font-size:0.95rem;">
+          高二上開始備考擁有超過 14 個月的戰略優勢。每日僅需 <strong>15~20 分鐘</strong>，絕不干擾學校段考，以微習慣穩健登頂 15 級分。
+        </p>
+
+        <div class="stages-grid">
+          <div class="stage-box">
+            <div class="stage-num">Stage 1</div>
+            <div class="stage-title">真題破壁・建立題感</div>
+            <div class="stage-duration">Day 1 ~ Day 21 (3週)</div>
+            <p class="stage-desc">完成 106~115 全 125 題歷屆官方真題。掌握 3動、3名、3形、1副出題規律，衝刺至 Lv.7「搭配詞獵人」。</p>
+          </div>
+
+          <div class="stage-box">
+            <div class="stage-num">Stage 2</div>
+            <div class="stage-title">主題攻堅・無死角網羅</div>
+            <div class="stage-duration">Day 22 ~ Day 63 (6週)</div>
+            <p class="stage-desc">精熟 1,500 組主題搭配詞，同時消化艾賓浩斯錯題盒子。將題目選項句型轉化為作文鷹架，升上 Lv.11。</p>
+          </div>
+
+          <div class="stage-box">
+            <div class="stage-num">Stage 3</div>
+            <div class="stage-title">五級魔王題與陷阱排雷</div>
+            <div class="stage-duration">Day 64 ~ Day 84 (3週)</div>
+            <p class="stage-desc">鎖定 Level 5 鑑別度字彙與 50 組「形音易混淆字（adapt/adopt 等）」，看破誘答陷阱，升上 Lv.14「頂標先鋒」。</p>
+          </div>
+
+          <div class="stage-box">
+            <div class="stage-num">Stage 4</div>
+            <div class="stage-title">極速秒殺與滿級分固化</div>
+            <div class="stage-duration">Day 85 ~ Day 90 (1週)</div>
+            <p class="stage-desc">全真隨機 10 題限時 3.5 分鐘盲測。將所有 Box 1 錯題徹底清零晉升至 Box 5，登頂 Lv.15「學測滿級分戰神」。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Big Data Insights -->
+    <section>
+      <div class="insights-card">
+        <div class="insights-header">
+          <div style="font-size:0.8rem; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Big Data Analytics</div>
+          <h3>大考中心歷屆試題大數據提煉結果</h3>
+          <p style="color:#94a3b8; font-size:0.9rem;">基於 106 ~ 115 學測全試卷真實題庫統計，徹底粉碎盲目死背單字書的低效策略。</p>
+        </div>
+
+        <div class="insights-grid">
+          <div class="insight-stat">
+            <div class="stat-number">0%</div>
+            <div class="stat-label">官方答案重複率</div>
+            <div class="stat-desc">歷屆 125 題答案單字 100% 完全不重複！死背歷屆正解是徒勞，真正會重複輪替的是「誘答選項」。</div>
+          </div>
+
+          <div class="insight-stat">
+            <div class="stat-number">84.8%</div>
+            <div class="stat-label">搭配詞出題佔比</div>
+            <div class="stat-desc">高達 106 題答案直接由前後 2~3 個單字的慣用語 (Collocation) 決定。掌握搭配詞就能一眼秒殺答案。</div>
+          </div>
+
+          <div class="insight-stat">
+            <div class="stat-number">3:3:3:1</div>
+            <div class="stat-label">黃金詞性配比</div>
+            <div class="stat-desc">每回 10 題嚴格固定「3動詞、3名詞、3形容詞、1副詞」，且每題 4 個選項皆同詞性同形式，不可抱僥倖心理。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 學測英文滿級分智能備考系統 (CEEC English Mastery Platform)</p>
+      <p style="margin-top:4px; font-size:0.78rem;">專為高二學生量身規劃・支援 GitHub Pages 離線與全平台存檔</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sync status from LocalStorage
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        const raw = localStorage.getItem('CEEC_VOCAB_RPG_DATA_v2');
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (data && data.profile) {
+            const p = data.profile;
+            const titles = ["", "詞彙新兵", "題意初探者", "基礎斥候", "單字獵犬", "語感學徒", "四級字破壁者", "搭配詞獵人", "語境鎖定者", "題型掌控者", "邏輯破題大師", "前標守護者", "五級字魔王剋星", "誘答陷阱粉碎者", "頂標先鋒將軍", "學測滿級分戰神"];
+            
+            document.getElementById('portalNick').textContent = p.nickname || "學測戰士";
+            document.getElementById('portalLevel').textContent = `Lv. ${p.level} ${titles[p.level] || '詞彙新兵'}`;
+            document.getElementById('portalExp').textContent = p.exp;
+            document.getElementById('portalStreak').textContent = p.streak;
+            
+            // Due count
+            let dueCount = 0;
+            const now = new Date();
+            if (data.questions) {
+              for (let k in data.questions) {
+                const q = data.questions[k];
+                if (q.answered && q.nextReview && new Date(q.nextReview) <= now) {
+                  dueCount++;
+                }
+              }
+            }
+            const dueEl = document.getElementById('portalDuePill');
+            if (dueEl) {
+              dueEl.textContent = `🔥 今日待複習：${dueCount} 題`;
+              if (dueCount > 0) {
+                dueEl.style.background = '#ef4444';
+                dueEl.style.color = '#ffffff';
+                dueEl.style.fontWeight = '900';
+              }
+            }
+          }
+        }
+      } catch(e) {
+        console.log("No existing profile found:", e);
+      }
+    });
+  </script>
+</body>
+</html>

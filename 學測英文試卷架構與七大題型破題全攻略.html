@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學測英文試卷架構與七大題型破題全攻略 (111~115新制標準)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --accent: #d97706;
+      --success: #059669;
+      --purple: #7c3aed;
+      --rose: #e11d48;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --code-bg: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 90px;
+    }
+
+    /* Header Bar */
+    .header-bar {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: white;
+      padding: 30px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .header-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-title-box { max-width: 780px; }
+    .badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.15);
+      padding: 3px 12px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+    h1 { font-size: 1.95rem; font-weight: 900; line-height: 1.3; margin-bottom: 6px; }
+    .subtitle { font-size: 0.98rem; color: #cbd5e1; }
+
+    .print-btn {
+      background: #ffffff;
+      color: var(--primary);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .print-btn:hover { background: #f1f5f9; transform: translateY(-1px); }
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 1040px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Metrics Grid */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .metric-title { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+    .metric-value { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .metric-sub { font-size: 0.84rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.05);
+      break-inside: avoid;
+    }
+    .section-title {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+    }
+    .section-title .num-badge {
+      background: var(--primary);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Type Card Item */
+    .type-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      background: #ffffff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .type-card:hover {
+      box-shadow: 0 6px 16px -2px rgba(0,0,0,0.08);
+      border-color: #cbd5e1;
+    }
+    .type-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 10px;
+    }
+    .type-name { font-size: 1.18rem; font-weight: 800; color: #1e293b; display: flex; align-items: center; gap: 8px; }
+    .type-meta {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      background: #eff6ff;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    /* Badges & Tags */
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 6px;
+    }
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-green { background: #dcfce7; color: #166534; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-red { background: #fee2e2; color: #991b1b; }
+    .tag-purple { background: #f3e8ff; color: #6b21a8; }
+
+    /* Callouts */
+    .rule-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--primary-light);
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-size: 0.93rem;
+    }
+    .rule-box strong { color: #1e3a8a; }
+
+    .danger-box {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-size: 0.92rem;
+      color: #991b1b;
+    }
+
+    .tip-box {
+      background: #fefce8;
+      border-left: 4px solid #eab308;
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-size: 0.92rem;
+      color: #854d0e;
+    }
+
+    /* Pacing Timeline Table */
+    .pace-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.93rem;
+    }
+    .pace-table th {
+      background: #f1f5f9;
+      text-align: left;
+      padding: 11px 16px;
+      border-bottom: 2px solid var(--border);
+      color: #334155;
+      font-weight: 700;
+    }
+    .pace-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+      vertical-align: middle;
+    }
+    .pace-table tr:hover td { background: #f8fafc; }
+
+    .time-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e0e7ff;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Quick Links Box */
+    .nav-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .nav-box-title { font-weight: 800; font-size: 0.95rem; color: #334155; margin-right: 6px; }
+    .nav-link-btn {
+      text-decoration: none;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .nav-link-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Print styles */
+    @media print {
+      body { background: white; color: black; padding-bottom: 0; }
+      .header-bar {
+        background: none;
+        color: black;
+        border-bottom: 2px solid black;
+        padding: 12px 0;
+        box-shadow: none;
+      }
+      .badge, .print-btn, .nav-box { display: none; }
+      h1 { font-size: 1.6rem; color: black; }
+      .subtitle { color: #444; }
+      .main-wrap { max-width: 100%; margin: 10px 0; padding: 0; }
+      .section-card {
+        border: none;
+        box-shadow: none;
+        padding: 12px 0;
+        margin-bottom: 18px;
+        border-bottom: 1px solid #ccc;
+        break-inside: avoid;
+      }
+      .type-card {
+        border: 1px solid #ddd;
+        box-shadow: none;
+        padding: 10px 14px;
+        margin-bottom: 14px;
+        break-inside: avoid;
+      }
+      .section-title { color: black; border-bottom: 1px solid #999; }
+      .section-title .num-badge { background: black; color: white; }
+      .rule-box, .danger-box, .tip-box {
+        background: #f9f9f9;
+        border-left: 3px solid #333;
+        color: black;
+        padding: 8px 12px;
+      }
+      .pace-table th { background: #eee; color: black; border-bottom: 1px solid black; }
+      .pace-table td { border-bottom: 1px solid #ccc; color: black; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <div class="header-container">
+      <div class="header-title-box">
+        <span class="badge">108課綱 111~115 學測最新官方標準</span>
+        <h1>學測英文試卷架構與七大題型破題全攻略</h1>
+        <p class="subtitle">深度透視全卷三大板塊、七大題型分佈、命題指標能力、新舊課綱演變差異與實戰 100 分鐘黃金配速指南。</p>
+      </div>
+      <div>
+        <button class="print-btn" onclick="window.print()">🖨️ 列印 / 另存 PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- 相關講義快捷導航 -->
+    <div class="nav-box">
+      <span class="nav-box-title">📚 全套自學輔助資源：</span>
+      <a href="學測英文作文自學講義.html" class="nav-link-btn">✍️ 英文作文自學講義</a>
+      <a href="學測歷屆試題單字分析儀表板.html" class="nav-link-btn">📊 歷屆單字大數據儀表板</a>
+      <a href="學測英文歷屆文法考點完整大全.html" class="nav-link-btn">📘 歷屆文法考點大全</a>
+    </div>
+
+    <!-- 0. 全卷結構數據概覽 -->
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-title">考試總時間</div>
+        <div class="metric-value">100 分鐘</div>
+        <div class="metric-sub">時間非常緊湊，配速是決勝關鍵</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">全卷總滿分</div>
+        <div class="metric-value">100 分</div>
+        <div class="metric-sub">折合學測 15 級分標準計分制</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">第壹部分：選擇題</div>
+        <div class="metric-value">62 分 (62%)</div>
+        <div class="metric-sub">共 46 題（詞彙、克漏、選填、篇章、閱讀）</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">第貳/參部分：手寫與素養</div>
+        <div class="metric-value">38 分 (38%)</div>
+        <div class="metric-sub">混合題 10 分 + 中翻英 8 分 + 作文 20 分</div>
+      </div>
+    </div>
+
+    <!-- 模組一：七大題型深度剖析 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">1</span> 學測英文最新「七大題型」規格與破題攻略</h2>
+
+      <!-- 題型 1 -->
+      <div class="type-card">
+        <div class="type-header">
+          <div class="type-name">
+            <span class="tag tag-blue">題型一</span> 詞彙題（單字題）
+          </div>
+          <div class="type-meta">第 1 ~ 10 題 ｜ 共 10 題 ｜ 占 10 分（每題 1 分）</div>
+        </div>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【題型規格】</strong>：4 選 1 單選題，每題一個英文長句挖一個空格，從 (A)(B)(C)(D) 選出最合適單字。
+        </p>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【命題核心】</strong>：範圍嚴格鎖定在高中考綱 1～5 級詞彙（以 3～4 級為核心骨幹，5 級鑑別高分）。重點在<strong>「慣用搭配詞（Collocations）」</strong>而非死板的中文翻譯。
+        </p>
+        <div class="tip-box">
+          <strong>💡 實戰破題心法：</strong>
+          看空格前後搭配的<strong>「動詞 + 名詞」</strong>或<strong>「動詞 + 介系詞」</strong>（例如見到 <em>a state of emergency</em> 就知配 <em>declared</em>；見到 <em>peer pressure</em> 配 <em>cope with</em>）。目標配速：<strong>10 題在 8~10 分鐘內解決</strong>，不卡關！
+        </div>
+      </div>
+
+      <!-- 題型 2 -->
+      <div class="type-card">
+        <div class="type-header">
+          <div class="type-name">
+            <span class="tag tag-amber">題型二</span> 綜合測驗（克漏字）
+          </div>
+          <div class="type-meta">第 11 ~ 20 題 ｜ 共 2 篇（每篇 5 題） ｜ 占 10 分（每題 1 分）</div>
+        </div>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【題型規格】</strong>：兩篇短文，每篇挖 5 個空格，每題提供 4 個選項。
+        </p>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【命題核心】</strong>：文法與邏輯的綜合體。包含：<strong>分詞構句 (V-ing/p.p.)</strong>、<strong>時態與助動詞推測 (must have p.p.)</strong>、<strong>動詞片語搭配</strong>、以及<strong>篇章轉折詞 (however, therefore)</strong>。
+        </p>
+        <div class="tip-box">
+          <strong>💡 實戰破題心法：</strong>
+          先看選項是「文法詞」還是「字彙詞」。若四個選項是動詞的不同變形（如 <em>installing / installed / to install</em>），直接在句子中<strong>找真正主詞判斷主被動</strong>；若選項是片語或轉折詞，看<strong>前後兩句的因果與對比關係</strong>。
+        </div>
+      </div>
+
+      <!-- 題型 3 -->
+      <div class="type-card">
+        <div class="type-header">
+          <div class="type-name">
+            <span class="tag tag-green">題型三</span> 文意選填（填空題）
+          </div>
+          <div class="type-meta">第 21 ~ 30 題 ｜ 共 1 篇 10 格 ｜ 占 10 分（每題 1 分）</div>
+        </div>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【題型規格】</strong>：一篇科普或人文散文，挖出 10 個空格，文章下方提供 (A) 到 (J) 共 10 個單字選項。
+        </p>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【命題核心】</strong>：評量學生的<strong>「詞性句法結構定位能力」</strong>與語境精確搭配。不倒扣。
+        </p>
+        <div class="tip-box">
+          <strong>💡 實戰破題心法（五大詞性定位法）：</strong>
+          <strong>千萬不要逐字翻譯套中文！</strong> 先花 30 秒把 A~J 的單字標出 <code>V</code>、<code>N</code>、<code>adj</code>、<code>adv</code>。看空格前後文法（如助動詞後必定接原形動詞 V、冠詞後接形容詞 adj），將 10 選 1 縮小為 2 選 1 後再依文意決定。
+        </div>
+      </div>
+
+      <!-- 題型 4 -->
+      <div class="type-card">
+        <div class="type-header">
+          <div class="type-name">
+            <span class="tag tag-purple">題型四</span> 篇章結構（段落銜接）
+          </div>
+          <div class="type-meta">第 31 ~ 34 題 ｜ 共 1 篇 4 格 ｜ 占 8 分（每題 2 分）</div>
+        </div>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【題型規格】</strong>：一篇文章挖出 4 個完整句子，文章下方給予 (A) 到 (E) 共 5 個句子選項，從中選出 4 個正確句子填入（<strong>5 選 4</strong>）。
+        </p>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【命題核心】</strong>：111 年新課綱起從「指考（現分科測驗）」正式移入學測，112 年起改為「5 選 4」防止學生用消去法。評量<strong>文章段落鋪陳、承先啟後的邏輯、代名詞回指</strong>。
+        </p>
+        <div class="tip-box">
+          <strong>💡 實戰破題心法：</strong>
+          專抓選項中的<strong>「代名詞（They, This, Such）」</strong>與<strong>「轉折詞（However, As a result, Meanwhile）」</strong>。選項出現 <em>These devices...</em>，空格前一句必然有具體的科技裝置名稱！
+        </div>
+      </div>
+
+      <!-- 題型 5 -->
+      <div class="type-card">
+        <div class="type-header">
+          <div class="type-name">
+            <span class="tag tag-blue">題型五</span> 閱讀測驗（長篇閱讀）
+          </div>
+          <div class="type-meta">第 35 ~ 46 題 ｜ 共 3~4 篇長文（共 12 題） ｜ 占 24 分（每題 2 分）</div>
+        </div>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【題型規格】</strong>：3～4 篇主題多元的長文（歷史文化、動物生態、醫學心理、尖端科技），每篇文章附 3～4 題單選題。全卷選擇題中<strong>配分最高（占 24 分）</strong>！
+        </p>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【命題核心】</strong>：評量<strong>主旨題（Main idea / Best title）</strong>、<strong>事實細節定位（According to the passage...）</strong>、<strong>上下文推論（What can be inferred...）</strong>、以及<strong>詞義辨析（closest in meaning）</strong>。
+        </p>
+        <div class="tip-box">
+          <strong>💡 實戰破題心法：</strong>
+          <strong>「先讀題目題幹，再回文章精準定位掃讀」</strong>。遇到生字（OOV）絕不驚慌，大考中心 90% 生詞都有上下文解釋或同義字代換，看懂段落主題句（Topic Sentence）就能掌握主旨。
+        </div>
+      </div>
+
+      <!-- 題型 6 -->
+      <div class="type-card">
+        <div class="type-header">
+          <div class="type-name">
+            <span class="tag tag-red">題型六</span> 混合題（新課綱素養亮點題型）
+          </div>
+          <div class="type-meta">第 47 ~ 50 題 ｜ 共 1 組題組 ｜ 占 10 分（單選 + 手寫填空/簡答）</div>
+        </div>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【題型規格】</strong>：108 課綱自 111 學年度起推出的標誌性新題型。通常由<strong>一篇長文搭配非連續性文本（表格、流程圖、資訊圖表、地圖）</strong>構成，題型包含 2 題單選 + 2 題手寫（從文章找字填空或簡答）。
+        </p>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【命題核心】</strong>：評量學生的<strong>跨文本整合能力、圖表轉化文字、以及從長文中「精準摘取原詞拼寫」</strong>的能力。
+        </p>
+        <div class="tip-box">
+          <strong>💡 實戰破題心法：</strong>
+          手寫填空題<strong>「嚴格依照文章原文詞彙作答」</strong>，注意題目限制（如 <em>Fill in the blank with a word from the passage</em>），並務必檢查<strong>大小寫與單複數形式</strong>，絕不要自己隨便換同義字！
+        </div>
+      </div>
+
+      <!-- 題型 7 -->
+      <div class="type-card">
+        <div class="type-header">
+          <div class="type-name">
+            <span class="tag tag-purple">題型七</span> 非選擇題（中譯英 + 英文作文）
+          </div>
+          <div class="type-meta">非選部分 ｜ 中譯英 8 分 + 英文作文 20 分 ｜ 占 28 分</div>
+        </div>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【中譯英規格（8分）】</strong>：2 個中文長句子，譯為正確、通順之英文（每題 4 分）。評量核心在「時態正確度（現在完成式等）」、「分詞修飾」與「動詞片語搭配」。
+        </p>
+        <p style="font-size: 0.94rem; color: #334155; margin-bottom: 8px;">
+          <strong>【英文作文規格（20分）】</strong>：文長至少 120 字（建議寫至 150～180 字），標準兩段式論述。題型包含：<strong>四格連環圖看圖寫作</strong>、<strong>圖表數據分析</strong>、<strong>雙情境二選一論述</strong>。評量四大向度：內容（5分）、組織（5分）、文法句構（4分）、字彙拼字（4分），標點與格式（2分）。
+        </p>
+        <div class="tip-box">
+          <strong>💡 實戰破題心法：</strong>
+          <strong>務必在時鐘上留出完整的 25～30 分鐘給作文！</strong> 第一段破題描寫現況／圖片，第二段提出個人主張、理由與解決對策。刻意安排 2～3 個分詞構句與轉折詞，直接鎖定 15 分以上頂標！
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 模組二：新舊課綱演變差異 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">2</span> 孩子刷考古題必知：106～110（舊制）vs 111～115（新制）演變</h2>
+      <p style="font-size: 0.93rem; color: #475569; margin-bottom: 12px;">
+        當孩子刷 106～110 學年度的歷屆試題時，會發現跟現在的最新試卷有所出入。了解以下演變，能讓練習時的心態更加踏實：
+      </p>
+
+      <table class="pace-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">試卷大題</th>
+            <th style="width: 38%;">舊課綱舊制 (106 ~ 110 學年度)</th>
+            <th style="width: 40%;">108 新課綱新制 (111 ~ 115 最新標準)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>一、詞彙題</strong></td>
+            <td><strong>15 題（占 15 分）</strong></td>
+            <td><strong>縮減為 10 題（占 10 分）</strong><br><span style="font-size:0.85rem; color:#64748b;">減少純死記單字題，將時間釋放給長文</span></td>
+          </tr>
+          <tr>
+            <td><strong>二、綜合測驗</strong></td>
+            <td><strong>15 題（占 15 分）</strong>（共 3 篇文章）</td>
+            <td><strong>縮減為 10 題（占 10 分）</strong>（共 2 篇文章）</td>
+          </tr>
+          <tr>
+            <td><strong>三、文意選填</strong></td>
+            <td>1 篇 10 格（占 10 分）</td>
+            <td>維持 1 篇 10 格（占 10 分）</td>
+          </tr>
+          <tr>
+            <td><strong>四、篇章結構</strong></td>
+            <td><strong style="color:#ef4444;">學測完全不考</strong>（以前是指考專屬題型）</td>
+            <td><strong style="color:#10b981;">正式列入學測必考</strong>（111年4選4，112年起改為5選4防消去法，占 8 分）</td>
+          </tr>
+          <tr>
+            <td><strong>五、閱讀測驗</strong></td>
+            <td>16 題（4篇長文，占 32 分）</td>
+            <td><strong>12 題（3~4篇長文，占 24 分）</strong></td>
+          </tr>
+          <tr>
+            <td><strong>六、混合題</strong></td>
+            <td><strong style="color:#ef4444;">完全沒有</strong></td>
+            <td><strong style="color:#10b981;">新課綱全新素養題組（占 10 分）</strong><br><span style="font-size:0.85rem; color:#64748b;">結合長文與圖表，含手寫填空簡答</span></td>
+          </tr>
+          <tr>
+            <td><strong>七、非選擇題</strong></td>
+            <td>中翻英 8 分 + 作文 20 分（共 28 分）</td>
+            <td>維持中翻英 8 分 + 作文 20 分（共 28 分）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 模組三：100 分鐘黃金配速時鐘 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">3</span> 實戰 100 分鐘「黃金配速時間表」（防作文寫不完）</h2>
+      <p style="font-size: 0.93rem; color: #475569; margin-bottom: 12px;">
+        大考考場上最殘酷的現場是：<strong>「閱讀讀太慢，等到看手錶只剩 15 分鐘，作文草草收尾痛失 10 分」</strong>。平時刷題時，務必強制孩子依照此節奏養成生理時鐘：
+      </p>
+
+      <table class="pace-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">考試經過時間</th>
+            <th style="width: 24%;">目標題型</th>
+            <th style="width: 14%;">分配時間</th>
+            <th style="width: 40%;">破題戰略重點與操作準則</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="time-badge">00 ~ 10 分鐘</span></td>
+            <td><strong>一、詞彙題 (1~10)</strong></td>
+            <td>10 分鐘</td>
+            <td>平均 1 題 1 分鐘。看懂關鍵搭配詞立刻劃記，猶豫超過 1 分鐘的先標記跳過，絕不卡死在開頭。</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">10 ~ 25 分鐘</span></td>
+            <td><strong>二、綜合測驗 (11~20)<br>三、文意選填 (21~30)</strong></td>
+            <td>15 分鐘</td>
+            <td>克漏字靠找主詞破分詞；選填題靠「五大詞性定位法」快速排查，縮小選項後套入語境。</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">25 ~ 35 分鐘</span></td>
+            <td><strong>四、篇章結構 (31~34)</strong></td>
+            <td>10 分鐘</td>
+            <td>找選項中的代名詞（They/This）與轉折信號（However/Thus），對照前後句邏輯鏈條。</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">35 ~ 60 分鐘</span></td>
+            <td><strong>五、閱讀測驗 (35~46)<br>六、混合題組 (47~50)</strong></td>
+            <td>25 分鐘</td>
+            <td>先瀏覽題目題幹再精準定位掃讀。混合題的手寫填空一定要從原文中精確抄寫，確認大小寫與單複數。</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">60 ~ 70 分鐘</span></td>
+            <td><strong>七、非選：中翻英 (2題)</strong></td>
+            <td>10 分鐘</td>
+            <td>在草稿紙上先標出「主詞、動詞時態、受詞」，注意現在完成式 <code>have/has p.p.</code> 與動名詞主詞。</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">70 ~ 95 分鐘</span></td>
+            <td><strong>七、非選：英文作文</strong></td>
+            <td><strong style="color:#e11d48;">整整 25 分鐘</strong></td>
+            <td>5分鐘審題列大綱 → 15分鐘寫滿兩段（目標150~180字） → 刻意置入分詞構句與優質動詞。</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">95 ~ 100 分鐘</span></td>
+            <td><strong>全卷總檢查</strong></td>
+            <td>5 分鐘</td>
+            <td>檢查答案卡劃記有無跳格、作文名詞單複數一致性、動詞第三人稱單數 <code>-s</code>、基本拼字。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 模組四：考前四大實戰禁忌 -->
+    <div class="section-card" style="border: 2px dashed #94a3b8; background: #fafafa;">
+      <h3 style="font-size: 1.15rem; font-weight: 800; color: #1e293b; margin-bottom: 12px;">
+        ⚠️ 學測英文考場四大實戰禁忌（考前必讀提醒）
+      </h3>
+      <div style="font-size: 0.94rem; line-height: 1.8; color: #334155;">
+        <p>❌ <strong>禁忌 1：在單字題卡關超過 2 分鐘</strong><br>
+        → 學測單字題每題只有 1 分，但作文 1 分只要多一個精彩句型就能拿到。如果第 1~10 題有完全沒看過的單字，憑直覺猜一個立刻往前走，把寶貴時間留給後方大題。</p>
+        
+        <p>❌ <strong>禁忌 2：文意選填逐字套中文翻譯</strong><br>
+        → 逐字套中文會讓腦力在 5 分鐘內過載。高手做選填是「機械式詞性分類」，利用句子缺動詞、形容詞的語法規則秒殺破題。</p>
+
+        <p>❌ <strong>禁忌 3：混合題手寫隨便換自己會的同義字</strong><br>
+        → 混合題手寫格大多有嚴格評分標準（通常要求從文本找字）。除非題目要求自主簡答，否則務必從文章中抄下原詞，不要自己腦補換字。</p>
+
+        <p>❌ <strong>禁忌 4：作文只寫一段或長度低於 120 字</strong><br>
+        → 大考中心明確規定作文「文分兩段」。只要寫成一段，結構分立刻扣 2 分；字數不足 120 字，扣總分 1 分以上。保持兩段分明、寫到 150～180 字是穩拿 14 分以上的底線！</p>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

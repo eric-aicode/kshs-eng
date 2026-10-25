@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大學學測英文作文高分自學講義 | 觀念打破・任務拆解・備考指南</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-subtle: #eff6ff;
+      --accent: #d97706;
+      --accent-subtle: #fef3c7;
+      --danger: #dc2626;
+      --danger-subtle: #fee2e2;
+      --success: #059669;
+      --success-subtle: #d1fae5;
+      --dark: #0f172a;
+      --gray-900: #1e293b;
+      --gray-700: #334155;
+      --gray-600: #475569;
+      --gray-500: #64748b;
+      --gray-300: #cbd5e1;
+      --gray-200: #e2e8f0;
+      --gray-100: #f1f5f9;
+      --gray-50: #f8fafc;
+      --white: #ffffff;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+      color: var(--gray-900);
+      background-color: #f8fafc;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 24px 80px;
+    }
+
+    /* Top Control Bar */
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--gray-200);
+      padding: 12px 24px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+    }
+
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-subtle);
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary), #1d4ed8);
+      color: var(--white);
+      border: none;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(30, 58, 138, 0.25);
+      transition: all 0.2s ease;
+    }
+    .print-btn:hover {
+      background: linear-gradient(135deg, #1e40af, #1e3a8a);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(30, 58, 138, 0.35);
+    }
+
+    /* Compact Document Header */
+    .doc-header {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-left: 6px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .doc-title {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    .doc-subtitle {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      margin-top: 4px;
+    }
+
+    .doc-meta-inline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--gray-200);
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .fill-line {
+      display: inline-block;
+      width: 100px;
+      border-bottom: 1px solid var(--gray-400);
+      vertical-align: middle;
+      margin-left: 4px;
+    }
+
+    /* Section Styling */
+    .section-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      padding: 36px 36px;
+      margin-bottom: 32px;
+      transition: box-shadow 0.2s ease;
+    }
+    .section-card:hover {
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 2px solid var(--gray-100);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+
+    .section-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-subtle);
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+
+    /* Typography & Content Elements */
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 24px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h3::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--gray-700);
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 18px;
+      color: var(--gray-700);
+    }
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Highlight Callouts */
+    .callout {
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      margin: 20px 0;
+      border-left: 5px solid;
+      background: var(--gray-50);
+    }
+    .callout.info {
+      background: var(--primary-subtle);
+      border-color: var(--primary-light);
+      color: #1e3a8a;
+    }
+    .callout.warning {
+      background: var(--accent-subtle);
+      border-color: var(--accent);
+      color: #92400e;
+    }
+    .callout.danger {
+      background: var(--danger-subtle);
+      border-color: var(--danger);
+      color: #991b1b;
+    }
+    .callout.success {
+      background: var(--success-subtle);
+      border-color: var(--success);
+      color: #065f46;
+    }
+    .callout-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Grid for Comparison & Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin: 20px 0;
+    }
+
+    .myth-card {
+      background: #fafafa;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      position: relative;
+    }
+    .myth-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+    }
+    .myth-badge.fake {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .myth-badge.truth {
+      background: #dcfce7;
+      color: #15803d;
+    }
+    .myth-title {
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .myth-truth {
+      font-size: 0.92rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+
+    /* Table Design */
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95rem;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .custom-table th {
+      background: var(--gray-100);
+      color: var(--gray-900);
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    .custom-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      vertical-align: top;
+    }
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    .custom-table tr:hover td {
+      background: var(--gray-50);
+    }
+
+    /* Step Timeline */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .step-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+    }
+    .step-badge {
+      background: var(--primary);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+    }
+    .step-content h4 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      margin-bottom: 0;
+    }
+
+    /* Practice Worksheet Area */
+    .worksheet-box {
+      border: 2px dashed var(--gray-300);
+      background: #fafafa;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .worksheet-line {
+      border-bottom: 1px solid var(--gray-300);
+      height: 34px;
+      width: 100%;
+      margin-bottom: 6px;
+    }
+
+    /* Print Footer / Pagination */
+    .print-footer {
+      display: none;
+    }
+
+    /* ====================================================
+       PRINT STYLESHEET (OPTIMIZED FOR A4 HANDOUT)
+       ==================================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 18mm 15mm 18mm 15mm;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.55 !important;
+      }
+
+      .no-print, .action-bar {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .doc-header {
+        background: #ffffff !important;
+        border: 1px solid #94a3b8 !important;
+        border-left: 4px solid #1e3a8a !important;
+        box-shadow: none !important;
+        padding: 8px 12px !important;
+        margin-bottom: 12px !important;
+        border-radius: 4px !important;
+      }
+      .doc-title {
+        font-size: 14pt !important;
+        color: #0f172a !important;
+        margin-bottom: 2px !important;
+      }
+      .doc-subtitle {
+        font-size: 8.5pt !important;
+        color: #475569 !important;
+      }
+      .doc-meta-inline {
+        font-size: 8pt !important;
+        padding-top: 4px !important;
+        margin-top: 4px !important;
+        gap: 14px !important;
+        border-top: 1px dashed #cbd5e1 !important;
+      }
+      .fill-line {
+        border-bottom: 1px solid #000000 !important;
+        width: 80px !important;
+      }
+
+      .section-card {
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        padding: 16px 18px !important;
+        margin-bottom: 18px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+        border-radius: 6px !important;
+      }
+
+      /* 避免標題孤懸在頁尾 */
+      h2, h3, h4, .section-header {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+      }
+
+      /* 小型結構元素保持完整，避免被截半 */
+      .callout, .custom-table, .myth-card, .step-item, .worksheet-box, tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .section-num {
+        background: #e2e8f0 !important;
+        color: #0f172a !important;
+        border: 1px solid #94a3b8 !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 11pt !important;
+      }
+      .section-title { font-size: 14pt !important; }
+
+      h3 { font-size: 12pt !important; margin: 14px 0 8px !important; }
+      h3::before { background: #1e3a8a !important; }
+
+      .callout {
+        border: 1px solid #94a3b8 !important;
+        background: #f8fafc !important;
+        color: #000000 !important;
+        padding: 12px 14px !important;
+        margin: 12px 0 !important;
+        page-break-inside: avoid;
+      }
+
+      .custom-table {
+        border: 1px solid #64748b !important;
+        font-size: 9.5pt !important;
+      }
+      .custom-table th {
+        background: #e2e8f0 !important;
+        color: #000000 !important;
+        border-bottom: 1px solid #64748b !important;
+        padding: 6px 10px !important;
+      }
+      .custom-table td {
+        border-bottom: 1px solid #cbd5e1 !important;
+        padding: 6px 10px !important;
+      }
+
+      .myth-card {
+        border: 1px solid #cbd5e1 !important;
+        background: #ffffff !important;
+        padding: 10px 12px !important;
+      }
+
+      .worksheet-box {
+        border: 1px dashed #64748b !important;
+        background: #ffffff !important;
+        page-break-inside: avoid;
+      }
+      .worksheet-line {
+        border-bottom: 1px solid #cbd5e1 !important;
+      }
+
+      .print-footer {
+        display: block !important;
+        text-align: center;
+        font-size: 8pt;
+        color: #64748b;
+        margin-top: 20px;
+        border-top: 1px solid #cbd5e1;
+        padding-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Action Bar (Sticky for Screen, Hidden on Print) -->
+    <div class="action-bar no-print">
+      <span class="badge-tag">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        學測英文寫作核心特訓・自學專用
+      </span>
+      <button class="print-btn" onclick="window.print()">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+        列印紙本講義 / 存為 PDF
+      </button>
+    </div>
+
+    <!-- Compact Document Header -->
+    <header class="doc-header">
+      <div>
+        <h1 class="doc-title">大學學測英文作文高分自學講義</h1>
+        <div class="doc-subtitle">大考中心閱卷真相・四大迷思打破・40 分鐘極限任務拆解（整理自鳳山高中 羅俊宏老師 講座精華）</div>
+      </div>
+      <div class="doc-meta-inline">
+        <span><strong>考生姓名：</strong><span class="fill-line"></span></span>
+        <span><strong>目標級分：</strong>15 滿級分</span>
+        <span><strong>作文目標：</strong>16～18 分</span>
+        <span><strong>自主研讀</strong></span>
+      </div>
+    </header>
+
+    <!-- MODULE 1: MYTH BUSTING -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div>
+          <h2 class="section-title">打破學測英文作文的四大都市傳說</h2>
+          <div class="section-desc">常見迷思深度破解：方向正確，才能把有限時間換成真正的分數！</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="myth-card">
+          <span class="myth-badge fake">迷思 1</span>
+          <div class="myth-title">背「萬用開頭」，任何題目套進去就能得分？</div>
+          <div class="myth-truth">
+            <strong>【教授視角真相】</strong><br>
+            萬用句（例如：<em>As a high school student under tremendous stress...</em>）若與文章主題情境無關，閱卷教授<strong>既不加分也不給分</strong>，反而會<strong>嚴重排擠你核心內容的篇幅</strong>！當關鍵任務因篇幅不足而交代不清時，內容分立刻被打入低分區。
+          </div>
+        </div>
+
+        <div class="myth-card">
+          <span class="myth-badge fake">迷思 2</span>
+          <div class="myth-title">單字背得越難、用得越生僻，分數越高？</div>
+          <div class="myth-truth">
+            <strong>【教授視角真相】</strong><br>
+            大考最看重的是<strong>「用字適切性（Appropriateness）」</strong>。背了艱深的法律字或偏僻字硬套在日常生活情境，只會被判定為「使用不適切」而遭扣分。掌握<strong>大考 1~4 級的核心生活字彙與精準搭配詞</strong>才是高分關鍵。
+          </div>
+        </div>
+
+        <div class="myth-card">
+          <span class="myth-badge fake">迷思 3</span>
+          <div class="myth-title">狂塞倒裝句、分詞構句，越多句型越能拿分？</div>
+          <div class="myth-truth">
+            <strong>【教授視角真相】</strong><br>
+            句型有其存在的語境與語氣。例如 <em>"It is essential that everyone have..."</em> 帶有<strong>權威機構或長輩呼籲</strong>的強烈色彩，若套在普通日常觀察則顯得突兀失衡。句型追求的是<strong>表達清晰、文意通順與自然變化</strong>，絕非炫技硬套。
+          </div>
+        </div>
+
+        <div class="myth-card">
+          <span class="myth-badge fake">迷思 4</span>
+          <div class="myth-title">只要文法完全沒錯，就能穩拿作文高分？</div>
+          <div class="myth-truth">
+            <strong>【教授視角真相】</strong><br>
+            文法只是表達的載體！如果內容空洞、答非所問或文不對題，就算文法毫無差錯也無法及格。大考閱卷是看<strong>「整篇文章的整體論述與溝通品質」</strong>，並非拿紅筆一行行扣錯字。相同類別的文法錯誤只算一次。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 2: SCORING SECRETS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div>
+          <h2 class="section-title">閱卷教授如何給分？揭密「天花板法則」</h2>
+          <div class="section-desc">認識電腦雙盲閱卷流程與四大向度評分結構</div>
+        </div>
+      </div>
+
+      <h3>大考中心雙盲閱卷標準流程</h3>
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-badge">STEP 1</span>
+          <div class="step-content">
+            <h4>標準設定與試閱校準</h4>
+            <p>考完後召開標準設定會議，從全國抽出抽樣試卷，由資深教授們制定全國一致的評分標竿與扣分標準。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-badge">STEP 2</span>
+          <div class="step-content">
+            <h4>電腦雙盲閱卷（一閱 ＋ 二閱）</h4>
+            <p>每份試卷掃描後由兩位大學教授在螢幕上獨立評分，彼此互不知曉對方的給分。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-badge">STEP 3</span>
+          <div class="step-content">
+            <h4>分差檢核（未達差分標準取平均，過大啟動三閱／四閱）</h4>
+            <p>若兩位教授給分差距在容許範圍內，直接取平均值；若分差過大，系統自動派發給第三位甚至第四位資深主試召集人進行權威裁決。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout danger">
+        <div class="callout-title">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+          核心評分秘辛：內容（Content）是所有向度的「天花板」！
+        </div>
+        <p>
+          大考中心四大向度滿分各為 5 分（內容、組織、文法句構、字彙拼字，總分 20 分）。<br>
+          <strong>極度重要規則：</strong>下方所有項目的得分，<strong>原則上不得超過「內容」項目的得分</strong>！
+        </p>
+        <ul style="margin-bottom: 0;">
+          <li>若「內容」只拿到 <strong>3 分</strong>，整篇作文就算文法字彙再好，天花板被鎖死，總分最高只能落在 <strong>10~12 分</strong>！</li>
+          <li>只有把「內容」撐到 <strong>4~5 分</strong>，後續各項才有機會拿到滿檔，總分才能成功衝上 <strong>15~18 分高分群</strong>！</li>
+        </ul>
+      </div>
+
+      <h3>外送平台比喻：教授如何看待四大評分向度？</h3>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 18%;">評分向度</th>
+            <th style="width: 32%;">生活外送比喻</th>
+            <th style="width: 50%;">學測作文的具體要求</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>內容 (Content)</strong><br><small>滿分 5 分・絕對天花板</small></td>
+            <td>點牛肉麵送來珍珠奶茶（0星退貨）</td>
+            <td><strong>完全切合題意</strong>、完成題目的每一個任務要求、提供充足具體的支持細節與實例。</td>
+          </tr>
+          <tr>
+            <td><strong>組織 (Organization)</strong><br><small>滿分 5 分</small></td>
+            <td>湯、麵、配料都有，卻全混在同一個塑膠袋裡</td>
+            <td><strong>段落功能清楚</strong>、想法推進有先後順序、前後文意連貫、轉折詞（However, Furthermore）使用自然。</td>
+          </tr>
+          <tr>
+            <td><strong>文法句構 (Grammar)</strong><br><small>滿分 5 分</small></td>
+            <td>肉塊沒煮熟，吃得非常痛苦</td>
+            <td><strong>基本句構完整正確</strong>（避免片段句、 run-on 句）、時態一致、能依情境自然運用適當句型。</td>
+          </tr>
+          <tr>
+            <td><strong>字彙拼字 (Vocabulary)</strong><br><small>滿分 5 分</small></td>
+            <td>調味料有的加太多、有的完全沒加</td>
+            <td><strong>用字適切貼切</strong>、詞彙搭配自然（Collocation）、正確拼字與標點符號。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- MODULE 3: EXAM TRENDS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div>
+          <h2 class="section-title">近六年學測作文在考什麼？四大共通能力</h2>
+          <div class="section-desc">題型從「看圖說故事」演變為「觀察生活現象與社會思辨」</div>
+        </div>
+      </div>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">學年度</th>
+            <th style="width: 28%;">題目情境</th>
+            <th style="width: 58%;">具體寫作任務解析</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>115 年</strong></td>
+            <td><strong>養寵物取代養小孩現象</strong></td>
+            <td>第 1 段描述圖片所呈現的<strong>社會現象</strong>；第 2 段依經驗或觀察分析<strong>成因</strong>以及對社會的<strong>可能影響</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>114 年</strong></td>
+            <td><strong>颱風假的兩種情境</strong></td>
+            <td>描述民眾面對颱風假的不同反應；結合自身經驗說明對颱風假的看法與感受。</td>
+          </tr>
+          <tr>
+            <td><strong>113 年</strong></td>
+            <td><strong>AI 機器人生活小幫手</strong></td>
+            <td>選擇想解決的生活難題、說明理由；闡述機器人應具備的能力與人機分工合作。</td>
+          </tr>
+          <tr>
+            <td><strong>112 年</strong></td>
+            <td><strong>表情符號 (Emojis)</strong></td>
+            <td>說明表情符號受歡迎的原因與功能；以親友或自身經驗說明曾造成的誤會及化解之道。</td>
+          </tr>
+          <tr>
+            <td><strong>111 年</strong></td>
+            <td><strong>兩座不同風格的公園</strong></td>
+            <td>比較傳統設施公園與自然景觀公園的差異；說明自己心目中的理想公園與理由。</td>
+          </tr>
+          <tr>
+            <td><strong>110 年</strong></td>
+            <td><strong>遊客踩踏花田新聞事件</strong></td>
+            <td>描述遊客不當行為引發的新聞事件；從踩點遊客或農民店家的立場出發表達看法。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout info">
+        <div class="callout-title">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 002 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.001z"/></svg>
+          萬變不離其宗！大考教授要看的 4 項核心能力：
+        </div>
+        <ol style="margin-bottom: 0;">
+          <li><strong>觀察與描述能力</strong>：看清細節，精準提煉出「特徵、差異或現象」（而非死板描寫畫面每樣物品）。</li>
+          <li><strong>解釋與支持能力</strong>：對論點提出扎實的「理由、數據概念或具體生活實例」。</li>
+          <li><strong>判斷與決策能力</strong>：面對爭議或方案時，能明確表達「我的立場與應對策略」。</li>
+          <li><strong>分析與推論能力</strong>：現象是怎麼產生的（成因）？未來可能造成什麼「正面利多或負面代價」（因果鏈推導）。</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MODULE 4: 40-MIN EXAM WORKFLOW -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div>
+          <h2 class="section-title">考場 40 分鐘極限實戰：任務拆解三步驟</h2>
+          <div class="section-desc">從審題、構思草稿到落筆檢查的時間分配最佳解</div>
+        </div>
+      </div>
+
+      <h3>考場 40 分鐘時間精準配置</h3>
+      <div class="grid-2">
+        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 18px;">
+          <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 8px;">⏳ 00 ~ 05 分鐘：審題與任務圈選</h4>
+          <p style="font-size: 0.93rem; margin-bottom: 0;"><strong>絕對不要直接提筆寫作！</strong>先拿出筆圈出核心關鍵字，將每一段所隱含的「所有子任務」條列出來。</p>
+        </div>
+        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 18px;">
+          <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 8px;">✍️ 05 ~ 35 分鐘：專注展開寫作</h4>
+          <p style="font-size: 0.93rem; margin-bottom: 0;">依照草稿關鍵字順暢展開，目標字數控制在 <strong>150 ～ 180 單字</strong>，注意段落功能分明與轉折連貫。</p>
+        </div>
+        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 18px;">
+          <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 8px;">🔍 35 ~ 40 分鐘：高頻扣分自我檢查</h4>
+          <p style="font-size: 0.93rem; margin-bottom: 0;">檢查三大高頻失分點：<strong>第三人稱單數動詞加 s</strong>、<strong>名詞單複數一致性</strong>、<strong>時態前後統一</strong>。</p>
+        </div>
+        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 18px;">
+          <h4 style="color: var(--danger); font-size: 1.1rem; margin-bottom: 8px;">⚠️ 考場硬性規則（違者直接扣分）</h4>
+          <p style="font-size: 0.93rem; margin-bottom: 0;">
+            1. <strong>必須分兩段</strong>（未分段扣 1 分）<br>
+            2. <strong>段首必須縮排</strong>（Indent 5 格字母，未縮排扣 1 分）<br>
+            3. <strong>必須使用黑色墨水筆書寫</strong>
+          </p>
+        </div>
+      </div>
+
+      <h3>實戰示範：以 115 學測「養寵物現象」為例</h3>
+      <div class="callout warning">
+        <div class="callout-title">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+          兩段式作文 ≠ 只有兩項任務！
+        </div>
+        <p>很多考生看到題目寫兩段，以為只要做兩件事。其實題目暗藏多項指令：</p>
+        <ul style="margin-bottom: 0;">
+          <li><strong>第 1 段任務</strong>：描述圖片呈現的<strong>「現象」</strong>（不是呆板地列舉左邊有一隻貓、右邊有一個嬰兒車，而是指出人們視毛小孩為子女、家庭功能轉變的社會趨勢）。</li>
+          <li><strong>第 2 段任務 ①</strong>：分析此現象的<strong>「成因」</strong>（至少提供 2 個互不重疊的維度）。</li>
+          <li><strong>第 2 段任務 ②</strong>：推論可能帶來的<strong>「後續影響」</strong>（如少子化勞動力短缺、長照壓力或動保產業興起）。</li>
+        </ul>
+      </div>
+
+      <h3>如何想出互不重疊的高分論點？「雙維度切割法」</h3>
+      <p>當題目要求你提出 2 個理由或成因時，切忌寫出兩句表面不同但實質重疊的論點（例如：理由一「養小孩很貴」，理由二「買奶粉尿布花很多錢」，這在教授看來是同一件事！）。建議使用以下切角：</p>
+      <div class="grid-2">
+        <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 16px; background: #ffffff;">
+          <h4 style="color: var(--primary); margin-bottom: 6px;">維度 A：外在現實 vs 內在心理</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">
+            • <strong>外在現實</strong>：經濟壓力沉重、生活生活物價高昂、晚婚現象。<br>
+            • <strong>內在心理</strong>：渴望即時情感陪伴、紓解職場壓力、追求無負擔的療癒感。
+          </p>
+        </div>
+        <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 16px; background: #ffffff;">
+          <h4 style="color: var(--primary); margin-bottom: 6px;">維度 B：個人利益 vs 社會環境</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">
+            • <strong>個人層面</strong>：自主時間自由度高、寵物溫馴不叛逆。<br>
+            • <strong>社會環境</strong>：居住空間狹小、托育友善環境不足。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 5: ESSAY SAMPLES & COMPARATIVE STUDY -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <div>
+          <h2 class="section-title">官方佳作怎麼讀？「思維對比法」</h2>
+          <div class="section-desc">佳作不是用來死背優美文句，而是用來校準自己的論述結構</div>
+        </div>
+      </div>
+
+      <p>大考中心每年公告的滿分作文手稿，其實是全國考生在 30 分鐘緊張時限下寫出的真實作品，偶爾也會有微小拼字筆誤。老師提醒：<strong>「讀佳作不是為了崇拜背誦，而是為了對比自己的思考廣度！」</strong></p>
+
+      <h3>官方佳作的三大主流論述架構</h3>
+      <div class="grid-2">
+        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 18px;">
+          <span style="background: var(--primary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">模型 A</span>
+          <h4 style="margin: 8px 0 6px; font-size: 1rem;">成因深化 ＋ 正負影響對照</h4>
+          <p style="font-size: 0.88rem; color: var(--gray-600); margin-bottom: 0;">
+            第 1 段概述現象。<br>
+            第 2 段先提成因，再將影響清晰劃分為<strong>「正面效益（流浪動物減少、情緒支持）」</strong>與<strong>「負面代價（生育率下降、未來高齡長照危機）」</strong>。
+          </p>
+        </div>
+
+        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 18px;">
+          <span style="background: var(--primary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">模型 B</span>
+          <h4 style="margin: 8px 0 6px; font-size: 1rem;">雙成因鋪陳 ＋ 支持細節 ＋ 總結</h4>
+          <p style="font-size: 0.88rem; color: var(--gray-600); margin-bottom: 0;">
+            第 1 段描述現象細節。<br>
+            第 2 段集中論述兩大成因：<strong>原因一（成本與教養負擔）＋ 原因二（心靈陪伴需求）</strong>，最後帶出一項具體社會影響作為結尾警惕。
+          </p>
+        </div>
+      </div>
+
+      <div class="callout success">
+        <div class="callout-title">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          自主練習的「三步驟思維升級法」
+        </div>
+        <ol style="margin-bottom: 0;">
+          <li><strong>Step 1：自己先想（5分鐘）</strong>：拿到題目，先用中文列出自己的第 1 段重點、2 個原因與影響。</li>
+          <li><strong>Step 2：對比佳作（或 AI）</strong>：翻開大考佳作（或請 AI 列出思考大綱），看看別人想到了哪些你沒想到的面向（如：有人提到了流浪動物減少，有人提到了寵物經濟）。</li>
+          <li><strong>Step 3：修正第二版草稿</strong>：用不同顏色的筆，把更好的想法或因果細節補進自己的草稿中。這就是「留下了思考進步的證據」！</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MODULE 6: STUDY ROADMAP -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <div>
+          <h2 class="section-title">高一高二平時功 vs 高三考前 60 天衝刺指南</h2>
+          <div class="section-desc">分齡備考策略：把力氣花在投資報酬率最高的地方</div>
+        </div>
+      </div>
+
+      <h3>高一／高二同學：建立「長篇訊息解讀能力」</h3>
+      <ul>
+        <li>
+          <strong>讀雜誌先克制查單字的衝動</strong>：許多人讀英文雜誌第一件事就是查生字，這完全錯過了訓練。考試時沒人能查字典，你必須培養<strong>「即便有不懂的生字，也能精準讀懂作者段落大意」</strong>的冷靜解讀力。
+        </li>
+        <li>
+          <strong>鎖定轉折詞（However, But, Yet）</strong>：閱讀長文時，真正的重點與作者核心立場永遠隱藏在轉折詞之後。
+        </li>
+        <li>
+          <strong>大考字彙掌握範圍</strong>：學測以 <strong>1 ~ 4 級生活高頻字</strong> 為基石，第 5 ~ 6 級字多屬專有名詞或可從上下文推知。目標前標至頂標的同學，特別要留意 <strong>1 ~ 4 級字的一字多義</strong>（如 <em>belt</em> 當動詞用法）。
+        </li>
+      </ul>
+
+      <h3>高三同學：考前 60 天精準提分指南</h3>
+      <ul>
+        <li>
+          <strong>歷屆試題 P 值（通過率）分析</strong>：做歷屆試題的價值不是盲目刷題賭命中，而是找出自己的盲點。如果 P 值 60% 以上的大眾題你錯了，表示觀念有漏洞；若只有推論題常錯，就要專門針對推論題型加強。
+        </li>
+        <li>
+          <strong>每次練習作文，只專注突破一個弱點</strong>：不要試圖在一篇作文裡解決所有問題。給自己明確目標：這篇我只要做到「任務完整不遺漏」，下篇我只要做到「因果鏈邏輯清晰」，循序漸進。
+        </li>
+      </ul>
+
+      <h3>交卷前 3 分鐘「火眼金睛」檢查清單</h3>
+      <table class="custom-table">
+        <tbody>
+          <tr>
+            <td style="width: 25%;"><strong>動詞三單現</strong></td>
+            <td>主詞若是第三人稱單數（he, she, it, a person），現在式動詞是否有確實加上 <strong>-s / -es</strong>？</td>
+          </tr>
+          <tr>
+            <td><strong>名詞單複數</strong></td>
+            <td>可數名詞是否有加冠詞（a/the）或複數 <strong>-s</strong>？不可數名詞是否有誤加 -s？</td>
+          </tr>
+          <tr>
+            <td><strong>時態一致性</strong></td>
+            <td>描述一般真理或當代現象用現在式；描述個人過去經驗或回憶時，是否有一致切換成過去式？</td>
+          </tr>
+          <tr>
+            <td><strong>標點與拼字</strong></td>
+            <td>兩個完整句子中間是否有對等連接詞或分號（避免 comma splice 逗號串接句）？</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- MODULE 7: PRINTABLE PRACTICE WORKSHEET -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <div>
+          <h2 class="section-title">【實戰演練工作紙】5 分鐘審題與構思練習</h2>
+          <div class="section-desc">每次寫作文前，請逼自己在此工作紙上完整規劃 5 分鐘再動筆！</div>
+        </div>
+      </div>
+
+      <div class="worksheet-box">
+        <h4 style="margin-bottom: 12px; color: var(--primary);">📝 任務一：題目核心指令圈選（圈出要求、劃底線標記任務）</h4>
+        <div style="font-size: 0.95rem; color: var(--gray-700); margin-bottom: 16px;">
+          請將你即將練習的學測題目貼在心中，並回答：這題到底要求你完成哪幾項子任務？
+        </div>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <span style="font-weight: 700; color: var(--gray-900);">子任務 1：</span>
+          <div class="worksheet-line"></div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <span style="font-weight: 700; color: var(--gray-900);">子任務 2：</span>
+          <div class="worksheet-line"></div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+          <span style="font-weight: 700; color: var(--gray-900);">子任務 3：</span>
+          <div class="worksheet-line"></div>
+        </div>
+
+        <h4 style="margin-bottom: 12px; color: var(--primary);">🧠 任務二：第 1 段重點與第 2 段雙維度切角草稿</h4>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <span style="font-weight: 700; color: var(--gray-900); white-space: nowrap;">第 1 段核心主題句：</span>
+          <div class="worksheet-line"></div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <span style="font-weight: 700; color: var(--gray-900); white-space: nowrap;">第 2 段成因 A（外在/現實）：</span>
+          <div class="worksheet-line"></div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <span style="font-weight: 700; color: var(--gray-900); white-space: nowrap;">第 2 段成因 B（內在/心理）：</span>
+          <div class="worksheet-line"></div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+          <span style="font-weight: 700; color: var(--gray-900); white-space: nowrap;">總結與後續影響推論：</span>
+          <div class="worksheet-line"></div>
+        </div>
+
+        <h4 style="margin-bottom: 12px; color: var(--primary);">✍️ 任務三：段首縮排與正式寫作格子區（每段第 1 行務必空 5 格）</h4>
+        <div class="worksheet-line"></div>
+        <div class="worksheet-line"></div>
+        <div class="worksheet-line"></div>
+        <div class="worksheet-line"></div>
+        <div class="worksheet-line"></div>
+        <div class="worksheet-line"></div>
+        <div class="worksheet-line"></div>
+        <div class="worksheet-line"></div>
+      </div>
+    </section>
+
+    <!-- Footer for Print / Screen -->
+    <footer class="print-footer">
+      大學學測英文作文高分自學講義・精心製作供家庭學習使用・祝應試順利，勇奪滿級分！
+    </footer>
+
+  </div>
+
+</body>
+</html>

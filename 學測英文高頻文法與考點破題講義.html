@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學測英文高頻文法與考點破題講義 (106~115 歷屆大數據提煉)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --accent: #d97706;
+      --success: #059669;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --code-bg: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 80px;
+    }
+
+    /* Compact Header Bar */
+    .header-bar {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: white;
+      padding: 28px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .header-container {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-title-box { max-width: 720px; }
+    .badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.15);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+    h1 { font-size: 1.85rem; font-weight: 900; line-height: 1.3; margin-bottom: 6px; }
+    .subtitle { font-size: 0.95rem; color: #cbd5e1; }
+
+    .print-btn {
+      background: #ffffff;
+      color: var(--primary);
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .print-btn:hover { background: #f1f5f9; transform: translateY(-1px); }
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 960px;
+      margin: 28px auto;
+      padding: 0 20px;
+    }
+
+    /* Cards & Sections */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px 30px;
+      margin-bottom: 26px;
+      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.05);
+      break-inside: avoid;
+    }
+    .section-title {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 10px;
+    }
+    .section-title .num-badge {
+      background: var(--primary);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Subsections */
+    .sub-block {
+      margin-bottom: 22px;
+    }
+    .sub-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Formula & Rule Box */
+    .rule-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--primary-light);
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 10px 0 14px 0;
+      font-size: 0.94rem;
+    }
+    .rule-box strong { color: #1e3a8a; }
+
+    .exam-real {
+      background: #fdf2f8;
+      border-left: 4px solid #db2777;
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 10px 0 14px 0;
+      font-size: 0.92rem;
+    }
+    .exam-real strong { color: #9d174d; }
+
+    .tip-box {
+      background: #fefce8;
+      border-left: 4px solid #eab308;
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 10px 0 14px 0;
+      font-size: 0.92rem;
+      color: #854d0e;
+    }
+
+    /* Example Code / Sentence */
+    .code-box {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      background: var(--code-bg);
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #334155;
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .code-box strong { color: #0f172a; }
+
+    /* Tables */
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.92rem;
+    }
+    .grammar-table th {
+      background: #f1f5f9;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--border);
+      color: #334155;
+      font-weight: 700;
+    }
+    .grammar-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+      vertical-align: top;
+    }
+    .grammar-table tr:hover td { background: #f8fafc; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 4px;
+    }
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-green { background: #dcfce7; color: #166534; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-red { background: #fee2e2; color: #991b1b; }
+
+    /* Print styles */
+    @media print {
+      body { background: white; color: black; padding-bottom: 0; }
+      .header-bar {
+        background: none;
+        color: black;
+        border-bottom: 2px solid black;
+        padding: 14px 0;
+        box-shadow: none;
+      }
+      .badge, .print-btn { display: none; }
+      h1 { font-size: 1.6rem; color: black; }
+      .subtitle { color: #555; }
+      .main-wrap { max-width: 100%; margin: 10px 0; padding: 0; }
+      .section-card {
+        border: none;
+        box-shadow: none;
+        padding: 12px 0;
+        margin-bottom: 18px;
+        border-bottom: 1px solid #ddd;
+        break-inside: avoid;
+      }
+      .section-title { color: black; border-bottom: 1px solid #aaa; }
+      .section-title .num-badge { background: black; color: white; }
+      .rule-box, .exam-real, .tip-box {
+        background: #f9f9f9;
+        border-left: 3px solid #333;
+        color: black;
+        padding: 8px 12px;
+      }
+      .code-box { background: #f4f4f4; border-color: #ccc; color: black; }
+      .grammar-table th { background: #eee; color: black; border-bottom: 1px solid black; }
+      .grammar-table td { border-bottom: 1px solid #ccc; color: black; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <div class="header-container">
+      <div class="header-title-box">
+        <span class="badge">學測英文大數據題型透視 × 實戰破題系列</span>
+        <h1>學測英文高頻文法與考點破題自學講義</h1>
+        <p class="subtitle">深度提煉近 10 年（106～115學年度）試題精華：文法五大天王、文意選填五大公式、中翻英高頻句型與作文語法升級。</p>
+      </div>
+      <div>
+        <button class="print-btn" onclick="window.print()">🖨️ 列印 / 另存 PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- 0. 核心導言 -->
+    <div class="section-card" style="background: #f8fafc; border-left: 4px solid var(--primary);">
+      <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">
+        💡 孩子開始自學前，先建立一個關鍵心態：
+      </h3>
+      <p style="font-size: 0.94rem; color: #334155; margin-bottom: 6px;">
+        大考中心（CEEC）在新課綱與近十年命題中，已經<strong>完全揚棄繁瑣、冷僻的刁鑽文法規則</strong>（如少見的倒裝句例外、怪異名詞複數）。
+      </p>
+      <p style="font-size: 0.94rem; color: #334155;">
+        學測考的文法只有一個目的：<strong>「評量你能否看懂長句子的主幹架構、理解事件先後的邏輯脈絡，並在寫作中寫出層次分明的複句」</strong>。掌握以下五大高頻文法，整份考卷的文法分就能穩穩全拿！
+      </p>
+    </div>
+
+    <!-- PART 1: 必考文法五大天王 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">1</span> 歷屆學測「文法五大天王」（年年必考核心）</h2>
+
+      <!-- 天王 1 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-blue">No.1</span> 分詞構句與動詞變化（主動 V-ing vs 被動 p.p.）</h3>
+        <p style="font-size: 0.93rem; color: #475569;">
+          <strong>大考地位</strong>：克漏字、篇章結構與作文中<strong>出場率第一名</strong>的霸主，每年必考 2～3 題！
+        </p>
+
+        <div class="rule-box">
+          <strong>【黃金判斷法則】</strong>：看到動詞選項，<strong>第一步找「主詞」</strong>！
+          <ul style="margin-left: 20px; margin-top: 4px;">
+            <li>主詞<strong>自己做動作（主動、進行）</strong> → 選 <code>V-ing</code>（現在分詞）</li>
+            <li>主詞<strong>被做動作、遭受（被動、完成）</strong> → 選 <code>p.p. / V-ed</code>（過去分詞）</li>
+          </ul>
+        </div>
+
+        <div class="exam-real">
+          <strong>🔥 近年大考真實考點還原：</strong>
+          <ul style="margin-left: 20px; margin-top: 4px;">
+            <li><strong>113 年克漏字第 17 題</strong>：選項 <code>(A) Aimed at (B) Trained for (C) Equipped with (D) Exhausted by</code><br>
+            → 主詞是機器人/選手，被裝備...，考<strong>「過去分詞片語置於句首作修飾」</strong>。</li>
+            <li><strong>110 年克漏字第 20 題</strong>：選項 <code>(A) installing (B) installed (C) to install (D) having installed</code><br>
+            → 考主動安裝與完成式的動名詞搭配。</li>
+            <li><strong>110 年克漏字第 30 題</strong>：選項 <code>...left unchecked</code>（留置動詞 <code>leave + O + p.p.</code>，任由某事未受檢驗）。</li>
+          </ul>
+        </div>
+
+        <div class="tip-box">
+          <strong>✍️ 作文直接升級應用：</strong><br>
+          避免通篇寫 <code>I felt tired, and I went to bed.</code><br>
+          改寫為優美分詞構句：<br>
+          <code>Feeling exhausted after a long day of study, I went straight to bed.</code>（語言能力直接加分！）
+        </div>
+      </div>
+
+      <!-- 天王 2 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-amber">No.2</span> 情態助動詞的過去推測與時態（Modal + have p.p.）</h3>
+        <p style="font-size: 0.93rem; color: #475569;">
+          <strong>大考地位</strong>：專門用來區分「均標」與「前標」的鑑別題，近 5 年考過 4 次！
+        </p>
+
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 32%;">句型公式</th>
+              <th style="width: 28%;">真實大考語義</th>
+              <th style="width: 40%;">歷屆經典實例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>must have + p.p.</code></td>
+              <td><strong>當時必定已經...</strong><br>(對過去極有把握的肯定推測)</td>
+              <td><strong>111年第17題</strong>：Ancient people <em>must have been</em> fascinated by the stars...</td>
+            </tr>
+            <tr>
+              <td><code>could / would have + p.p.</code></td>
+              <td><strong>當時本來可以／本來會...</strong><br>(但實際上沒有發生)</td>
+              <td><strong>113年第16題</strong>：They <em>could have used</em> alternative methods, but chose not to.</td>
+            </tr>
+            <tr>
+              <td><code>should have + p.p.</code></td>
+              <td><strong>當時本來應該...卻沒做</strong><br>(表達遺憾、後悔或責備)</td>
+              <td>We <em>should have taken</em> precautions before the typhoon hit.</td>
+            </tr>
+            <tr>
+              <td><code>Since + 過去時間, S + have/has p.p.</code></td>
+              <td><strong>自從...以來一直...</strong><br>(現在完成式標準搭配)</td>
+              <td><strong>108年、115年中翻英</strong>：高鐵自營運以來已成為... / 老師已經增加使用百分比...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 天王 3 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-green">No.3</span> 關係詞與「介系詞 + 關係代名詞」</h3>
+        <p style="font-size: 0.93rem; color: #475569;">
+          <strong>大考地位</strong>：長篇閱讀長難句的關鍵骨幹，克漏字必出考題。
+        </p>
+
+        <div class="rule-box">
+          <strong>【介系詞 + which / whom 的秒殺解法】</strong>：
+          <br>看到 <code>in which</code>、<code>to which</code>、<code>with which</code> 時，<strong>把先行詞放回子句後面</strong>，看後面的動詞配什麼介系詞！
+          <div class="code-box">
+            原句：This is the goal. We have been striving <strong>for</strong> the goal.<br>
+            合併：This is the goal <strong>for which</strong> we have been striving.
+          </div>
+          <strong>🔥 113 年克漏字第 12 題直接考出</strong>：選項 <code>(A) in that (B) with which (C) for that (D) to which</code>（注意：that 前面絕對不能加介系詞，(C) 秒刪！）。
+        </div>
+
+        <div class="rule-box">
+          <strong>【what vs that 世紀對決】</strong>：
+          <ul style="margin-left: 20px; margin-top: 4px;">
+            <li><code>that + 完整句子</code>：只當連接詞，無實質中文意思（如 <em>He said that he was happy.</em>）。</li>
+            <li><code>what + 不完整句子</code>（缺主詞或受詞）：相當於 <em>the thing which...</em>，意思是「...的事物」（如 <em>What matters most is your attitude.</em>）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 天王 4 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-red">No.4</span> 篇章邏輯轉折詞（綜合測驗與篇章結構之魂）</h3>
+        <p style="font-size: 0.93rem; color: #475569;">
+          <strong>大考地位</strong>：克漏字必定考 1～2 題；<strong>篇章結構（第 31~34 題）更是 100% 依賴轉折詞解題</strong>！
+        </p>
+
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">邏輯關係</th>
+              <th style="width: 45%;">歷屆常考轉折詞庫</th>
+              <th style="width: 30%;">上下文關係解密</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>轉折對比</strong></td>
+              <td><code>however</code>, <code>nevertheless</code>, <code>on the other hand</code>, <code>in contrast</code>, <code>instead</code></td>
+              <td>前後句語氣相反（正面 ↔ 負面）</td>
+            </tr>
+            <tr>
+              <td><strong>因果推論</strong></td>
+              <td><code>therefore</code>, <code>consequently</code>, <code>as a result</code>, <code>thus</code>, <code>hence</code></td>
+              <td>前句是原因，後句是必然結果</td>
+            </tr>
+            <tr>
+              <td><strong>遞進補充</strong></td>
+              <td><code>furthermore</code>, <code>moreover</code>, <code>in addition</code>, <code>what is more</code>, <code>besides</code></td>
+              <td>同方向論點加碼（好上加好／壞上加壞）</td>
+            </tr>
+            <tr>
+              <td><strong>讓步條件</strong></td>
+              <td><code>otherwise</code>（否則）, <code>meanwhile</code>（同時）, <code>likewise</code>（同樣地）</td>
+              <td>提供反面假想或平行對照</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 天王 5 -->
+      <div class="sub-block">
+        <h3 class="sub-title"><span class="tag tag-blue">No.5</span> 介系詞 vs 連接詞辨析（粗心高失分點）</h3>
+        <p style="font-size: 0.93rem; color: #475569;">
+          <strong>大考地位</strong>：題目最愛拿中文意思一樣、但後方文法接法不同的字放在一起考。
+        </p>
+
+        <div class="rule-box">
+          <strong>【黃金對照表】</strong>：
+          <table class="grammar-table" style="margin: 6px 0;">
+            <thead>
+              <tr>
+                <th>中文語義</th>
+                <th>連接詞（後接 S + V 完整子句）</th>
+                <th>介系詞片語（後接 N / V-ing 名詞片語）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>雖然 / 儘管</strong></td>
+                <td><code>Although</code>, <code>Even though</code>, <code>While</code></td>
+                <td><code>Despite</code>, <code>In spite of</code> (112年考點)</td>
+              </tr>
+              <tr>
+                <td><strong>因為</strong></td>
+                <td><code>Because</code>, <code>Since</code>, <code>As</code>, <code>in that</code></td>
+                <td><code>Because of</code>, <code>Due to</code>, <code>Owing to</code> (111年考點)</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="code-box">
+            ❌ <em>Despite he was tired</em>, he worked hard. （錯！Despite 是介系詞不能接子句）<br>
+            ✔️ <em>Although he was tired</em>, he worked hard.<br>
+            ✔️ <em>Despite his fatigue</em>, he worked hard.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PART 2: 文意選填 5 大破題公式 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">2</span> 文意選填（填空題）：五大「詞性語法定位法」</h2>
+      <p style="font-size: 0.93rem; color: #475569; margin-bottom: 14px;">
+        很多同學做文意選填（A～J 10 選 1）會錯很多，是因為「逐字拿去翻譯套中文」。<br>
+        <strong>大考高手的破題步驟是：不先看中文，先看空格前後的「文法詞性」！</strong>
+      </p>
+
+      <div class="rule-box">
+        <strong>📋 實戰解題三步驟：</strong>
+        <ol style="margin-left: 20px; margin-top: 4px;">
+          <li><strong>步驟 1（選項分類）</strong>：花 30 秒瀏覽 A～J 選項，在每個單字旁標上 <code>V</code>（動詞）、<code>N</code>（名詞）、<code>adj</code>（形容詞）、<code>adv</code>（副詞）。</li>
+          <li><strong>步驟 2（空格定位）</strong>：閱讀文章，看空格前後的字，套用下方 5 大公式秒判詞性。</li>
+          <li><strong>步驟 3（縮小範圍）</strong>：把 10 選 1 縮小成 2 選 1，再依文意決定答案。</li>
+        </ol>
+      </div>
+
+      <table class="grammar-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">公式名稱</th>
+            <th style="width: 35%;">空格前後文法特徵</th>
+            <th style="width: 40%;">鎖定詞性與實例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>公式 A：助動詞後</strong></td>
+            <td><code>can / will / should / to + [　]</code></td>
+            <td><strong>原形動詞 (V)</strong><br>例：<em>...in order to [ boost ] sales.</em></td>
+          </tr>
+          <tr>
+            <td><strong>公式 B：完成式/被動</strong></td>
+            <td><code>have/has/had + [　]</code> 或 <code>be + [　]</code></td>
+            <td><strong>過去分詞 (p.p.) 或 形容詞 (adj.)</strong><br>例：<em>...has been widely [ accepted ].</em></td>
+          </tr>
+          <tr>
+            <td><strong>公式 C：修飾名詞</strong></td>
+            <td><code>冠詞(a/the) + [　] + 名詞(N)</code></td>
+            <td><strong>形容詞 (adj.)</strong><br>例：<em>...a [ unique ] feature of this animal.</em></td>
+          </tr>
+          <tr>
+            <td><strong>公式 D：主詞與受詞</strong></td>
+            <td><code>動詞前 [　] + V</code> 或 <code>介系詞後 prep. + [　]</code></td>
+            <td><strong>名詞 (N) 或 動名詞 (V-ing)</strong><br>例：<em>...prevent the spread of [ disease ].</em></td>
+          </tr>
+          <tr>
+            <td><strong>公式 E：句首逗點前</strong></td>
+            <td><code>[　], S + V + O.</code></td>
+            <td><strong>轉折副詞 (adv.) 或 分詞構句 (V-ing/p.p.)</strong><br>例：<em>[ Unfortunately ], the plan failed.</em></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 3: 中翻英歷屆四大句型 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">3</span> 非選擇題（中翻英）：歷屆 10 年固定循環的四大句型</h2>
+      <p style="font-size: 0.93rem; color: #475569; margin-bottom: 14px;">
+        仔細拆解 106～115 學年度的 20 題中翻英，題目外表看似年年不同（高鐵、颱風、寵物承諾、戰爭和平、科幻科技），<strong>但骨子裡的文法句型幾乎是這 4 套在輪流考</strong>！
+      </p>
+
+      <!-- 句型 1 -->
+      <div class="sub-block">
+        <h4 style="font-weight: 700; color: var(--primary);">句型 ①：現在完成式 + 「最...之一」（出現 5 次！）</h4>
+        <div class="code-box">
+          <strong>句型公式</strong>：<code>Since + 過去時間點, S + have/has + p.p. + one of the most + [複數名詞].</code>
+        </div>
+        <ul style="font-size: 0.9rem; color: #334155; margin-left: 20px;">
+          <li><strong>108 年原題</strong>：自2007年營運以來，高鐵已成為臺灣最便利、最快速的交通工具之一。<br>
+          → <em>Since its operation in 2007, the High Speed Rail has become one of the most convenient and fastest means of transportation in Taiwan.</em></li>
+          <li><strong>106 年原題</strong>：征服玉山一直是國內外登山者最困難的挑戰之一。<br>
+          → <em>Conquering Jade Mountain has always been one of the most challenging tasks for climbers at home and abroad.</em></li>
+        </ul>
+      </div>
+
+      <!-- 句型 2 -->
+      <div class="sub-block">
+        <h4 style="font-weight: 700; color: var(--primary);">句型 ②：動名詞當主詞（出現 4 次！）</h4>
+        <div class="code-box">
+          <strong>句型公式</strong>：<code>[ V-ing + O ] + 單數動詞 (is / should be / has) ...</code>
+        </div>
+        <ul style="font-size: 0.9rem; color: #334155; margin-left: 20px;">
+          <li><strong>112 年原題</strong>：避免衝突、確保世界和平應該是所有人類追求的目標。<br>
+          → <em>Avoiding conflicts and ensuring world peace should be a goal that all humans pursue.</em></li>
+          <li><strong>111 年原題</strong>：飼養寵物並非一項短暫的人生體驗，而是一個對動物的終生承諾。<br>
+          → <em>Keeping pets is not a temporary life experience, but a lifelong commitment to animals.</em></li>
+        </ul>
+      </div>
+
+      <!-- 句型 3 -->
+      <div class="sub-block">
+        <h4 style="font-weight: 700; color: var(--primary);">句型 ③：對等連接詞 not... but...（並非...而是...）</h4>
+        <div class="code-box">
+          <strong>句型公式</strong>：<code>S + V + not [A], but [B].</code>（A 與 B 詞性必須對稱）
+        </div>
+        <ul style="font-size: 0.9rem; color: #334155; margin-left: 20px;">
+          <li>孩子在作文與翻譯中寫到「不是...而是...」時，絕不能逐字寫 <code>is no... but is...</code>，標準學測句型就是 <code>not A, but B</code>。</li>
+        </ul>
+      </div>
+
+      <!-- 句型 4 -->
+      <div class="sub-block">
+        <h4 style="font-weight: 700; color: var(--primary);">句型 ④：時間副詞子句與分詞修飾（在...時，...）</h4>
+        <div class="code-box">
+          <strong>句型公式</strong>：<code>While / When + [ V-ing + O ], S + should not ignore...</code>
+        </div>
+        <ul style="font-size: 0.9rem; color: #334155; margin-left: 20px;">
+          <li><strong>111 年原題</strong>：在享受寵物所帶來的歡樂時，我們不該忽略照顧牠們的責任。<br>
+          → <em>While enjoying the pleasure brought by pets, we should not neglect the responsibility to take good care of them.</em></li>
+          <li><strong>114 年原題</strong>：過去在科幻電影中出現的神奇物件，現在正逐一成真。<br>
+          → <em>Magical objects appearing in science fiction movies in the past are now coming true one by one.</em>（注意：appearing 後位修飾 objects！）</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- PART 4: 英文作文「文法升級」實戰技巧 -->
+    <div class="section-card">
+      <h2 class="section-title"><span class="num-badge">4</span> 英文作文滿分：如何把「國中簡單句」升級為「學測高分句」</h2>
+      <p style="font-size: 0.93rem; color: #475569; margin-bottom: 14px;">
+        大考閱卷教授在評定作文「語言能力（Language Use）」一項時，最看重的就是<strong>「句型多樣性（Sentence Variety）」</strong>。<br>
+        如果整篇作文都是 <em>I think... / It is good... / People should...</em>，分數最多只能落在 10~12 分（均標）。以下示範如何一秒升級：
+      </p>
+
+      <table class="grammar-table">
+        <thead>
+          <tr>
+            <th style="width: 20%;">想表達的意思</th>
+            <th style="width: 38%;">均標普通句（簡單句堆疊）</th>
+            <th style="width: 42%;">頂標升級句（大考教授最愛）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>表達原因與結果</strong></td>
+            <td>I was very tired. So I could not focus on the exam.</td>
+            <td><strong>分詞構句</strong>：<br><code>Exhausted from staying up late, I found it difficult to concentrate on the exam.</code></td>
+          </tr>
+          <tr>
+            <td><strong>強調某事的重要性</strong></td>
+            <td>Health is very important for everyone in modern life.</td>
+            <td><strong>虛主詞 + 比較級</strong>：<br><code>Nothing is more crucial than maintaining good health in modern life.</code></td>
+          </tr>
+          <tr>
+            <td><strong>提出解決方案</strong></td>
+            <td>We can do more exercise to solve this problem.</td>
+            <td><strong>動名詞主詞 + 倒裝/情態</strong>：<br><code>Only by taking regular exercise can we effectively tackle this issue.</code></td>
+          </tr>
+          <tr>
+            <td><strong>表達轉折與反思</strong></td>
+            <td>Social media is good, but it also has bad effects.</td>
+            <td><strong>讓步子句 + 對比</strong>：<br><code>Convenient as social media is, its potential hazards should never be overlooked.</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 5: 考前自測檢核清單 -->
+    <div class="section-card" style="border: 2px dashed #94a3b8; background: #fafafa;">
+      <h3 style="font-size: 1.15rem; font-weight: 800; color: #1e293b; margin-bottom: 12px;">
+        ✅ 學測高頻文法「考前自我檢測清單」（印出後讓孩子逐項打勾）
+      </h3>
+      <div style="font-size: 0.93rem; line-height: 1.9; color: #334155;">
+        <label><input type="checkbox"> 我能一眼看出克漏字選項中的 <code>V-ing</code>（主動/進行）與 <code>p.p.</code>（被動/完成）差別，並正確找到主詞。</label><br>
+        <label><input type="checkbox"> 我清楚知道 <code>must have p.p.</code>（當時必定已經）、<code>could have p.p.</code>（當時本來可以卻沒做）的涵義。</label><br>
+        <label><input type="checkbox"> 看到 <code>in which</code>、<code>to which</code> 時，我懂得把先行詞丟回子句找動詞搭配的介系詞。</label><br>
+        <label><input type="checkbox"> 我熟記至少 10 個最常考的篇章轉折詞（如 <code>nevertheless</code>, <code>consequently</code>, <code>furthermore</code>, <code>in contrast</code>）。</label><br>
+        <label><input type="checkbox"> 我絕不會在 <code>Despite</code> 後面接 <code>S + V</code> 句子，也不會在 <code>Although</code> 後面接單一名詞。</label><br>
+        <label><input type="checkbox"> 做文意選填時，我能利用空格前後的詞性公式（助動詞後接原形、冠詞後接形容詞）縮小選項範圍。</label><br>
+        <label><input type="checkbox"> 寫中翻英遇到「自從...以來」能本能反應使用 <code>Since + 過去時間, S + have/has p.p.</code>。</label><br>
+        <label><input type="checkbox"> 寫英文作文時，我能刻意安排 2～3 個分詞構句與動名詞主詞，避免全部都是簡單句。</label>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

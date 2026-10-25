@@ -1,0 +1,21 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python / Environment Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+
+# Scratch & IDE Temporary Logs
+scratch/
+.system_generated/
+*.log
+
+# Backups
+*.bak
+*.tmp
