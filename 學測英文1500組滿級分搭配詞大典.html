@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第二關：1,500 組滿級分搭配詞・主題闖關升級系統</title>
+  <title>第二關：1,500 組滿級分搭配詞・主題闖關升級系統 (快捷鍵/離線列印)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -26,11 +26,11 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      padding-bottom: 80px;
+      padding-bottom: 90px;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Ultra-Compact Sticky Header */
+    /* Compact Sticky Header */
     .compact-header {
       position: sticky;
       top: 0;
@@ -43,12 +43,12 @@
     .top-strip {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 8px 16px;
+      padding: 6px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
     .brand-section { display: flex; align-items: center; gap: 8px; }
     .brand-title {
@@ -70,25 +70,25 @@
       border-radius: 999px;
     }
 
-    .rpg-strip { display: flex; align-items: center; gap: 12px; }
+    .rpg-strip { display: flex; align-items: center; gap: 10px; }
     .level-badge {
       background: linear-gradient(135deg, #0284c7, #3b82f6);
       color: white;
       font-weight: 900;
-      font-size: 0.8rem;
-      padding: 3px 10px;
+      font-size: 0.78rem;
+      padding: 2px 9px;
       border-radius: 999px;
     }
     .exp-mini { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #94a3b8; }
-    .exp-bar-bg { width: 70px; height: 6px; background: #334155; border-radius: 999px; overflow: hidden; }
+    .exp-bar-bg { width: 65px; height: 6px; background: #334155; border-radius: 999px; overflow: hidden; }
     .exp-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #38bdf8, #10b981); border-radius: 999px; transition: width 0.4s; }
     .streak-tag {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 800;
       background: rgba(239, 68, 68, 0.2);
       border: 1px solid rgba(239, 68, 68, 0.4);
       color: #fca5a5;
-      padding: 2px 8px;
+      padding: 1px 7px;
       border-radius: 999px;
     }
 
@@ -106,13 +106,13 @@
       transition: all 0.15s;
     }
     .btn-nav:hover { background: rgba(255,255,255,0.25); color: white; }
-    .btn-nav.gold { background: #f59e0b; color: #0f172a; border-color: #d97706; }
+    .btn-nav.print { background: #10b981; color: white; border-color: #059669; font-weight: 800; }
 
     /* Controls Strip */
     .controls-strip {
       background: #1e293b;
       border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 6px 16px;
+      padding: 5px 16px;
     }
     .controls-container {
       max-width: 1100px;
@@ -121,11 +121,11 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
-    .filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .filter-group { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
     .c-btn {
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 5px;
       font-size: 0.75rem;
       font-weight: 700;
@@ -145,9 +145,9 @@
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 5px;
       color: white;
-      padding: 3px 8px;
+      padding: 2px 8px;
       font-size: 0.75rem;
-      width: 140px;
+      width: 120px;
       outline: none;
     }
     .search-input-compact:focus { border-color: #38bdf8; }
@@ -155,28 +155,30 @@
     /* Layout */
     .main-wrap {
       max-width: 1100px;
-      margin: 16px auto 0;
+      margin: 14px auto 0;
       padding: 0 16px;
     }
 
-    /* Questions List */
-    .questions-container { display: flex; flex-direction: column; gap: 16px; }
+    .questions-container { display: flex; flex-direction: column; gap: 14px; }
     .q-card {
       background: var(--card-bg);
       border-radius: 10px;
       padding: 16px 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       transition: all 0.2s;
     }
-    .q-card:hover { border-color: #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .q-card:hover, .q-card.is-active {
+      border-color: #0284c7;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.12);
+    }
     .q-card.bookmarked { border-left: 4px solid #f59e0b; }
 
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       flex-wrap: wrap;
       gap: 6px;
     }
@@ -228,7 +230,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     @media (max-width: 640px) { .options-grid { grid-template-columns: 1fr; } }
     .opt-box {
@@ -278,19 +280,64 @@
     .feedback-banner.error { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
     .exp-gain-tag { background: #f59e0b; color: #0f172a; font-size: 0.75rem; padding: 1px 6px; border-radius: 999px; font-weight: 900; }
 
-    .analysis-section { font-size: 0.88rem; }
-    .ans-line { margin-bottom: 4px; }
+    .ans-line { margin-bottom: 4px; font-size: 0.88rem; }
     .ans-text { color: #059669; font-weight: 900; }
     .colloc-formula { font-weight: 800; color: #0284c7; background: #e0f2fe; padding: 2px 8px; border-radius: 4px; margin-left: 6px; }
-    .clue-line { margin-bottom: 4px; color: #1e293b; }
+    .clue-line { margin-bottom: 4px; font-size: 0.88rem; color: #1e293b; }
     .clue-tag { font-weight: 800; color: #0284c7; }
-    .trans-line { color: #475569; }
+    .trans-line { font-size: 0.88rem; color: #475569; }
 
-    /* Pagination / Load more */
-    .load-more-wrap {
-      text-align: center;
-      margin: 24px 0;
+    /* Quick Jump Button inside card */
+    .card-footer-nav { margin-top: 12px; text-align: right; }
+    .btn-jump-next {
+      background: #0284c7;
+      color: white;
+      font-weight: 800;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.15s;
     }
+    .btn-jump-next:hover { background: #0369a1; transform: translateY(-1px); }
+
+    /* Floating Quick Nav Pill */
+    .floating-nav-pill {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(11, 19, 43, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      z-index: 999;
+      font-size: 0.82rem;
+    }
+    .btn-pill-arrow {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 900;
+      transition: background 0.15s;
+    }
+    .btn-pill-arrow:hover { background: #0284c7; }
+
+    /* Load more button */
+    .load-more-wrap { text-align: center; margin: 24px 0; }
     .btn-load-more {
       background: #0284c7;
       color: white;
@@ -305,29 +352,91 @@
     }
     .btn-load-more:hover { background: #0369a1; transform: translateY(-1px); }
 
-    /* Toast */
-    .toast-popup {
+    /* Modals */
+    .modal-overlay {
+      display: none;
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0f172a;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      border: 1px solid #334155;
-      display: flex;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 10000;
       align-items: center;
-      gap: 10px;
-      z-index: 9999;
-      transform: translateY(80px);
-      opacity: 0;
-      transition: all 0.25s;
+      justify-content: center;
+      padding: 16px;
     }
-    .toast-popup.show { transform: translateY(0); opacity: 1; }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: white;
+      border-radius: 12px;
+      max-width: 540px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .modal-title { font-size: 1.15rem; font-weight: 900; color: #0f172a; }
+    .btn-close { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #64748b; }
+
+    .print-opt-group { margin-bottom: 14px; }
+    .print-opt-label { font-size: 0.85rem; font-weight: 800; color: #1e293b; margin-bottom: 6px; }
+    .print-btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn-print-choice {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-align: left;
+    }
+    .btn-print-choice.active { background: #e0f2fe; border-color: #0284c7; color: #0369a1; }
+    .btn-print-go {
+      width: 100%;
+      background: #10b981;
+      color: white;
+      font-weight: 800;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+    .btn-print-go:hover { background: #059669; }
+
+    /* Print Styles */
+    @media print {
+      body { background: white !important; color: black !important; font-size: 10pt !important; line-height: 1.4 !important; padding: 0 !important; }
+      .compact-header, .controls-strip, .floating-nav-pill, .modal-overlay, .btn-star, .card-footer-nav, .load-more-wrap { display: none !important; }
+      .main-wrap { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+      .q-card { border: 1px solid #666 !important; box-shadow: none !important; border-radius: 4px !important; margin-bottom: 12px !important; padding: 10px 14px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+      .q-card.bookmarked { border-left: 1px solid #666 !important; }
+      .q-stem { font-size: 10.5pt !important; color: black !important; }
+      .blank-mark { color: black !important; border-bottom: 1.5px solid black !important; }
+      .options-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 6px !important; }
+      .opt-box { border: 1px solid #999 !important; background: none !important; padding: 4px 6px !important; }
+      body.print-study-mode .analysis-box { display: block !important; border: 1px dashed #666 !important; background: #fdfdfd !important; padding: 8px !important; margin-top: 6px !important; }
+      body.print-exam-mode .analysis-box { display: none !important; }
+      .print-header-sheet { display: block !important; border-bottom: 2px solid black; padding-bottom: 8px; margin-bottom: 14px; }
+    }
+    .print-header-sheet { display: none; }
   </style>
 </head>
 <body>
+
+  <!-- Printable Header Sheet -->
+  <div class="print-header-sheet">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 style="font-size:14pt; margin:0;">【學測英文 1,500 組主題搭配詞・離線自學研讀單】</h2>
+      <div style="font-size:9pt;">日期：____/____/____ ｜ 複習檢核：[ ]Day 1  [ ]Day 3  [ ]Day 7</div>
+    </div>
+    <div style="font-size:8.5pt; color:#555; margin-top:3px;">
+      核心焦點：85% 搭配詞動賓/形名結構公式、大考出題密碼與整句翻譯
+    </div>
+  </div>
 
   <!-- Ultra-Compact Sticky Header -->
   <header class="compact-header">
@@ -347,8 +456,10 @@
       </div>
 
       <div class="nav-actions">
+        <button class="btn-nav print" onclick="openPrintModal()">🖨️ 列印紙本</button>
         <button class="btn-nav" onclick="exportProgress()">💾 匯出</button>
         <label class="btn-nav" style="cursor:pointer;">📥 匯入<input type="file" id="importFileInput" accept=".json" style="display:none;" onchange="importProgress(event)"></label>
+        <button class="btn-nav" onclick="openResetModal()">🔄 重置</button>
         <a href="vocab-quiz.html" class="btn-nav" style="background:#1e3a8a; color:white; border-color:#2563eb;">⬅️ 回第 1 關</a>
         <a href="index.html" class="btn-nav">🏠 首頁</a>
       </div>
@@ -357,7 +468,6 @@
     <!-- Controls Strip -->
     <div class="controls-strip">
       <div class="controls-container">
-        <!-- Theme Chapter Selector -->
         <div class="filter-group">
           <button class="c-btn active" onclick="filterTheme(0, this)">全 1500 題</button>
           <button class="c-btn" onclick="filterTheme(1, this)">關卡 1: 個人心智 (300)</button>
@@ -367,7 +477,6 @@
           <button class="c-btn" onclick="filterTheme(5, this)">關卡 5: 人文文化 (300)</button>
         </div>
 
-        <!-- Special Filters & Search -->
         <div class="filter-group">
           <button class="c-btn warning" id="btnFilterDue" onclick="setSpecialFilter('due', this)">🔥 今日待複習 (<span id="filterDueCount">0</span>)</button>
           <button class="c-btn danger" id="btnFilterWrong" onclick="setSpecialFilter('box1', this)">⚠️ Box 1 錯題 (<span id="filterBox1Count">0</span>)</button>
@@ -378,7 +487,7 @@
     </div>
   </header>
 
-  <!-- Questions List (Rendered dynamically for extreme speed) -->
+  <!-- Main Container -->
   <main class="main-wrap">
     <div class="questions-container" id="questionsContainer"></div>
     
@@ -387,12 +496,40 @@
     </div>
   </main>
 
-  <!-- Toast Popup -->
-  <div class="toast-popup" id="toastPopup">
-    <span style="font-size:1.3rem;" id="toastIcon">🎉</span>
-    <div>
-      <div style="font-weight:800; font-size:0.85rem;" id="toastTitle">通知</div>
-      <div style="font-size:0.75rem; color:#cbd5e1;" id="toastMsg">內容</div>
+  <!-- Floating Nav Pill -->
+  <div class="floating-nav-pill" id="floatingNavPill">
+    <button class="btn-pill-arrow" onclick="navStep(-1)" title="上一題 (K / ↑)">▲</button>
+    <span id="activeQText" style="font-weight:700;">第 1 題</span>
+    <button class="btn-pill-arrow" onclick="navStep(1)" title="下一題 (J / Enter / ↓)">▼</button>
+  </div>
+
+  <!-- Print Modal -->
+  <div class="modal-overlay" id="printModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title">🖨️ 列印離線搭配詞研讀單 (A4 排版)</div>
+        <button class="btn-close" onclick="closePrintModal()">×</button>
+      </div>
+
+      <div class="print-opt-group">
+        <div class="print-opt-label">1. 選擇列印題目範圍：</div>
+        <div class="print-btn-row">
+          <button class="btn-print-choice active" onclick="setPrintScope('current', this)">📑 當前關卡題目 (前30題)</button>
+          <button class="btn-print-choice" onclick="setPrintScope('box1', this)">⚠️ Box 1 弱點錯題本</button>
+          <button class="btn-print-choice" onclick="setPrintScope('due', this)">🔥 艾賓浩斯今日待複習</button>
+          <button class="btn-print-choice" onclick="setPrintScope('starred', this)">⭐ 我的星號收藏題</button>
+        </div>
+      </div>
+
+      <div class="print-opt-group">
+        <div class="print-opt-label">2. 選擇紙本排版格式：</div>
+        <div class="print-btn-row">
+          <button class="btn-print-choice active" onclick="setPrintFormat('study', this)">📖 精華研讀本 (含公式/解析)</button>
+          <button class="btn-print-choice" onclick="setPrintFormat('exam', this)">📝 自測練習卷 (空格挖空)</button>
+        </div>
+      </div>
+
+      <button class="btn-print-go" onclick="executePrint()">🖨️ 立即列印 / 存為 PDF</button>
     </div>
   </div>
 
@@ -420,10 +557,14 @@
       questions: {}
     };
 
-    let currentTheme = 0; // 0 = all
+    let currentTheme = 0;
     let currentSpecialFilter = 'all';
     let visibleQuestions = [];
     let displayedCount = 25;
+    let activeQuestionIdx = 0;
+
+    let printScope = 'current';
+    let printFormat = 'study';
 
     function loadState() {
       try {
@@ -475,7 +616,6 @@
         expGained += 15;
         expMsg = "+15 EXP (答對)";
         if (appState.profile.streak >= 5) expGained += 15;
-
         if (qState.box === 1 && qState.wrongCount > 0) expGained += 25;
 
         if (qState.box < 5) qState.box++;
@@ -512,12 +652,7 @@
           break;
         }
       }
-      if (newLvl > currLvl) {
-        appState.profile.level = newLvl;
-        showToast("🎉 關卡晉升！", `恭喜升級為 Lv.${newLvl}「${LEVEL_CONFIG[newLvl - 1].title}」！`, "🏆");
-      } else {
-        showToast("⚡ 搭配詞經驗！", `+${amount} EXP！保持連勝！`, "⭐");
-      }
+      if (newLvl > currLvl) appState.profile.level = newLvl;
     }
 
     function toggleBookmark(qid) {
@@ -615,7 +750,7 @@
       const blankText = isAnswered ? `<span class="blank-mark filled-correct" id="blank_${q.id}">${q.word}</span>` : `<span class="blank-mark" id="blank_${q.id}">______</span>`;
 
       return `
-        <div class="q-card ${isAnswered ? 'answered' : ''} ${qState.bookmarked ? 'bookmarked' : ''}" data-id="${q.id}">
+        <div class="q-card ${isAnswered ? 'answered' : ''} ${qState.bookmarked ? 'bookmarked' : ''}" data-id="${q.id}" data-idx="${idx}" id="qcard_${idx}">
           <div class="q-header">
             <div class="q-meta">
               <span class="q-id">#${idx + 1}</span>
@@ -645,6 +780,10 @@
               <div class="clue-line"><span class="clue-tag">💡 大考出題密碼：</span> ${q.tip}</div>
               <div class="trans-line"><span style="font-weight:700; color:#334155;">📖 題幹全句翻譯：</span> ${q.trans}</div>
             </div>
+
+            <div class="card-footer-nav">
+              <button class="btn-jump-next" onclick="jumpToNextQuestion(${idx})">下一題 ➔ (Enter / J)</button>
+            </div>
           </div>
         </div>
       `;
@@ -669,6 +808,13 @@
 
       displayedCount = 25;
       renderVisibleQuestions();
+      if (visibleQuestions.length > 0) {
+        activeQuestionIdx = 0;
+        setTimeout(() => {
+          const first = document.querySelector('.q-card');
+          if (first) setActiveQuestion(first);
+        }, 50);
+      }
     }
 
     function renderVisibleQuestions() {
@@ -705,6 +851,101 @@
       filterQuestions();
     }
 
+    // --- Shortcuts & Jumping ---
+    function jumpToNextQuestion(currIdx) {
+      const cards = Array.from(document.querySelectorAll('.q-card'));
+      if (currIdx + 1 < cards.length) {
+        setActiveQuestion(cards[currIdx + 1]);
+      } else if (displayedCount < visibleQuestions.length) {
+        loadMoreQuestions();
+        setTimeout(() => {
+          const updated = Array.from(document.querySelectorAll('.q-card'));
+          if (currIdx + 1 < updated.length) setActiveQuestion(updated[currIdx + 1]);
+        }, 50);
+      }
+    }
+
+    function navStep(dir) {
+      const cards = Array.from(document.querySelectorAll('.q-card'));
+      if (cards.length === 0) return;
+      activeQuestionIdx += dir;
+      if (activeQuestionIdx < 0) activeQuestionIdx = 0;
+      if (activeQuestionIdx >= cards.length) activeQuestionIdx = cards.length - 1;
+      setActiveQuestion(cards[activeQuestionIdx]);
+    }
+
+    function setActiveQuestion(cardEl) {
+      document.querySelectorAll('.q-card').forEach(c => c.classList.remove('is-active'));
+      cardEl.classList.add('is-active');
+      cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      const cards = Array.from(document.querySelectorAll('.q-card'));
+      const idx = cards.indexOf(cardEl);
+      activeQuestionIdx = idx;
+      document.getElementById('activeQText').textContent = `第 ${idx + 1} 題`;
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+      const cards = Array.from(document.querySelectorAll('.q-card'));
+      if (cards.length === 0) return;
+
+      const activeCard = cards[activeQuestionIdx] || cards[0];
+      const qid = activeCard.getAttribute('data-id');
+
+      const key = e.key.toUpperCase();
+      let chosen = null;
+      if (key === 'A' || key === '1') chosen = 'A';
+      else if (key === 'B' || key === '2') chosen = 'B';
+      else if (key === 'C' || key === '3') chosen = 'C';
+      else if (key === 'D' || key === '4') chosen = 'D';
+
+      if (chosen) {
+        const optEl = activeCard.querySelector(`.opt-box[data-letter="${chosen}"]`);
+        if (optEl) handleOptionClick(optEl, qid, chosen);
+        return;
+      }
+
+      if (e.key === 'Enter' || e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        navStep(1);
+      } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        navStep(-1);
+      }
+    });
+
+    // --- Print System ---
+    function openPrintModal() { document.getElementById('printModal').classList.add('active'); }
+    function closePrintModal() { document.getElementById('printModal').classList.remove('active'); }
+    function setPrintScope(scope, btn) {
+      printScope = scope;
+      btn.closest('.print-btn-row').querySelectorAll('.btn-print-choice').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    function setPrintFormat(fmt, btn) {
+      printFormat = fmt;
+      btn.closest('.print-btn-row').querySelectorAll('.btn-print-choice').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function executePrint() {
+      closePrintModal();
+      const prevDisplayed = displayedCount;
+      displayedCount = 40; // Expand to 40 items for print sheet
+      renderVisibleQuestions();
+
+      document.body.classList.remove('print-study-mode', 'print-exam-mode');
+      if (printFormat === 'study') document.body.classList.add('print-study-mode');
+      else document.body.classList.add('print-exam-mode');
+
+      setTimeout(() => {
+        window.print();
+        displayedCount = prevDisplayed;
+        renderVisibleQuestions();
+      }, 250);
+    }
+
     function exportProgress() {
       const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appState, null, 2));
       const downloadAnchor = document.createElement('a');
@@ -713,7 +954,6 @@
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
-      showToast("💾 匯出成功", "搭配詞進度已存至裝置", "📥");
     }
 
     function importProgress(event) {
@@ -733,22 +973,45 @@
       reader.readAsText(file);
     }
 
-    let toastTimer = null;
-    function showToast(title, msg, icon = "🎉") {
-      const toast = document.getElementById('toastPopup');
-      document.getElementById('toastIcon').textContent = icon;
-      document.getElementById('toastTitle').textContent = title;
-      document.getElementById('toastMsg').textContent = msg;
-      toast.classList.add('show');
-      if (toastTimer) clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
       loadState();
       filterQuestions();
       updateHUD();
     });
+  
+    function openResetModal() {
+      document.getElementById('resetModal').classList.add('active');
+    }
+    function closeResetModal() {
+      document.getElementById('resetModal').classList.remove('active');
+    }
+    function confirmResetProgress() {
+      localStorage.removeItem(STORAGE_KEY);
+      location.reload();
+    }
+
   </script>
+
+  <!-- Reset Confirmation Modal (100% No Mojibake In-App Modal) -->
+  <div class="modal-overlay" id="resetModal">
+    <div class="modal-box" style="max-width: 460px; text-align: center;">
+      <div style="font-size: 2.8rem; margin-bottom: 6px;">⚠️</div>
+      <div class="modal-title" style="font-size: 1.25rem; font-weight: 900; color: #dc2626; margin-bottom: 10px; justify-content: center;">
+        確認重置所有學習進度？
+      </div>
+      <div style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin-bottom: 16px; text-align: left; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px;">
+        此動作將<strong>徹底清除</strong>：<br>
+        • 角色等級與 EXP 經驗值<br>
+        • 連勝紀錄與連續打卡進度<br>
+        • 艾賓浩斯 5 階記憶盒子與所有答題歷史<br><br>
+        <span style="color: #0284c7; font-weight: 800;">💡 建議：</span>在重置前，您可以先點擊「💾 匯出」備份進度檔案。
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <button class="c-btn" style="padding: 9px; font-size: 0.88rem; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;" onclick="closeResetModal()">取消（保留紀錄）</button>
+        <button class="c-btn" style="padding: 9px; font-size: 0.88rem; background: #dc2626; color: white; border: 1px solid #b91c1c; font-weight: 800;" onclick="confirmResetProgress()">確認重置（清除）</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

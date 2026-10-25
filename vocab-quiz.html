@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第一關：歷屆真題 15 級分 RPG 測驗系統 (106~115 全 125 題)</title>
+  <title>第一關：歷屆真題 15 級分 RPG 自測 (每日任務/離線列印/快捷鍵)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      padding-bottom: 80px;
+      padding-bottom: 90px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -45,18 +45,14 @@
     .top-strip {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 8px 16px;
+      padding: 6px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
-    }
-    .brand-section {
-      display: flex;
-      align-items: center;
       gap: 8px;
     }
+    .brand-section { display: flex; align-items: center; gap: 8px; }
     .brand-title {
       font-size: 1.05rem;
       font-weight: 900;
@@ -66,72 +62,40 @@
       gap: 6px;
       text-decoration: none;
     }
-    .stage-tag {
+    .mode-pill {
       font-size: 0.72rem;
       font-weight: 800;
-      background: rgba(245, 158, 11, 0.2);
-      color: #fde047;
-      border: 1px solid rgba(245, 158, 11, 0.4);
+      background: #0284c7;
+      color: white;
       padding: 1px 8px;
       border-radius: 999px;
+      cursor: pointer;
     }
 
-    /* Compact RPG Stats Strip */
-    .rpg-strip {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    /* RPG Stats Strip */
+    .rpg-strip { display: flex; align-items: center; gap: 10px; }
     .level-badge {
       background: linear-gradient(135deg, #f59e0b, #ef4444);
       color: white;
       font-weight: 900;
-      font-size: 0.8rem;
-      padding: 3px 10px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .exp-mini {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      color: #94a3b8;
-    }
-    .exp-bar-bg {
-      width: 70px;
-      height: 6px;
-      background: #334155;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .exp-bar-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #f59e0b, #10b981);
-      border-radius: 999px;
-      transition: width 0.4s;
-    }
-    .streak-tag {
       font-size: 0.78rem;
+      padding: 2px 9px;
+      border-radius: 999px;
+    }
+    .exp-mini { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #94a3b8; }
+    .exp-bar-bg { width: 65px; height: 6px; background: #334155; border-radius: 999px; overflow: hidden; }
+    .exp-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #f59e0b, #10b981); border-radius: 999px; transition: width 0.4s; }
+    .streak-tag {
+      font-size: 0.75rem;
       font-weight: 800;
       background: rgba(239, 68, 68, 0.2);
       border: 1px solid rgba(239, 68, 68, 0.4);
       color: #fca5a5;
-      padding: 2px 8px;
+      padding: 1px 7px;
       border-radius: 999px;
-      display: flex;
-      align-items: center;
-      gap: 3px;
     }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+
+    .nav-actions { display: flex; align-items: center; gap: 6px; }
     .btn-nav {
       background: rgba(255,255,255,0.12);
       color: #cbd5e1;
@@ -145,13 +109,13 @@
       transition: all 0.15s;
     }
     .btn-nav:hover { background: rgba(255,255,255,0.25); color: white; }
-    .btn-nav.gold { background: #f59e0b; color: #0f172a; border-color: #d97706; }
+    .btn-nav.print { background: #10b981; color: white; border-color: #059669; font-weight: 800; }
 
-    /* Compact Second Row: Leitner Box & Filter Strip */
+    /* Controls Strip */
     .controls-strip {
       background: #1e293b;
       border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 6px 16px;
+      padding: 5px 16px;
     }
     .controls-container {
       max-width: 1100px;
@@ -160,16 +124,11 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-    }
-    .filter-group {
-      display: flex;
-      align-items: center;
       gap: 6px;
-      flex-wrap: wrap;
     }
+    .filter-group { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
     .c-btn {
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 5px;
       font-size: 0.75rem;
       font-weight: 700;
@@ -180,68 +139,88 @@
       transition: all 0.15s;
     }
     .c-btn:hover { background: rgba(255,255,255,0.15); color: white; }
-    .c-btn.active {
-      background: #2563eb;
-      color: white;
-      border-color: #3b82f6;
-    }
-    .c-btn.danger.active {
-      background: #dc2626;
-      border-color: #ef4444;
-    }
-    .c-btn.warning.active {
-      background: #d97706;
-      border-color: #f59e0b;
-    }
+    .c-btn.active { background: #2563eb; color: white; border-color: #3b82f6; }
+    .c-btn.daily.active { background: #f59e0b; color: #0f172a; border-color: #d97706; font-weight: 900; }
+    .c-btn.danger.active { background: #dc2626; border-color: #ef4444; }
+    .c-btn.warning.active { background: #d97706; border-color: #f59e0b; }
+
     .search-input-compact {
       background: #0f172a;
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 5px;
       color: white;
-      padding: 3px 8px;
+      padding: 2px 8px;
       font-size: 0.75rem;
-      width: 140px;
+      width: 120px;
       outline: none;
     }
     .search-input-compact:focus { border-color: #38bdf8; }
 
-    /* Layout */
+    /* Daily Quest Banner */
+    .daily-quest-banner {
+      display: none;
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      border: 1px solid #3b82f6;
+      border-radius: 8px;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+      color: white;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .daily-quest-banner.active { display: flex; }
+    .daily-title { font-weight: 900; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+    .daily-progress-pill {
+      background: #f59e0b;
+      color: #0f172a;
+      font-weight: 900;
+      font-size: 0.8rem;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+
+    /* Main Container */
     .main-wrap {
       max-width: 1100px;
-      margin: 16px auto 0;
+      margin: 14px auto 0;
       padding: 0 16px;
     }
 
-    /* Questions List */
-    .questions-container {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    /* Questions */
+    .questions-container { display: flex; flex-direction: column; gap: 14px; }
     .q-card {
       background: var(--card-bg);
       border-radius: 10px;
       padding: 16px 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       transition: all 0.2s;
+      position: relative;
     }
-    .q-card:hover { border-color: #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .q-card:hover, .q-card.is-active {
+      border-color: #3b82f6;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+    }
     .q-card.bookmarked { border-left: 4px solid #f59e0b; }
 
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       flex-wrap: wrap;
       gap: 6px;
     }
-    .q-meta {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
+    .q-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .q-idx-badge {
+      font-size: 0.72rem;
+      font-weight: 900;
+      background: #0f172a;
+      color: white;
+      padding: 1px 6px;
+      border-radius: 4px;
     }
     .q-id { font-weight: 800; color: #1e293b; font-size: 0.9rem; }
     .pos-badge { font-size: 0.72rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; }
@@ -249,6 +228,7 @@
     .pos-n { background: #fdf2f8; color: #be185d; border: 1px solid #fbcfe8; }
     .pos-adj { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
     .pos-adv { background: #fefce8; color: #a16207; border: 1px solid #fef08a; }
+    .day-tag { font-size: 0.7rem; font-weight: 800; background: #e0f2fe; color: #0369a1; padding: 1px 6px; border-radius: 4px; }
 
     .box-badge { font-size: 0.7rem; font-weight: 800; padding: 1px 6px; border-radius: 4px; }
     .box-badge.box-1 { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
@@ -270,29 +250,17 @@
       margin-bottom: 12px;
       font-weight: 500;
     }
-    .blank-mark {
-      font-weight: 800;
-      color: #2563eb;
-      border-bottom: 2px solid #93c5fd;
-      padding: 0 4px;
-    }
-    .blank-mark.filled-correct {
-      color: #059669;
-      border-bottom-color: #059669;
-      background: #ecfdf5;
-      border-radius: 4px;
-    }
+    .blank-mark { font-weight: 800; color: #2563eb; border-bottom: 2px solid #93c5fd; padding: 0 4px; }
+    .blank-mark.filled-correct { color: #059669; border-bottom-color: #059669; background: #ecfdf5; border-radius: 4px; }
 
     /* Options */
     .options-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    @media (max-width: 640px) {
-      .options-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 640px) { .options-grid { grid-template-columns: 1fr; } }
     .opt-box {
       background: #f8fafc;
       border: 1.5px solid #e2e8f0;
@@ -343,13 +311,12 @@
     .feedback-banner.error { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
     .exp-gain-tag { background: #f59e0b; color: #0f172a; font-size: 0.75rem; padding: 1px 6px; border-radius: 999px; font-weight: 900; }
 
-    .analysis-section { font-size: 0.88rem; margin-bottom: 10px; }
-    .ans-line { margin-bottom: 4px; }
+    .ans-line { margin-bottom: 4px; font-size: 0.88rem; }
     .ans-text { color: #059669; font-weight: 900; }
     .ans-level-tag { font-size: 0.72rem; background: #e0f2fe; color: #0369a1; padding: 1px 5px; border-radius: 4px; margin-left: 6px; }
-    .clue-line { margin-bottom: 4px; color: #1e293b; }
+    .clue-line { margin-bottom: 4px; font-size: 0.88rem; color: #1e293b; }
     .clue-tag { font-weight: 800; color: #2563eb; }
-    .trans-line { color: #475569; }
+    .trans-line { font-size: 0.88rem; color: #475569; }
 
     .gloss-grid {
       display: grid;
@@ -360,7 +327,7 @@
       border-radius: 6px;
       padding: 8px 12px;
       font-size: 0.82rem;
-      margin-bottom: 10px;
+      margin: 8px 0;
     }
     @media (max-width: 640px) { .gloss-grid { grid-template-columns: 1fr; } }
 
@@ -369,13 +336,9 @@
       border: 1.5px solid #a7f3d0;
       border-radius: 6px;
       padding: 10px 12px;
+      margin-top: 8px;
     }
-    .scaffold-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
+    .scaffold-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
     .scaffold-badge { font-weight: 900; color: #065f46; font-size: 0.82rem; }
     .scaffold-scenario { font-size: 0.72rem; font-weight: 800; color: #047857; background: #d1fae5; padding: 1px 6px; border-radius: 4px; }
     .scaffold-body { font-size: 0.82rem; }
@@ -384,28 +347,59 @@
     .scaffold-example { background: white; border-left: 3px solid #10b981; padding: 6px 10px; border-radius: 0 4px 4px 0; color: #1e293b; font-style: italic; }
     .scaffold-trap { background: #fffbeb; border-left: 3px solid #f59e0b; padding: 6px 10px; border-radius: 0 4px 4px 0; color: #92400e; font-size: 0.8rem; }
 
-    /* Toast */
-    .toast-popup {
+    /* Quick Jump inside card */
+    .card-footer-nav {
+      margin-top: 12px;
+      text-align: right;
+    }
+    .btn-jump-next {
+      background: #2563eb;
+      color: white;
+      font-weight: 800;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-jump-next:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+    /* Floating Quick Nav Pill */
+    .floating-nav-pill {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #0f172a;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      border: 1px solid #334155;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
       display: flex;
       align-items: center;
       gap: 10px;
-      z-index: 9999;
-      transform: translateY(80px);
-      opacity: 0;
-      transition: all 0.25s;
+      color: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      z-index: 999;
+      font-size: 0.82rem;
     }
-    .toast-popup.show { transform: translateY(0); opacity: 1; }
+    .btn-pill-arrow {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 900;
+      transition: background 0.15s;
+    }
+    .btn-pill-arrow:hover { background: #3b82f6; }
 
-    /* Modal */
+    /* Modals */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -421,7 +415,7 @@
     .modal-box {
       background: white;
       border-radius: 12px;
-      max-width: 560px;
+      max-width: 540px;
       width: 100%;
       padding: 20px;
       box-shadow: 0 16px 36px rgba(0,0,0,0.25);
@@ -431,24 +425,132 @@
     .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
     .modal-title { font-size: 1.15rem; font-weight: 900; color: #0f172a; }
     .btn-close { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #64748b; }
-    .badges-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    @media (max-width: 500px) { .badges-grid { grid-template-columns: 1fr; } }
-    .badge-card { border: 1px solid var(--border); border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px; background: #f8fafc; }
-    .badge-card.unlocked { background: #eff6ff; border-color: #93c5fd; }
-    .badge-card.locked { opacity: 0.45; filter: grayscale(1); }
-    .badge-icon { font-size: 1.8rem; }
-    .badge-name { font-weight: 800; font-size: 0.88rem; color: #0f172a; }
-    .badge-desc { font-size: 0.72rem; color: #64748b; }
+
+    .print-opt-group { margin-bottom: 14px; }
+    .print-opt-label { font-size: 0.85rem; font-weight: 800; color: #1e293b; margin-bottom: 6px; }
+    .print-btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn-print-choice {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-align: left;
+    }
+    .btn-print-choice.active {
+      background: #eff6ff;
+      border-color: #2563eb;
+      color: #1d4ed8;
+    }
+    .btn-print-go {
+      width: 100%;
+      background: #10b981;
+      color: white;
+      font-weight: 800;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+    .btn-print-go:hover { background: #059669; }
+
+    /* ========================================================= */
+    /* PRINT STYLES (@media print) - Optimized for A4 Study Book */
+    /* ========================================================= */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 10pt !important;
+        line-height: 1.4 !important;
+        padding: 0 !important;
+      }
+      .compact-header, .controls-strip, .floating-nav-pill, .modal-overlay, .toast-popup, .btn-star, .card-footer-nav, .daily-quest-banner {
+        display: none !important;
+      }
+      .main-wrap {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .q-card {
+        border: 1px solid #666 !important;
+        box-shadow: none !important;
+        border-radius: 4px !important;
+        margin-bottom: 14px !important;
+        padding: 10px 14px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card.bookmarked { border-left: 1px solid #666 !important; }
+      .q-stem { font-size: 10.5pt !important; color: black !important; }
+      .blank-mark { color: black !important; border-bottom: 1.5px solid black !important; }
+      .options-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 6px !important;
+      }
+      .opt-box {
+        border: 1px solid #999 !important;
+        background: none !important;
+        padding: 4px 6px !important;
+      }
+      .opt-box.user-correct, .opt-box.user-wrong, .opt-box.actual-correct {
+        background: none !important;
+        border-color: #333 !important;
+      }
+      /* In Study Note Mode: Show Analysis Always */
+      body.print-study-mode .analysis-box {
+        display: block !important;
+        border: 1px dashed #666 !important;
+        background: #fdfdfd !important;
+        padding: 8px !important;
+        margin-top: 6px !important;
+      }
+      /* In Exam Mode: Hide Analysis */
+      body.print-exam-mode .analysis-box {
+        display: none !important;
+      }
+      .writing-scaffold-card {
+        background: none !important;
+        border: 1px solid #777 !important;
+      }
+      .scaffold-code { background: #eee !important; color: black !important; }
+      .scaffold-example { background: none !important; border-left: 2px solid #555 !important; color: black !important; }
+      .scaffold-trap { background: none !important; border-left: 2px solid #555 !important; color: black !important; }
+      .print-header-sheet {
+        display: block !important;
+        border-bottom: 2px solid black;
+        padding-bottom: 8px;
+        margin-bottom: 14px;
+      }
+    }
+    .print-header-sheet { display: none; }
   </style>
 </head>
 <body>
+
+  <!-- Printable Header (Visible only when printing) -->
+  <div class="print-header-sheet">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 style="font-size:14pt; margin:0;">【學測英文 15 級分離線自學研讀單】</h2>
+      <div style="font-size:9pt;">日期：____/____/____ ｜ 複習檢核：[ ]Day 1  [ ]Day 3  [ ]Day 7</div>
+    </div>
+    <div style="font-size:8.5pt; color:#555; margin-top:3px;">
+      考綱範圍：106~115 歷屆官方真題 ｜ 核心焦點：85% 搭配詞錨點公式、誘答辨析與作文高分鷹架
+    </div>
+  </div>
 
   <!-- Ultra-Compact Sticky Header -->
   <header class="compact-header">
     <div class="top-strip">
       <div class="brand-section">
         <a href="index.html" class="brand-title">🎯 歷屆真題戰神</a>
-        <span class="stage-tag">第 1 關：106~115 (125題)</span>
+        <span class="mode-pill" id="modePill" onclick="toggleDailyQuestMode()">📅 每日任務模式 [Day 1]</span>
       </div>
 
       <div class="rpg-strip">
@@ -461,10 +563,11 @@
       </div>
 
       <div class="nav-actions">
-        <button class="btn-nav gold" onclick="openBadgesModal()">🏆 徽章</button>
+        <button class="btn-nav print" onclick="openPrintModal()">🖨️ 列印紙本</button>
         <button class="btn-nav" onclick="exportProgress()">💾 匯出</button>
         <label class="btn-nav" style="cursor:pointer;">📥 匯入<input type="file" id="importFileInput" accept=".json" style="display:none;" onchange="importProgress(event)"></label>
-        <a href="collocations.html" class="btn-nav" style="background:#0284c7; color:white; border-color:#0369a1;">前往第 2 關 ➔</a>
+        <button class="btn-nav" onclick="openResetModal()">🔄 重置</button>
+        <a href="collocations.html" class="btn-nav" style="background:#0284c7; color:white; border-color:#0369a1;">第 2 關 ➔</a>
         <a href="index.html" class="btn-nav">🏠 首頁</a>
       </div>
     </div>
@@ -488,22 +591,38 @@
         </div>
 
         <div class="filter-group">
-          <input type="text" id="searchInput" class="search-input-compact" placeholder="🔍 搜尋單字/題幹..." oninput="filterQuestions()">
+          <input type="text" id="searchInput" class="search-input-compact" placeholder="🔍 搜尋題幹/選項..." oninput="filterQuestions()">
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Question List (Right at Top) -->
+  <!-- Main Content -->
   <main class="main-wrap">
+
+    <!-- Daily Quest Banner -->
+    <div class="daily-quest-banner active" id="dailyQuestBanner">
+      <div class="daily-title">
+        <span>📅 <strong>今日學習任務：Day <span id="currentDayText">1</span></strong>（今日進度：<span id="dayCompletedText">0 / 10 題</span>）</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="daily-progress-pill" id="dailyQuestStatus">進行中 (限時 5 分鐘)</span>
+        <button class="c-btn" onclick="changeDay(-1)">◀ 前一天</button>
+        <button class="c-btn" onclick="changeDay(1)">後一天 ▶</button>
+      </div>
+    </div>
+
+    <!-- Questions List -->
     <div class="questions-container" id="questionsContainer">
 
-      <div class="q-card" data-year="106" data-pos="adv." data-id="106-01" data-ans="B" data-word="properly" data-answered="false">
+      <div class="q-card" data-idx="0" data-day="1" data-year="106" data-pos="adv." data-id="106-01" data-ans="B" data-word="properly" data-answered="false" id="qcard_0">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#1</span>
             <span class="q-id">106學測 第 1 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_106-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-01" onclick="toggleBookmark('106-01')" title="收藏此題">⭐</button>
@@ -595,15 +714,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(0)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="v." data-id="106-02" data-ans="A" data-word="pursue" data-answered="false">
+      <div class="q-card" data-idx="1" data-day="1" data-year="106" data-pos="v." data-id="106-02" data-ans="A" data-word="pursue" data-answered="false" id="qcard_1">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#2</span>
             <span class="q-id">106學測 第 2 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_106-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-02" onclick="toggleBookmark('106-02')" title="收藏此題">⭐</button>
@@ -695,15 +821,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(1)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="adj." data-id="106-03" data-ans="C" data-word="remote" data-answered="false">
+      <div class="q-card" data-idx="2" data-day="1" data-year="106" data-pos="adj." data-id="106-03" data-ans="C" data-word="remote" data-answered="false" id="qcard_2">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#3</span>
             <span class="q-id">106學測 第 3 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_106-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-03" onclick="toggleBookmark('106-03')" title="收藏此題">⭐</button>
@@ -795,15 +928,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(2)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="v." data-id="106-04" data-ans="D" data-word="identify" data-answered="false">
+      <div class="q-card" data-idx="3" data-day="1" data-year="106" data-pos="v." data-id="106-04" data-ans="D" data-word="identify" data-answered="false" id="qcard_3">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#4</span>
             <span class="q-id">106學測 第 4 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_106-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-04" onclick="toggleBookmark('106-04')" title="收藏此題">⭐</button>
@@ -895,15 +1035,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(3)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="adj." data-id="106-05" data-ans="B" data-word="embarrassing" data-answered="false">
+      <div class="q-card" data-idx="4" data-day="1" data-year="106" data-pos="adj." data-id="106-05" data-ans="B" data-word="embarrassing" data-answered="false" id="qcard_4">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#5</span>
             <span class="q-id">106學測 第 5 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_106-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-05" onclick="toggleBookmark('106-05')" title="收藏此題">⭐</button>
@@ -995,15 +1142,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(4)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="adv." data-id="106-06" data-ans="A" data-word="barely" data-answered="false">
+      <div class="q-card" data-idx="5" data-day="1" data-year="106" data-pos="adv." data-id="106-06" data-ans="A" data-word="barely" data-answered="false" id="qcard_5">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#6</span>
             <span class="q-id">106學測 第 6 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_106-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-06" onclick="toggleBookmark('106-06')" title="收藏此題">⭐</button>
@@ -1095,15 +1249,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(5)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="n." data-id="106-07" data-ans="B" data-word="trace" data-answered="false">
+      <div class="q-card" data-idx="6" data-day="1" data-year="106" data-pos="n." data-id="106-07" data-ans="B" data-word="trace" data-answered="false" id="qcard_6">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#7</span>
             <span class="q-id">106學測 第 7 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_106-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-07" onclick="toggleBookmark('106-07')" title="收藏此題">⭐</button>
@@ -1195,15 +1356,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(6)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="v." data-id="106-08" data-ans="D" data-word="urged" data-answered="false">
+      <div class="q-card" data-idx="7" data-day="1" data-year="106" data-pos="v." data-id="106-08" data-ans="D" data-word="urged" data-answered="false" id="qcard_7">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#8</span>
             <span class="q-id">106學測 第 8 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_106-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-08" onclick="toggleBookmark('106-08')" title="收藏此題">⭐</button>
@@ -1295,15 +1463,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(7)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="n." data-id="106-09" data-ans="C" data-word="sculptures" data-answered="false">
+      <div class="q-card" data-idx="8" data-day="1" data-year="106" data-pos="n." data-id="106-09" data-ans="C" data-word="sculptures" data-answered="false" id="qcard_8">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#9</span>
             <span class="q-id">106學測 第 9 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_106-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-09" onclick="toggleBookmark('106-09')" title="收藏此題">⭐</button>
@@ -1395,15 +1570,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(8)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="n." data-id="106-10" data-ans="B" data-word="beam" data-answered="false">
+      <div class="q-card" data-idx="9" data-day="1" data-year="106" data-pos="n." data-id="106-10" data-ans="B" data-word="beam" data-answered="false" id="qcard_9">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#10</span>
             <span class="q-id">106學測 第 10 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_106-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 1</span>
+            <span class="box-badge box-1" id="boxBadge_106-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-10" onclick="toggleBookmark('106-10')" title="收藏此題">⭐</button>
@@ -1495,15 +1677,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(9)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="v." data-id="106-11" data-ans="A" data-word="enclosed" data-answered="false">
+      <div class="q-card" data-idx="10" data-day="2" data-year="106" data-pos="v." data-id="106-11" data-ans="A" data-word="enclosed" data-answered="false" id="qcard_10">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#11</span>
             <span class="q-id">106學測 第 11 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_106-11">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_106-11">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-11" onclick="toggleBookmark('106-11')" title="收藏此題">⭐</button>
@@ -1595,15 +1784,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(10)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="n." data-id="106-12" data-ans="C" data-word="medal" data-answered="false">
+      <div class="q-card" data-idx="11" data-day="2" data-year="106" data-pos="n." data-id="106-12" data-ans="C" data-word="medal" data-answered="false" id="qcard_11">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#12</span>
             <span class="q-id">106學測 第 12 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_106-12">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_106-12">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-12" onclick="toggleBookmark('106-12')" title="收藏此題">⭐</button>
@@ -1695,15 +1891,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(11)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="v." data-id="106-13" data-ans="C" data-word="disguised" data-answered="false">
+      <div class="q-card" data-idx="12" data-day="2" data-year="106" data-pos="v." data-id="106-13" data-ans="C" data-word="disguised" data-answered="false" id="qcard_12">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#13</span>
             <span class="q-id">106學測 第 13 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_106-13">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_106-13">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-13" onclick="toggleBookmark('106-13')" title="收藏此題">⭐</button>
@@ -1795,15 +1998,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(12)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="adj." data-id="106-14" data-ans="A" data-word="aware" data-answered="false">
+      <div class="q-card" data-idx="13" data-day="2" data-year="106" data-pos="adj." data-id="106-14" data-ans="A" data-word="aware" data-answered="false" id="qcard_13">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#14</span>
             <span class="q-id">106學測 第 14 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_106-14">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_106-14">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-14" onclick="toggleBookmark('106-14')" title="收藏此題">⭐</button>
@@ -1895,15 +2105,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(13)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="106" data-pos="n." data-id="106-15" data-ans="D" data-word="observation" data-answered="false">
+      <div class="q-card" data-idx="14" data-day="2" data-year="106" data-pos="n." data-id="106-15" data-ans="D" data-word="observation" data-answered="false" id="qcard_14">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#15</span>
             <span class="q-id">106學測 第 15 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_106-15">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_106-15">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_106-15" onclick="toggleBookmark('106-15')" title="收藏此題">⭐</button>
@@ -1995,15 +2212,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(14)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="adj." data-id="107-01" data-ans="C" data-word="seasonal" data-answered="false">
+      <div class="q-card" data-idx="15" data-day="2" data-year="107" data-pos="adj." data-id="107-01" data-ans="C" data-word="seasonal" data-answered="false" id="qcard_15">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#16</span>
             <span class="q-id">107學測 第 1 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_107-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_107-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-01" onclick="toggleBookmark('107-01')" title="收藏此題">⭐</button>
@@ -2095,15 +2319,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(15)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="n." data-id="107-02" data-ans="A" data-word="requirements" data-answered="false">
+      <div class="q-card" data-idx="16" data-day="2" data-year="107" data-pos="n." data-id="107-02" data-ans="A" data-word="requirements" data-answered="false" id="qcard_16">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#17</span>
             <span class="q-id">107學測 第 2 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_107-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_107-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-02" onclick="toggleBookmark('107-02')" title="收藏此題">⭐</button>
@@ -2195,15 +2426,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(16)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="v." data-id="107-03" data-ans="B" data-word="fulfill" data-answered="false">
+      <div class="q-card" data-idx="17" data-day="2" data-year="107" data-pos="v." data-id="107-03" data-ans="B" data-word="fulfill" data-answered="false" id="qcard_17">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#18</span>
             <span class="q-id">107學測 第 3 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_107-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_107-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-03" onclick="toggleBookmark('107-03')" title="收藏此題">⭐</button>
@@ -2295,15 +2533,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(17)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="adj." data-id="107-04" data-ans="C" data-word="hollow" data-answered="false">
+      <div class="q-card" data-idx="18" data-day="2" data-year="107" data-pos="adj." data-id="107-04" data-ans="C" data-word="hollow" data-answered="false" id="qcard_18">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#19</span>
             <span class="q-id">107學測 第 4 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_107-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_107-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-04" onclick="toggleBookmark('107-04')" title="收藏此題">⭐</button>
@@ -2395,15 +2640,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(18)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="v." data-id="107-05" data-ans="C" data-word="twisted" data-answered="false">
+      <div class="q-card" data-idx="19" data-day="2" data-year="107" data-pos="v." data-id="107-05" data-ans="C" data-word="twisted" data-answered="false" id="qcard_19">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#20</span>
             <span class="q-id">107學測 第 5 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_107-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 2</span>
+            <span class="box-badge box-1" id="boxBadge_107-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-05" onclick="toggleBookmark('107-05')" title="收藏此題">⭐</button>
@@ -2495,15 +2747,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(19)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="n." data-id="107-06" data-ans="B" data-word="beliefs" data-answered="false">
+      <div class="q-card" data-idx="20" data-day="3" data-year="107" data-pos="n." data-id="107-06" data-ans="B" data-word="beliefs" data-answered="false" id="qcard_20">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#21</span>
             <span class="q-id">107學測 第 6 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_107-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-06" onclick="toggleBookmark('107-06')" title="收藏此題">⭐</button>
@@ -2595,15 +2854,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(20)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="adj." data-id="107-07" data-ans="D" data-word="demanding" data-answered="false">
+      <div class="q-card" data-idx="21" data-day="3" data-year="107" data-pos="adj." data-id="107-07" data-ans="D" data-word="demanding" data-answered="false" id="qcard_21">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#22</span>
             <span class="q-id">107學測 第 7 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_107-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-07" onclick="toggleBookmark('107-07')" title="收藏此題">⭐</button>
@@ -2695,15 +2961,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(21)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="adv." data-id="107-08" data-ans="A" data-word="anxiously" data-answered="false">
+      <div class="q-card" data-idx="22" data-day="3" data-year="107" data-pos="adv." data-id="107-08" data-ans="A" data-word="anxiously" data-answered="false" id="qcard_22">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#23</span>
             <span class="q-id">107學測 第 8 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_107-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-08" onclick="toggleBookmark('107-08')" title="收藏此題">⭐</button>
@@ -2795,15 +3068,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(22)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="v." data-id="107-09" data-ans="D" data-word="surrounded" data-answered="false">
+      <div class="q-card" data-idx="23" data-day="3" data-year="107" data-pos="v." data-id="107-09" data-ans="D" data-word="surrounded" data-answered="false" id="qcard_23">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#24</span>
             <span class="q-id">107學測 第 9 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_107-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-09" onclick="toggleBookmark('107-09')" title="收藏此題">⭐</button>
@@ -2895,15 +3175,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(23)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="v." data-id="107-10" data-ans="B" data-word="impress" data-answered="false">
+      <div class="q-card" data-idx="24" data-day="3" data-year="107" data-pos="v." data-id="107-10" data-ans="B" data-word="impress" data-answered="false" id="qcard_24">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#25</span>
             <span class="q-id">107學測 第 10 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_107-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-10" onclick="toggleBookmark('107-10')" title="收藏此題">⭐</button>
@@ -2995,15 +3282,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(24)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="n." data-id="107-11" data-ans="C" data-word="blanket" data-answered="false">
+      <div class="q-card" data-idx="25" data-day="3" data-year="107" data-pos="n." data-id="107-11" data-ans="C" data-word="blanket" data-answered="false" id="qcard_25">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#26</span>
             <span class="q-id">107學測 第 11 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_107-11">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-11">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-11" onclick="toggleBookmark('107-11')" title="收藏此題">⭐</button>
@@ -3095,15 +3389,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(25)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="n." data-id="107-12" data-ans="B" data-word="margins" data-answered="false">
+      <div class="q-card" data-idx="26" data-day="3" data-year="107" data-pos="n." data-id="107-12" data-ans="B" data-word="margins" data-answered="false" id="qcard_26">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#27</span>
             <span class="q-id">107學測 第 12 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_107-12">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-12">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-12" onclick="toggleBookmark('107-12')" title="收藏此題">⭐</button>
@@ -3195,15 +3496,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(26)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="n." data-id="107-13" data-ans="D" data-word="penalty" data-answered="false">
+      <div class="q-card" data-idx="27" data-day="3" data-year="107" data-pos="n." data-id="107-13" data-ans="D" data-word="penalty" data-answered="false" id="qcard_27">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#28</span>
             <span class="q-id">107學測 第 13 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_107-13">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-13">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-13" onclick="toggleBookmark('107-13')" title="收藏此題">⭐</button>
@@ -3295,15 +3603,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(27)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="v." data-id="107-14" data-ans="A" data-word="conducted" data-answered="false">
+      <div class="q-card" data-idx="28" data-day="3" data-year="107" data-pos="v." data-id="107-14" data-ans="A" data-word="conducted" data-answered="false" id="qcard_28">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#29</span>
             <span class="q-id">107學測 第 14 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_107-14">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-14">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-14" onclick="toggleBookmark('107-14')" title="收藏此題">⭐</button>
@@ -3395,15 +3710,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(28)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="107" data-pos="adj." data-id="107-15" data-ans="C" data-word="massive" data-answered="false">
+      <div class="q-card" data-idx="29" data-day="3" data-year="107" data-pos="adj." data-id="107-15" data-ans="C" data-word="massive" data-answered="false" id="qcard_29">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#30</span>
             <span class="q-id">107學測 第 15 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_107-15">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 3</span>
+            <span class="box-badge box-1" id="boxBadge_107-15">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_107-15" onclick="toggleBookmark('107-15')" title="收藏此題">⭐</button>
@@ -3495,15 +3817,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(29)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="n." data-id="108-01" data-ans="C" data-word="privacy" data-answered="false">
+      <div class="q-card" data-idx="30" data-day="4" data-year="108" data-pos="n." data-id="108-01" data-ans="C" data-word="privacy" data-answered="false" id="qcard_30">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#31</span>
             <span class="q-id">108學測 第 1 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_108-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-01" onclick="toggleBookmark('108-01')" title="收藏此題">⭐</button>
@@ -3595,15 +3924,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(30)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="adj." data-id="108-02" data-ans="C" data-word="mean" data-answered="false">
+      <div class="q-card" data-idx="31" data-day="4" data-year="108" data-pos="adj." data-id="108-02" data-ans="C" data-word="mean" data-answered="false" id="qcard_31">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#32</span>
             <span class="q-id">108學測 第 2 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_108-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-02" onclick="toggleBookmark('108-02')" title="收藏此題">⭐</button>
@@ -3695,15 +4031,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(31)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="v." data-id="108-03" data-ans="D" data-word="predicted" data-answered="false">
+      <div class="q-card" data-idx="32" data-day="4" data-year="108" data-pos="v." data-id="108-03" data-ans="D" data-word="predicted" data-answered="false" id="qcard_32">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#33</span>
             <span class="q-id">108學測 第 3 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_108-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-03" onclick="toggleBookmark('108-03')" title="收藏此題">⭐</button>
@@ -3795,15 +4138,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(32)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="n." data-id="108-04" data-ans="B" data-word="restrictions" data-answered="false">
+      <div class="q-card" data-idx="33" data-day="4" data-year="108" data-pos="n." data-id="108-04" data-ans="B" data-word="restrictions" data-answered="false" id="qcard_33">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#34</span>
             <span class="q-id">108學測 第 4 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_108-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-04" onclick="toggleBookmark('108-04')" title="收藏此題">⭐</button>
@@ -3895,15 +4245,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(33)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="v." data-id="108-05" data-ans="B" data-word="declared" data-answered="false">
+      <div class="q-card" data-idx="34" data-day="4" data-year="108" data-pos="v." data-id="108-05" data-ans="B" data-word="declared" data-answered="false" id="qcard_34">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#35</span>
             <span class="q-id">108學測 第 5 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_108-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-05" onclick="toggleBookmark('108-05')" title="收藏此題">⭐</button>
@@ -3995,15 +4352,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(34)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="v." data-id="108-06" data-ans="C" data-word="proposed" data-answered="false">
+      <div class="q-card" data-idx="35" data-day="4" data-year="108" data-pos="v." data-id="108-06" data-ans="C" data-word="proposed" data-answered="false" id="qcard_35">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#36</span>
             <span class="q-id">108學測 第 6 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_108-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-06" onclick="toggleBookmark('108-06')" title="收藏此題">⭐</button>
@@ -4095,15 +4459,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(35)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="adj." data-id="108-07" data-ans="B" data-word="expressive" data-answered="false">
+      <div class="q-card" data-idx="36" data-day="4" data-year="108" data-pos="adj." data-id="108-07" data-ans="B" data-word="expressive" data-answered="false" id="qcard_36">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#37</span>
             <span class="q-id">108學測 第 7 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_108-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-07" onclick="toggleBookmark('108-07')" title="收藏此題">⭐</button>
@@ -4195,15 +4566,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(36)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="adv." data-id="108-08" data-ans="A" data-word="particularly" data-answered="false">
+      <div class="q-card" data-idx="37" data-day="4" data-year="108" data-pos="adv." data-id="108-08" data-ans="A" data-word="particularly" data-answered="false" id="qcard_37">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#38</span>
             <span class="q-id">108學測 第 8 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_108-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-08" onclick="toggleBookmark('108-08')" title="收藏此題">⭐</button>
@@ -4295,15 +4673,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(37)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="v." data-id="108-09" data-ans="A" data-word="stumble" data-answered="false">
+      <div class="q-card" data-idx="38" data-day="4" data-year="108" data-pos="v." data-id="108-09" data-ans="A" data-word="stumble" data-answered="false" id="qcard_38">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#39</span>
             <span class="q-id">108學測 第 9 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_108-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-09" onclick="toggleBookmark('108-09')" title="收藏此題">⭐</button>
@@ -4395,15 +4780,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(38)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="adj." data-id="108-10" data-ans="B" data-word="annual" data-answered="false">
+      <div class="q-card" data-idx="39" data-day="4" data-year="108" data-pos="adj." data-id="108-10" data-ans="B" data-word="annual" data-answered="false" id="qcard_39">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#40</span>
             <span class="q-id">108學測 第 10 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_108-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 4</span>
+            <span class="box-badge box-1" id="boxBadge_108-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-10" onclick="toggleBookmark('108-10')" title="收藏此題">⭐</button>
@@ -4495,15 +4887,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(39)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="n." data-id="108-11" data-ans="A" data-word="factors" data-answered="false">
+      <div class="q-card" data-idx="40" data-day="5" data-year="108" data-pos="n." data-id="108-11" data-ans="A" data-word="factors" data-answered="false" id="qcard_40">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#41</span>
             <span class="q-id">108學測 第 11 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_108-11">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_108-11">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-11" onclick="toggleBookmark('108-11')" title="收藏此題">⭐</button>
@@ -4595,15 +4994,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(40)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="adv." data-id="108-12" data-ans="D" data-word="vividly" data-answered="false">
+      <div class="q-card" data-idx="41" data-day="5" data-year="108" data-pos="adv." data-id="108-12" data-ans="D" data-word="vividly" data-answered="false" id="qcard_41">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#42</span>
             <span class="q-id">108學測 第 12 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_108-12">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_108-12">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-12" onclick="toggleBookmark('108-12')" title="收藏此題">⭐</button>
@@ -4695,15 +5101,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(41)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="v." data-id="108-13" data-ans="D" data-word="chirping" data-answered="false">
+      <div class="q-card" data-idx="42" data-day="5" data-year="108" data-pos="v." data-id="108-13" data-ans="D" data-word="chirping" data-answered="false" id="qcard_42">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#43</span>
             <span class="q-id">108學測 第 13 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_108-13">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_108-13">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-13" onclick="toggleBookmark('108-13')" title="收藏此題">⭐</button>
@@ -4795,15 +5208,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(42)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="n." data-id="108-14" data-ans="B" data-word="contact" data-answered="false">
+      <div class="q-card" data-idx="43" data-day="5" data-year="108" data-pos="n." data-id="108-14" data-ans="B" data-word="contact" data-answered="false" id="qcard_43">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#44</span>
             <span class="q-id">108學測 第 14 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_108-14">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_108-14">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-14" onclick="toggleBookmark('108-14')" title="收藏此題">⭐</button>
@@ -4895,15 +5315,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(43)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="108" data-pos="adj." data-id="108-15" data-ans="C" data-word="manual" data-answered="false">
+      <div class="q-card" data-idx="44" data-day="5" data-year="108" data-pos="adj." data-id="108-15" data-ans="C" data-word="manual" data-answered="false" id="qcard_44">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#45</span>
             <span class="q-id">108學測 第 15 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_108-15">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_108-15">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_108-15" onclick="toggleBookmark('108-15')" title="收藏此題">⭐</button>
@@ -4995,15 +5422,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(44)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="n." data-id="109-01" data-ans="B" data-word="conclusion" data-answered="false">
+      <div class="q-card" data-idx="45" data-day="5" data-year="109" data-pos="n." data-id="109-01" data-ans="B" data-word="conclusion" data-answered="false" id="qcard_45">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#46</span>
             <span class="q-id">109學測 第 1 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_109-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_109-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-01" onclick="toggleBookmark('109-01')" title="收藏此題">⭐</button>
@@ -5095,15 +5529,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(45)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="v." data-id="109-02" data-ans="B" data-word="amazed" data-answered="false">
+      <div class="q-card" data-idx="46" data-day="5" data-year="109" data-pos="v." data-id="109-02" data-ans="B" data-word="amazed" data-answered="false" id="qcard_46">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#47</span>
             <span class="q-id">109學測 第 2 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_109-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_109-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-02" onclick="toggleBookmark('109-02')" title="收藏此題">⭐</button>
@@ -5195,15 +5636,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(46)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="n." data-id="109-03" data-ans="D" data-word="manufacturer" data-answered="false">
+      <div class="q-card" data-idx="47" data-day="5" data-year="109" data-pos="n." data-id="109-03" data-ans="D" data-word="manufacturer" data-answered="false" id="qcard_47">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#48</span>
             <span class="q-id">109學測 第 3 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_109-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_109-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-03" onclick="toggleBookmark('109-03')" title="收藏此題">⭐</button>
@@ -5295,15 +5743,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(47)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="v." data-id="109-04" data-ans="D" data-word="decreased" data-answered="false">
+      <div class="q-card" data-idx="48" data-day="5" data-year="109" data-pos="v." data-id="109-04" data-ans="D" data-word="decreased" data-answered="false" id="qcard_48">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#49</span>
             <span class="q-id">109學測 第 4 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_109-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_109-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-04" onclick="toggleBookmark('109-04')" title="收藏此題">⭐</button>
@@ -5395,15 +5850,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(48)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="adj." data-id="109-05" data-ans="B" data-word="crispy" data-answered="false">
+      <div class="q-card" data-idx="49" data-day="5" data-year="109" data-pos="adj." data-id="109-05" data-ans="B" data-word="crispy" data-answered="false" id="qcard_49">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#50</span>
             <span class="q-id">109學測 第 5 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_109-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 5</span>
+            <span class="box-badge box-1" id="boxBadge_109-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-05" onclick="toggleBookmark('109-05')" title="收藏此題">⭐</button>
@@ -5495,15 +5957,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(49)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="n." data-id="109-06" data-ans="A" data-word="monument" data-answered="false">
+      <div class="q-card" data-idx="50" data-day="6" data-year="109" data-pos="n." data-id="109-06" data-ans="A" data-word="monument" data-answered="false" id="qcard_50">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#51</span>
             <span class="q-id">109學測 第 6 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_109-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-06" onclick="toggleBookmark('109-06')" title="收藏此題">⭐</button>
@@ -5595,15 +6064,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(50)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="v." data-id="109-07" data-ans="C" data-word="recite" data-answered="false">
+      <div class="q-card" data-idx="51" data-day="6" data-year="109" data-pos="v." data-id="109-07" data-ans="C" data-word="recite" data-answered="false" id="qcard_51">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#52</span>
             <span class="q-id">109學測 第 7 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_109-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-07" onclick="toggleBookmark('109-07')" title="收藏此題">⭐</button>
@@ -5695,15 +6171,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(51)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="n." data-id="109-08" data-ans="D" data-word="ownership" data-answered="false">
+      <div class="q-card" data-idx="52" data-day="6" data-year="109" data-pos="n." data-id="109-08" data-ans="D" data-word="ownership" data-answered="false" id="qcard_52">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#53</span>
             <span class="q-id">109學測 第 8 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_109-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-08" onclick="toggleBookmark('109-08')" title="收藏此題">⭐</button>
@@ -5795,15 +6278,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(52)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="n." data-id="109-09" data-ans="C" data-word="cradle" data-answered="false">
+      <div class="q-card" data-idx="53" data-day="6" data-year="109" data-pos="n." data-id="109-09" data-ans="C" data-word="cradle" data-answered="false" id="qcard_53">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#54</span>
             <span class="q-id">109學測 第 9 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_109-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-09" onclick="toggleBookmark('109-09')" title="收藏此題">⭐</button>
@@ -5895,15 +6385,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(53)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="adj." data-id="109-10" data-ans="C" data-word="permissible" data-answered="false">
+      <div class="q-card" data-idx="54" data-day="6" data-year="109" data-pos="adj." data-id="109-10" data-ans="C" data-word="permissible" data-answered="false" id="qcard_54">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#55</span>
             <span class="q-id">109學測 第 10 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_109-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-10" onclick="toggleBookmark('109-10')" title="收藏此題">⭐</button>
@@ -5995,15 +6492,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(54)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="v." data-id="109-11" data-ans="A" data-word="erased" data-answered="false">
+      <div class="q-card" data-idx="55" data-day="6" data-year="109" data-pos="v." data-id="109-11" data-ans="A" data-word="erased" data-answered="false" id="qcard_55">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#56</span>
             <span class="q-id">109學測 第 11 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_109-11">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-11">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-11" onclick="toggleBookmark('109-11')" title="收藏此題">⭐</button>
@@ -6095,15 +6599,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(55)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="v." data-id="109-12" data-ans="A" data-word="mock" data-answered="false">
+      <div class="q-card" data-idx="56" data-day="6" data-year="109" data-pos="v." data-id="109-12" data-ans="A" data-word="mock" data-answered="false" id="qcard_56">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#57</span>
             <span class="q-id">109學測 第 12 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_109-12">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-12">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-12" onclick="toggleBookmark('109-12')" title="收藏此題">⭐</button>
@@ -6195,15 +6706,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(56)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="adv." data-id="109-13" data-ans="D" data-word="formerly" data-answered="false">
+      <div class="q-card" data-idx="57" data-day="6" data-year="109" data-pos="adv." data-id="109-13" data-ans="D" data-word="formerly" data-answered="false" id="qcard_57">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#58</span>
             <span class="q-id">109學測 第 13 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_109-13">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-13">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-13" onclick="toggleBookmark('109-13')" title="收藏此題">⭐</button>
@@ -6295,15 +6813,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(57)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="adj." data-id="109-14" data-ans="A" data-word="sober" data-answered="false">
+      <div class="q-card" data-idx="58" data-day="6" data-year="109" data-pos="adj." data-id="109-14" data-ans="A" data-word="sober" data-answered="false" id="qcard_58">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#59</span>
             <span class="q-id">109學測 第 14 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_109-14">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-14">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-14" onclick="toggleBookmark('109-14')" title="收藏此題">⭐</button>
@@ -6395,15 +6920,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(58)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="109" data-pos="adj." data-id="109-15" data-ans="B" data-word="disputable" data-answered="false">
+      <div class="q-card" data-idx="59" data-day="6" data-year="109" data-pos="adj." data-id="109-15" data-ans="B" data-word="disputable" data-answered="false" id="qcard_59">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#60</span>
             <span class="q-id">109學測 第 15 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_109-15">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 6</span>
+            <span class="box-badge box-1" id="boxBadge_109-15">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_109-15" onclick="toggleBookmark('109-15')" title="收藏此題">⭐</button>
@@ -6495,15 +7027,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(59)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="v." data-id="110-01" data-ans="C" data-word="tease" data-answered="false">
+      <div class="q-card" data-idx="60" data-day="7" data-year="110" data-pos="v." data-id="110-01" data-ans="C" data-word="tease" data-answered="false" id="qcard_60">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#61</span>
             <span class="q-id">110學測 第 1 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_110-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-01" onclick="toggleBookmark('110-01')" title="收藏此題">⭐</button>
@@ -6595,15 +7134,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(60)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="n." data-id="110-02" data-ans="C" data-word="escalator" data-answered="false">
+      <div class="q-card" data-idx="61" data-day="7" data-year="110" data-pos="n." data-id="110-02" data-ans="C" data-word="escalator" data-answered="false" id="qcard_61">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#62</span>
             <span class="q-id">110學測 第 2 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_110-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-02" onclick="toggleBookmark('110-02')" title="收藏此題">⭐</button>
@@ -6695,15 +7241,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(61)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="adv." data-id="110-03" data-ans="A" data-word="obediently" data-answered="false">
+      <div class="q-card" data-idx="62" data-day="7" data-year="110" data-pos="adv." data-id="110-03" data-ans="A" data-word="obediently" data-answered="false" id="qcard_62">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#63</span>
             <span class="q-id">110學測 第 3 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_110-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-03" onclick="toggleBookmark('110-03')" title="收藏此題">⭐</button>
@@ -6795,15 +7348,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(62)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="adj." data-id="110-04" data-ans="A" data-word="moist" data-answered="false">
+      <div class="q-card" data-idx="63" data-day="7" data-year="110" data-pos="adj." data-id="110-04" data-ans="A" data-word="moist" data-answered="false" id="qcard_63">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#64</span>
             <span class="q-id">110學測 第 4 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_110-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-04" onclick="toggleBookmark('110-04')" title="收藏此題">⭐</button>
@@ -6895,15 +7455,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(63)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="n." data-id="110-05" data-ans="D" data-word="parachute" data-answered="false">
+      <div class="q-card" data-idx="64" data-day="7" data-year="110" data-pos="n." data-id="110-05" data-ans="D" data-word="parachute" data-answered="false" id="qcard_64">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#65</span>
             <span class="q-id">110學測 第 5 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_110-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-05" onclick="toggleBookmark('110-05')" title="收藏此題">⭐</button>
@@ -6995,15 +7562,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(64)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="adj." data-id="110-06" data-ans="D" data-word="revolutionary" data-answered="false">
+      <div class="q-card" data-idx="65" data-day="7" data-year="110" data-pos="adj." data-id="110-06" data-ans="D" data-word="revolutionary" data-answered="false" id="qcard_65">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#66</span>
             <span class="q-id">110學測 第 6 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_110-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-06" onclick="toggleBookmark('110-06')" title="收藏此題">⭐</button>
@@ -7095,15 +7669,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(65)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="n." data-id="110-07" data-ans="B" data-word="interaction" data-answered="false">
+      <div class="q-card" data-idx="66" data-day="7" data-year="110" data-pos="n." data-id="110-07" data-ans="B" data-word="interaction" data-answered="false" id="qcard_66">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#67</span>
             <span class="q-id">110學測 第 7 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_110-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-07" onclick="toggleBookmark('110-07')" title="收藏此題">⭐</button>
@@ -7195,15 +7776,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(66)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="v." data-id="110-08" data-ans="D" data-word="tumbled" data-answered="false">
+      <div class="q-card" data-idx="67" data-day="7" data-year="110" data-pos="v." data-id="110-08" data-ans="D" data-word="tumbled" data-answered="false" id="qcard_67">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#68</span>
             <span class="q-id">110學測 第 8 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_110-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-08" onclick="toggleBookmark('110-08')" title="收藏此題">⭐</button>
@@ -7295,15 +7883,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(67)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="n." data-id="110-09" data-ans="A" data-word="kits" data-answered="false">
+      <div class="q-card" data-idx="68" data-day="7" data-year="110" data-pos="n." data-id="110-09" data-ans="A" data-word="kits" data-answered="false" id="qcard_68">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#69</span>
             <span class="q-id">110學測 第 9 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_110-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-09" onclick="toggleBookmark('110-09')" title="收藏此題">⭐</button>
@@ -7395,15 +7990,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(68)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="adv." data-id="110-10" data-ans="C" data-word="jointly" data-answered="false">
+      <div class="q-card" data-idx="69" data-day="7" data-year="110" data-pos="adv." data-id="110-10" data-ans="C" data-word="jointly" data-answered="false" id="qcard_69">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#70</span>
             <span class="q-id">110學測 第 10 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_110-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 7</span>
+            <span class="box-badge box-1" id="boxBadge_110-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-10" onclick="toggleBookmark('110-10')" title="收藏此題">⭐</button>
@@ -7495,15 +8097,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(69)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="v." data-id="110-11" data-ans="B" data-word="flourishing" data-answered="false">
+      <div class="q-card" data-idx="70" data-day="8" data-year="110" data-pos="v." data-id="110-11" data-ans="B" data-word="flourishing" data-answered="false" id="qcard_70">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#71</span>
             <span class="q-id">110學測 第 11 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_110-11">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_110-11">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-11" onclick="toggleBookmark('110-11')" title="收藏此題">⭐</button>
@@ -7595,15 +8204,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(70)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="adj." data-id="110-12" data-ans="A" data-word="absurd" data-answered="false">
+      <div class="q-card" data-idx="71" data-day="8" data-year="110" data-pos="adj." data-id="110-12" data-ans="A" data-word="absurd" data-answered="false" id="qcard_71">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#72</span>
             <span class="q-id">110學測 第 12 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_110-12">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_110-12">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-12" onclick="toggleBookmark('110-12')" title="收藏此題">⭐</button>
@@ -7695,15 +8311,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(71)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="adj." data-id="110-13" data-ans="A" data-word="singular" data-answered="false">
+      <div class="q-card" data-idx="72" data-day="8" data-year="110" data-pos="adj." data-id="110-13" data-ans="A" data-word="singular" data-answered="false" id="qcard_72">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#73</span>
             <span class="q-id">110學測 第 13 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_110-13">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_110-13">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-13" onclick="toggleBookmark('110-13')" title="收藏此題">⭐</button>
@@ -7795,15 +8418,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(72)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="v." data-id="110-14" data-ans="C" data-word="committed" data-answered="false">
+      <div class="q-card" data-idx="73" data-day="8" data-year="110" data-pos="v." data-id="110-14" data-ans="C" data-word="committed" data-answered="false" id="qcard_73">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#74</span>
             <span class="q-id">110學測 第 14 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_110-14">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_110-14">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-14" onclick="toggleBookmark('110-14')" title="收藏此題">⭐</button>
@@ -7895,15 +8525,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(73)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="110" data-pos="v." data-id="110-15" data-ans="B" data-word="resumed" data-answered="false">
+      <div class="q-card" data-idx="74" data-day="8" data-year="110" data-pos="v." data-id="110-15" data-ans="B" data-word="resumed" data-answered="false" id="qcard_74">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#75</span>
             <span class="q-id">110學測 第 15 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_110-15">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_110-15">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_110-15" onclick="toggleBookmark('110-15')" title="收藏此題">⭐</button>
@@ -7995,15 +8632,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(74)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="v." data-id="111-01" data-ans="B" data-word="delivered" data-answered="false">
+      <div class="q-card" data-idx="75" data-day="8" data-year="111" data-pos="v." data-id="111-01" data-ans="B" data-word="delivered" data-answered="false" id="qcard_75">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#76</span>
             <span class="q-id">111學測 第 1 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_111-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_111-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-01" onclick="toggleBookmark('111-01')" title="收藏此題">⭐</button>
@@ -8095,15 +8739,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(75)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="n." data-id="111-02" data-ans="A" data-word="assistant" data-answered="false">
+      <div class="q-card" data-idx="76" data-day="8" data-year="111" data-pos="n." data-id="111-02" data-ans="A" data-word="assistant" data-answered="false" id="qcard_76">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#77</span>
             <span class="q-id">111學測 第 2 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_111-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_111-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-02" onclick="toggleBookmark('111-02')" title="收藏此題">⭐</button>
@@ -8195,15 +8846,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(76)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="n." data-id="111-03" data-ans="C" data-word="puppet" data-answered="false">
+      <div class="q-card" data-idx="77" data-day="8" data-year="111" data-pos="n." data-id="111-03" data-ans="C" data-word="puppet" data-answered="false" id="qcard_77">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#78</span>
             <span class="q-id">111學測 第 3 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_111-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_111-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-03" onclick="toggleBookmark('111-03')" title="收藏此題">⭐</button>
@@ -8295,15 +8953,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(77)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="adv." data-id="111-04" data-ans="A" data-word="potentially" data-answered="false">
+      <div class="q-card" data-idx="78" data-day="8" data-year="111" data-pos="adv." data-id="111-04" data-ans="A" data-word="potentially" data-answered="false" id="qcard_78">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#79</span>
             <span class="q-id">111學測 第 4 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_111-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_111-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-04" onclick="toggleBookmark('111-04')" title="收藏此題">⭐</button>
@@ -8395,15 +9060,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(78)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="v." data-id="111-05" data-ans="A" data-word="Tagging" data-answered="false">
+      <div class="q-card" data-idx="79" data-day="8" data-year="111" data-pos="v." data-id="111-05" data-ans="A" data-word="Tagging" data-answered="false" id="qcard_79">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#80</span>
             <span class="q-id">111學測 第 5 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_111-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 8</span>
+            <span class="box-badge box-1" id="boxBadge_111-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-05" onclick="toggleBookmark('111-05')" title="收藏此題">⭐</button>
@@ -8495,15 +9167,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(79)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="adj." data-id="111-06" data-ans="C" data-word="agreeable" data-answered="false">
+      <div class="q-card" data-idx="80" data-day="9" data-year="111" data-pos="adj." data-id="111-06" data-ans="C" data-word="agreeable" data-answered="false" id="qcard_80">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#81</span>
             <span class="q-id">111學測 第 6 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_111-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_111-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-06" onclick="toggleBookmark('111-06')" title="收藏此題">⭐</button>
@@ -8595,15 +9274,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(80)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="adj." data-id="111-07" data-ans="B" data-word="visible" data-answered="false">
+      <div class="q-card" data-idx="81" data-day="9" data-year="111" data-pos="adj." data-id="111-07" data-ans="B" data-word="visible" data-answered="false" id="qcard_81">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#82</span>
             <span class="q-id">111學測 第 7 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_111-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_111-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-07" onclick="toggleBookmark('111-07')" title="收藏此題">⭐</button>
@@ -8695,15 +9381,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(81)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="adj." data-id="111-08" data-ans="D" data-word="eventual" data-answered="false">
+      <div class="q-card" data-idx="82" data-day="9" data-year="111" data-pos="adj." data-id="111-08" data-ans="D" data-word="eventual" data-answered="false" id="qcard_82">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#83</span>
             <span class="q-id">111學測 第 8 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_111-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_111-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-08" onclick="toggleBookmark('111-08')" title="收藏此題">⭐</button>
@@ -8795,15 +9488,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(82)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="n." data-id="111-09" data-ans="D" data-word="quest" data-answered="false">
+      <div class="q-card" data-idx="83" data-day="9" data-year="111" data-pos="n." data-id="111-09" data-ans="D" data-word="quest" data-answered="false" id="qcard_83">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#84</span>
             <span class="q-id">111學測 第 9 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_111-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_111-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-09" onclick="toggleBookmark('111-09')" title="收藏此題">⭐</button>
@@ -8895,15 +9595,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(83)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="111" data-pos="v." data-id="111-10" data-ans="B" data-word="blushes" data-answered="false">
+      <div class="q-card" data-idx="84" data-day="9" data-year="111" data-pos="v." data-id="111-10" data-ans="B" data-word="blushes" data-answered="false" id="qcard_84">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#85</span>
             <span class="q-id">111學測 第 10 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_111-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_111-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_111-10" onclick="toggleBookmark('111-10')" title="收藏此題">⭐</button>
@@ -8995,15 +9702,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(84)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="adj." data-id="112-01" data-ans="A" data-word="sticky" data-answered="false">
+      <div class="q-card" data-idx="85" data-day="9" data-year="112" data-pos="adj." data-id="112-01" data-ans="A" data-word="sticky" data-answered="false" id="qcard_85">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#86</span>
             <span class="q-id">112學測 第 1 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_112-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_112-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-01" onclick="toggleBookmark('112-01')" title="收藏此題">⭐</button>
@@ -9095,15 +9809,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(85)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="n." data-id="112-02" data-ans="C" data-word="pose" data-answered="false">
+      <div class="q-card" data-idx="86" data-day="9" data-year="112" data-pos="n." data-id="112-02" data-ans="C" data-word="pose" data-answered="false" id="qcard_86">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#87</span>
             <span class="q-id">112學測 第 2 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_112-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_112-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-02" onclick="toggleBookmark('112-02')" title="收藏此題">⭐</button>
@@ -9195,15 +9916,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(86)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="n." data-id="112-03" data-ans="C" data-word="ancestors" data-answered="false">
+      <div class="q-card" data-idx="87" data-day="9" data-year="112" data-pos="n." data-id="112-03" data-ans="C" data-word="ancestors" data-answered="false" id="qcard_87">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#88</span>
             <span class="q-id">112學測 第 3 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_112-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_112-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-03" onclick="toggleBookmark('112-03')" title="收藏此題">⭐</button>
@@ -9295,15 +10023,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(87)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="adj." data-id="112-04" data-ans="B" data-word="bare" data-answered="false">
+      <div class="q-card" data-idx="88" data-day="9" data-year="112" data-pos="adj." data-id="112-04" data-ans="B" data-word="bare" data-answered="false" id="qcard_88">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#89</span>
             <span class="q-id">112學測 第 4 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_112-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_112-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-04" onclick="toggleBookmark('112-04')" title="收藏此題">⭐</button>
@@ -9395,15 +10130,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(88)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="n." data-id="112-05" data-ans="D" data-word="sincerity" data-answered="false">
+      <div class="q-card" data-idx="89" data-day="9" data-year="112" data-pos="n." data-id="112-05" data-ans="D" data-word="sincerity" data-answered="false" id="qcard_89">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#90</span>
             <span class="q-id">112學測 第 5 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_112-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 9</span>
+            <span class="box-badge box-1" id="boxBadge_112-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-05" onclick="toggleBookmark('112-05')" title="收藏此題">⭐</button>
@@ -9495,15 +10237,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(89)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="n." data-id="112-06" data-ans="D" data-word="recall" data-answered="false">
+      <div class="q-card" data-idx="90" data-day="10" data-year="112" data-pos="n." data-id="112-06" data-ans="D" data-word="recall" data-answered="false" id="qcard_90">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#91</span>
             <span class="q-id">112學測 第 6 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_112-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_112-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-06" onclick="toggleBookmark('112-06')" title="收藏此題">⭐</button>
@@ -9595,15 +10344,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(90)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="v." data-id="112-07" data-ans="B" data-word="counter" data-answered="false">
+      <div class="q-card" data-idx="91" data-day="10" data-year="112" data-pos="v." data-id="112-07" data-ans="B" data-word="counter" data-answered="false" id="qcard_91">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#92</span>
             <span class="q-id">112學測 第 7 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_112-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_112-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-07" onclick="toggleBookmark('112-07')" title="收藏此題">⭐</button>
@@ -9695,15 +10451,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(91)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="v." data-id="112-08" data-ans="A" data-word="crippled" data-answered="false">
+      <div class="q-card" data-idx="92" data-day="10" data-year="112" data-pos="v." data-id="112-08" data-ans="A" data-word="crippled" data-answered="false" id="qcard_92">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#93</span>
             <span class="q-id">112學測 第 8 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_112-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_112-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-08" onclick="toggleBookmark('112-08')" title="收藏此題">⭐</button>
@@ -9795,15 +10558,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(92)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="v." data-id="112-09" data-ans="A" data-word="choked" data-answered="false">
+      <div class="q-card" data-idx="93" data-day="10" data-year="112" data-pos="v." data-id="112-09" data-ans="A" data-word="choked" data-answered="false" id="qcard_93">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#94</span>
             <span class="q-id">112學測 第 9 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_112-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_112-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-09" onclick="toggleBookmark('112-09')" title="收藏此題">⭐</button>
@@ -9895,15 +10665,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(93)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="112" data-pos="adv." data-id="112-10" data-ans="D" data-word="supposedly" data-answered="false">
+      <div class="q-card" data-idx="94" data-day="10" data-year="112" data-pos="adv." data-id="112-10" data-ans="D" data-word="supposedly" data-answered="false" id="qcard_94">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#95</span>
             <span class="q-id">112學測 第 10 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_112-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_112-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_112-10" onclick="toggleBookmark('112-10')" title="收藏此題">⭐</button>
@@ -9995,15 +10772,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(94)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="adj." data-id="113-01" data-ans="B" data-word="slender" data-answered="false">
+      <div class="q-card" data-idx="95" data-day="10" data-year="113" data-pos="adj." data-id="113-01" data-ans="B" data-word="slender" data-answered="false" id="qcard_95">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#96</span>
             <span class="q-id">113學測 第 1 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_113-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_113-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-01" onclick="toggleBookmark('113-01')" title="收藏此題">⭐</button>
@@ -10095,15 +10879,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(95)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="v." data-id="113-02" data-ans="A" data-word="emerging" data-answered="false">
+      <div class="q-card" data-idx="96" data-day="10" data-year="113" data-pos="v." data-id="113-02" data-ans="A" data-word="emerging" data-answered="false" id="qcard_96">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#97</span>
             <span class="q-id">113學測 第 2 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_113-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_113-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-02" onclick="toggleBookmark('113-02')" title="收藏此題">⭐</button>
@@ -10195,15 +10986,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(96)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="adj." data-id="113-03" data-ans="B" data-word="due" data-answered="false">
+      <div class="q-card" data-idx="97" data-day="10" data-year="113" data-pos="adj." data-id="113-03" data-ans="B" data-word="due" data-answered="false" id="qcard_97">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#98</span>
             <span class="q-id">113學測 第 3 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_113-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_113-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-03" onclick="toggleBookmark('113-03')" title="收藏此題">⭐</button>
@@ -10295,15 +11093,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(97)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="n." data-id="113-04" data-ans="B" data-word="humidity" data-answered="false">
+      <div class="q-card" data-idx="98" data-day="10" data-year="113" data-pos="n." data-id="113-04" data-ans="B" data-word="humidity" data-answered="false" id="qcard_98">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#99</span>
             <span class="q-id">113學測 第 4 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_113-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_113-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-04" onclick="toggleBookmark('113-04')" title="收藏此題">⭐</button>
@@ -10395,15 +11200,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(98)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="v." data-id="113-05" data-ans="D" data-word="stand" data-answered="false">
+      <div class="q-card" data-idx="99" data-day="10" data-year="113" data-pos="v." data-id="113-05" data-ans="D" data-word="stand" data-answered="false" id="qcard_99">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#100</span>
             <span class="q-id">113學測 第 5 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_113-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 10</span>
+            <span class="box-badge box-1" id="boxBadge_113-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-05" onclick="toggleBookmark('113-05')" title="收藏此題">⭐</button>
@@ -10495,15 +11307,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(99)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="adj." data-id="113-06" data-ans="C" data-word="compulsory" data-answered="false">
+      <div class="q-card" data-idx="100" data-day="11" data-year="113" data-pos="adj." data-id="113-06" data-ans="C" data-word="compulsory" data-answered="false" id="qcard_100">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#101</span>
             <span class="q-id">113學測 第 6 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_113-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_113-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-06" onclick="toggleBookmark('113-06')" title="收藏此題">⭐</button>
@@ -10595,15 +11414,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(100)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="n." data-id="113-07" data-ans="D" data-word="credit" data-answered="false">
+      <div class="q-card" data-idx="101" data-day="11" data-year="113" data-pos="n." data-id="113-07" data-ans="D" data-word="credit" data-answered="false" id="qcard_101">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#102</span>
             <span class="q-id">113學測 第 7 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_113-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_113-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-07" onclick="toggleBookmark('113-07')" title="收藏此題">⭐</button>
@@ -10695,15 +11521,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(101)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="v." data-id="113-08" data-ans="C" data-word="promises" data-answered="false">
+      <div class="q-card" data-idx="102" data-day="11" data-year="113" data-pos="v." data-id="113-08" data-ans="C" data-word="promises" data-answered="false" id="qcard_102">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#103</span>
             <span class="q-id">113學測 第 8 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_113-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_113-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-08" onclick="toggleBookmark('113-08')" title="收藏此題">⭐</button>
@@ -10795,15 +11628,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(102)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="n." data-id="113-09" data-ans="A" data-word="appeal" data-answered="false">
+      <div class="q-card" data-idx="103" data-day="11" data-year="113" data-pos="n." data-id="113-09" data-ans="A" data-word="appeal" data-answered="false" id="qcard_103">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#104</span>
             <span class="q-id">113學測 第 9 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_113-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_113-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-09" onclick="toggleBookmark('113-09')" title="收藏此題">⭐</button>
@@ -10895,15 +11735,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(103)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="113" data-pos="adv." data-id="113-10" data-ans="B" data-word="randomly" data-answered="false">
+      <div class="q-card" data-idx="104" data-day="11" data-year="113" data-pos="adv." data-id="113-10" data-ans="B" data-word="randomly" data-answered="false" id="qcard_104">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#105</span>
             <span class="q-id">113學測 第 10 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_113-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_113-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_113-10" onclick="toggleBookmark('113-10')" title="收藏此題">⭐</button>
@@ -10995,15 +11842,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(104)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="n." data-id="114-01" data-ans="C" data-word="container" data-answered="false">
+      <div class="q-card" data-idx="105" data-day="11" data-year="114" data-pos="n." data-id="114-01" data-ans="C" data-word="container" data-answered="false" id="qcard_105">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#106</span>
             <span class="q-id">114學測 第 1 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_114-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_114-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-01" onclick="toggleBookmark('114-01')" title="收藏此題">⭐</button>
@@ -11095,15 +11949,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(105)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="n." data-id="114-02" data-ans="A" data-word="produce" data-answered="false">
+      <div class="q-card" data-idx="106" data-day="11" data-year="114" data-pos="n." data-id="114-02" data-ans="A" data-word="produce" data-answered="false" id="qcard_106">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#107</span>
             <span class="q-id">114學測 第 2 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_114-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_114-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-02" onclick="toggleBookmark('114-02')" title="收藏此題">⭐</button>
@@ -11195,15 +12056,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(106)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="adj." data-id="114-03" data-ans="A" data-word="blurring" data-answered="false">
+      <div class="q-card" data-idx="107" data-day="11" data-year="114" data-pos="adj." data-id="114-03" data-ans="A" data-word="blurring" data-answered="false" id="qcard_107">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#108</span>
             <span class="q-id">114學測 第 3 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_114-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_114-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-03" onclick="toggleBookmark('114-03')" title="收藏此題">⭐</button>
@@ -11295,15 +12163,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(107)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="adj." data-id="114-04" data-ans="C" data-word="offensive" data-answered="false">
+      <div class="q-card" data-idx="108" data-day="11" data-year="114" data-pos="adj." data-id="114-04" data-ans="C" data-word="offensive" data-answered="false" id="qcard_108">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#109</span>
             <span class="q-id">114學測 第 4 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_114-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_114-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-04" onclick="toggleBookmark('114-04')" title="收藏此題">⭐</button>
@@ -11395,15 +12270,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(108)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="n." data-id="114-05" data-ans="C" data-word="draft" data-answered="false">
+      <div class="q-card" data-idx="109" data-day="11" data-year="114" data-pos="n." data-id="114-05" data-ans="C" data-word="draft" data-answered="false" id="qcard_109">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#110</span>
             <span class="q-id">114學測 第 5 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_114-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 11</span>
+            <span class="box-badge box-1" id="boxBadge_114-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-05" onclick="toggleBookmark('114-05')" title="收藏此題">⭐</button>
@@ -11495,15 +12377,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(109)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="adj." data-id="114-06" data-ans="D" data-word="vacant" data-answered="false">
+      <div class="q-card" data-idx="110" data-day="12" data-year="114" data-pos="adj." data-id="114-06" data-ans="D" data-word="vacant" data-answered="false" id="qcard_110">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#111</span>
             <span class="q-id">114學測 第 6 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_114-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_114-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-06" onclick="toggleBookmark('114-06')" title="收藏此題">⭐</button>
@@ -11595,15 +12484,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(110)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="adj." data-id="114-07" data-ans="D" data-word="enormous" data-answered="false">
+      <div class="q-card" data-idx="111" data-day="12" data-year="114" data-pos="adj." data-id="114-07" data-ans="D" data-word="enormous" data-answered="false" id="qcard_111">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#112</span>
             <span class="q-id">114學測 第 7 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_114-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_114-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-07" onclick="toggleBookmark('114-07')" title="收藏此題">⭐</button>
@@ -11695,15 +12591,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(111)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="v." data-id="114-08" data-ans="A" data-word="halted" data-answered="false">
+      <div class="q-card" data-idx="112" data-day="12" data-year="114" data-pos="v." data-id="114-08" data-ans="A" data-word="halted" data-answered="false" id="qcard_112">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#113</span>
             <span class="q-id">114學測 第 8 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_114-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_114-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-08" onclick="toggleBookmark('114-08')" title="收藏此題">⭐</button>
@@ -11795,15 +12698,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(112)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="v." data-id="114-09" data-ans="B" data-word="graced" data-answered="false">
+      <div class="q-card" data-idx="113" data-day="12" data-year="114" data-pos="v." data-id="114-09" data-ans="B" data-word="graced" data-answered="false" id="qcard_113">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#114</span>
             <span class="q-id">114學測 第 9 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_114-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_114-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-09" onclick="toggleBookmark('114-09')" title="收藏此題">⭐</button>
@@ -11895,15 +12805,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(113)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="114" data-pos="adv." data-id="114-10" data-ans="A" data-word="verbally" data-answered="false">
+      <div class="q-card" data-idx="114" data-day="12" data-year="114" data-pos="adv." data-id="114-10" data-ans="A" data-word="verbally" data-answered="false" id="qcard_114">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#115</span>
             <span class="q-id">114學測 第 10 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_114-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_114-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_114-10" onclick="toggleBookmark('114-10')" title="收藏此題">⭐</button>
@@ -11995,15 +12912,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(114)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="adj." data-id="115-01" data-ans="B" data-word="tight" data-answered="false">
+      <div class="q-card" data-idx="115" data-day="12" data-year="115" data-pos="adj." data-id="115-01" data-ans="B" data-word="tight" data-answered="false" id="qcard_115">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#116</span>
             <span class="q-id">115學測 第 1 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_115-01">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_115-01">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-01" onclick="toggleBookmark('115-01')" title="收藏此題">⭐</button>
@@ -12095,15 +13019,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(115)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="adj." data-id="115-02" data-ans="C" data-word="amateur" data-answered="false">
+      <div class="q-card" data-idx="116" data-day="12" data-year="115" data-pos="adj." data-id="115-02" data-ans="C" data-word="amateur" data-answered="false" id="qcard_116">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#117</span>
             <span class="q-id">115學測 第 2 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_115-02">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_115-02">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-02" onclick="toggleBookmark('115-02')" title="收藏此題">⭐</button>
@@ -12195,15 +13126,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(116)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="n." data-id="115-03" data-ans="B" data-word="vacancy" data-answered="false">
+      <div class="q-card" data-idx="117" data-day="12" data-year="115" data-pos="n." data-id="115-03" data-ans="B" data-word="vacancy" data-answered="false" id="qcard_117">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#118</span>
             <span class="q-id">115學測 第 3 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_115-03">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_115-03">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-03" onclick="toggleBookmark('115-03')" title="收藏此題">⭐</button>
@@ -12295,15 +13233,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(117)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="adv." data-id="115-04" data-ans="A" data-word="initially" data-answered="false">
+      <div class="q-card" data-idx="118" data-day="12" data-year="115" data-pos="adv." data-id="115-04" data-ans="A" data-word="initially" data-answered="false" id="qcard_118">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#119</span>
             <span class="q-id">115學測 第 4 題</span>
             <span class="pos-badge pos-adv">副詞 adv.</span>
-            <span class="box-badge box-1" id="boxBadge_115-04">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_115-04">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-04" onclick="toggleBookmark('115-04')" title="收藏此題">⭐</button>
@@ -12395,15 +13340,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(118)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="n." data-id="115-05" data-ans="D" data-word="consumption" data-answered="false">
+      <div class="q-card" data-idx="119" data-day="12" data-year="115" data-pos="n." data-id="115-05" data-ans="D" data-word="consumption" data-answered="false" id="qcard_119">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#120</span>
             <span class="q-id">115學測 第 5 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_115-05">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 12</span>
+            <span class="box-badge box-1" id="boxBadge_115-05">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-05" onclick="toggleBookmark('115-05')" title="收藏此題">⭐</button>
@@ -12495,15 +13447,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(119)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="v." data-id="115-06" data-ans="A" data-word="dreads" data-answered="false">
+      <div class="q-card" data-idx="120" data-day="13" data-year="115" data-pos="v." data-id="115-06" data-ans="A" data-word="dreads" data-answered="false" id="qcard_120">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#121</span>
             <span class="q-id">115學測 第 6 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_115-06">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 13</span>
+            <span class="box-badge box-1" id="boxBadge_115-06">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-06" onclick="toggleBookmark('115-06')" title="收藏此題">⭐</button>
@@ -12595,15 +13554,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(120)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="n." data-id="115-07" data-ans="C" data-word="passion" data-answered="false">
+      <div class="q-card" data-idx="121" data-day="13" data-year="115" data-pos="n." data-id="115-07" data-ans="C" data-word="passion" data-answered="false" id="qcard_121">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#122</span>
             <span class="q-id">115學測 第 7 題</span>
             <span class="pos-badge pos-n">名詞 n.</span>
-            <span class="box-badge box-1" id="boxBadge_115-07">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 13</span>
+            <span class="box-badge box-1" id="boxBadge_115-07">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-07" onclick="toggleBookmark('115-07')" title="收藏此題">⭐</button>
@@ -12695,15 +13661,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(121)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="v." data-id="115-08" data-ans="B" data-word="assaulted" data-answered="false">
+      <div class="q-card" data-idx="122" data-day="13" data-year="115" data-pos="v." data-id="115-08" data-ans="B" data-word="assaulted" data-answered="false" id="qcard_122">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#123</span>
             <span class="q-id">115學測 第 8 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_115-08">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 13</span>
+            <span class="box-badge box-1" id="boxBadge_115-08">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-08" onclick="toggleBookmark('115-08')" title="收藏此題">⭐</button>
@@ -12795,15 +13768,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(122)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="v." data-id="115-09" data-ans="C" data-word="elbow" data-answered="false">
+      <div class="q-card" data-idx="123" data-day="13" data-year="115" data-pos="v." data-id="115-09" data-ans="C" data-word="elbow" data-answered="false" id="qcard_123">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#124</span>
             <span class="q-id">115學測 第 9 題</span>
             <span class="pos-badge pos-v">動詞 v.</span>
-            <span class="box-badge box-1" id="boxBadge_115-09">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 13</span>
+            <span class="box-badge box-1" id="boxBadge_115-09">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-09" onclick="toggleBookmark('115-09')" title="收藏此題">⭐</button>
@@ -12895,15 +13875,22 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(123)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
 
-      <div class="q-card" data-year="115" data-pos="adj." data-id="115-10" data-ans="D" data-word="grave" data-answered="false">
+      <div class="q-card" data-idx="124" data-day="13" data-year="115" data-pos="adj." data-id="115-10" data-ans="D" data-word="grave" data-answered="false" id="qcard_124">
         <div class="q-header">
           <div class="q-meta">
+            <span class="q-idx-badge">#125</span>
             <span class="q-id">115學測 第 10 題</span>
             <span class="pos-badge pos-adj">形容詞 adj.</span>
-            <span class="box-badge box-1" id="boxBadge_115-10">Box 1 (未測/待練)</span>
+            <span class="day-tag">Day 13</span>
+            <span class="box-badge box-1" id="boxBadge_115-10">Box 1 (未測)</span>
           </div>
           <div class="q-actions">
             <button class="btn-star" id="starBtn_115-10" onclick="toggleBookmark('115-10')" title="收藏此題">⭐</button>
@@ -12995,28 +13982,55 @@
             </div>
           </div>
 
+          <!-- Quick Jump Button inside analysis -->
+          <div class="card-footer-nav">
+            <button class="btn-jump-next" onclick="jumpToNextQuestion(124)">下一題 ➔ (Enter / J)</button>
+          </div>
+
         </div>
       </div>
     </div>
+
   </main>
 
-  <!-- Badges Modal -->
-  <div class="modal-overlay" id="badgesModal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <div class="modal-title">🏆 歷屆真題成就徽章庫</div>
-        <button class="btn-close" onclick="closeBadgesModal()">×</button>
-      </div>
-      <div class="badges-grid" id="badgesGrid"></div>
-    </div>
+  <!-- Floating Quick Nav Pill -->
+  <div class="floating-nav-pill" id="floatingNavPill">
+    <button class="btn-pill-arrow" onclick="navStep(-1)" title="上一題 (K / ↑)">▲</button>
+    <span id="activeQText" style="font-weight:700;">第 1 / 10 題</span>
+    <button class="btn-pill-arrow" onclick="navStep(1)" title="下一題 (J / Enter / ↓)">▼</button>
   </div>
 
-  <!-- Toast Popup -->
-  <div class="toast-popup" id="toastPopup">
-    <span style="font-size:1.3rem;" id="toastIcon">🎉</span>
-    <div>
-      <div style="font-weight:800; font-size:0.85rem;" id="toastTitle">通知</div>
-      <div style="font-size:0.75rem; color:#cbd5e1;" id="toastMsg">內容</div>
+  <!-- Print Sheet Modal -->
+  <div class="modal-overlay" id="printModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title">🖨️ 列印離線研讀單 (A4 專屬排版)</div>
+        <button class="btn-close" onclick="closePrintModal()">×</button>
+      </div>
+
+      <div class="print-opt-group">
+        <div class="print-opt-label">1. 選擇列印題目範圍：</div>
+        <div class="print-btn-row">
+          <button class="btn-print-choice active" onclick="setPrintScope('daily', this)">📅 今日 Day 任務 (10題)</button>
+          <button class="btn-print-choice" onclick="setPrintScope('box1', this)">⚠️ Box 1 弱點錯題本</button>
+          <button class="btn-print-choice" onclick="setPrintScope('due', this)">🔥 艾賓浩斯今日待複習</button>
+          <button class="btn-print-choice" onclick="setPrintScope('starred', this)">⭐ 我的星號收藏題</button>
+        </div>
+      </div>
+
+      <div class="print-opt-group">
+        <div class="print-opt-label">2. 選擇紙本排版格式：</div>
+        <div class="print-btn-row">
+          <button class="btn-print-choice active" onclick="setPrintFormat('study', this)">📖 精華研讀本 (含公式/鷹架)</button>
+          <button class="btn-print-choice" onclick="setPrintFormat('exam', this)">📝 自測練習卷 (空格挖空)</button>
+        </div>
+      </div>
+
+      <p style="font-size:0.75rem; color:#64748b; margin-top:8px;">
+        💡 提示：點擊「立即列印」將調用瀏覽器列印對話框，可直接列印或另存為 A4 PDF 檔案。
+      </p>
+
+      <button class="btn-print-go" onclick="executePrint()">🖨️ 立即列印 / 存為 PDF</button>
     </div>
   </div>
 
@@ -13041,34 +14055,21 @@
       { level: 15, title: "學測滿級分戰神", minExp: 11050, nextExp: 999999 }
     ];
 
-    const BADGES = [
-      { id: 'first_blood', name: '初入試煉', icon: '🛡️', desc: '完成第 1 題作答' },
-      { id: 'streak_5', name: '勢不可擋', icon: '⚡', desc: '連續 5 題答對' },
-      { id: 'streak_10', name: '十連斬神射', icon: '⚔️', desc: '連續 10 題答對無失誤' },
-      { id: 'box_crusher', name: '錯題粉碎者', icon: '🧹', desc: '成功消滅 5 道 Box 1 弱點錯題' },
-      { id: 'level_8', name: '前標突破', icon: '🚀', desc: '角色達到 Lv.8 語境鎖定者' },
-      { id: 'god_of_vocab', name: '滿級分戰神', icon: '👑', desc: '登頂 Lv.15 達到滿級分境界' }
-    ];
-
     const BOX_INTERVALS = [0, 1, 3, 7, 14, 30];
 
     let appState = {
       version: 2,
-      profile: {
-        level: 1,
-        exp: 0,
-        streak: 0,
-        maxStreak: 0,
-        totalAnswered: 0,
-        totalCorrect: 0,
-        totalWrong: 0,
-        badges: []
-      },
+      profile: { level: 1, exp: 0, streak: 0, maxStreak: 0, totalAnswered: 0, totalCorrect: 0, totalWrong: 0, currentDay: 1 },
       questions: {}
     };
 
+    let isDailyQuestMode = true; // default Daily Mode
     let currentSpecialFilter = 'all';
     let currentPOS = 'all';
+    let activeQuestionIdx = 0;
+
+    let printScope = 'daily';
+    let printFormat = 'study';
 
     function loadState() {
       try {
@@ -13087,16 +14088,7 @@
     function getQuestionState(qid) {
       if (!appState.questions[qid]) {
         appState.questions[qid] = {
-          box: 1,
-          nextReview: null,
-          lastTested: null,
-          streak: 0,
-          wrongCount: 0,
-          attempts: 0,
-          bookmarked: false,
-          answered: false,
-          chosen: null,
-          isCorrect: false
+          box: 1, nextReview: null, lastTested: null, streak: 0, wrongCount: 0, attempts: 0, bookmarked: false, answered: false, chosen: null, isCorrect: false
         };
       }
       return appState.questions[qid];
@@ -13128,21 +14120,12 @@
 
         expGained += 15;
         expMsg = "+15 EXP (答對)";
-        if (appState.profile.streak >= 5) {
-          expGained += 15;
-          expMsg += " +15 連勝加成!";
-        }
-
-        if (qState.box === 1 && qState.wrongCount > 0) {
-          expGained += 25;
-          expMsg += " +25 錯題消滅賞金!";
-          checkBadge('box_crusher');
-        }
+        if (appState.profile.streak >= 5) expGained += 15;
+        if (qState.box === 1 && qState.wrongCount > 0) expGained += 25;
 
         if (qState.box < 5) qState.box++;
-        const days = BOX_INTERVALS[qState.box];
         const nextDate = new Date();
-        nextDate.setDate(nextDate.getDate() + days);
+        nextDate.setDate(nextDate.getDate() + BOX_INTERVALS[qState.box]);
         qState.nextReview = nextDate.toISOString();
       } else {
         qState.streak = 0;
@@ -13157,14 +14140,11 @@
 
       appState.profile.totalAnswered++;
       addExp(expGained);
-
-      checkBadge('first_blood');
-      if (appState.profile.streak >= 5) checkBadge('streak_5');
-      if (appState.profile.streak >= 10) checkBadge('streak_10');
-
       saveState();
+
       renderQuestionCardUI(card, qid, qState, correctLetter, correctWord, expGained, expMsg);
       updateHUD();
+      checkDailyCompletion();
     }
 
     function addExp(amount) {
@@ -13178,23 +14158,7 @@
           break;
         }
       }
-      if (newLvl > currLvl) {
-        appState.profile.level = newLvl;
-        showToast("🎉 等級晉升！", `恭喜晉升為 Lv.${newLvl}「${LEVEL_CONFIG[newLvl - 1].title}」！`, "🏆");
-        if (newLvl >= 8) checkBadge('level_8');
-        if (newLvl >= 15) checkBadge('god_of_vocab');
-      } else {
-        showToast("⚡ 經驗獲取", `+${amount} EXP！保持連勝！`, "⭐");
-      }
-    }
-
-    function checkBadge(badgeId) {
-      if (!appState.profile.badges.includes(badgeId)) {
-        appState.profile.badges.push(badgeId);
-        const b = BADGES.find(x => x.id === badgeId);
-        if (b) showToast(`🏆 解鎖成就：${b.name}！`, b.desc, b.icon);
-        saveState();
-      }
+      if (newLvl > currLvl) appState.profile.level = newLvl;
     }
 
     function toggleBookmark(qid) {
@@ -13220,18 +14184,14 @@
 
       card.querySelectorAll('.opt-box').forEach(box => {
         const letter = box.getAttribute('data-letter');
-        if (letter === qState.chosen) {
-          box.classList.add(qState.isCorrect ? 'user-correct' : 'user-wrong');
-        }
-        if (!qState.isCorrect && letter === correctLetter) {
-          box.classList.add('actual-correct');
-        }
+        if (letter === qState.chosen) box.classList.add(qState.isCorrect ? 'user-correct' : 'user-wrong');
+        if (!qState.isCorrect && letter === correctLetter) box.classList.add('actual-correct');
       });
 
       const feedbackEl = document.getElementById('feedback_' + qid);
       if (feedbackEl) {
         if (qState.isCorrect) {
-          feedbackEl.innerHTML = `<div class="feedback-banner success"><div>🎉 <strong>正確！</strong> (${correctLetter}) ${correctWord}</div><div class="exp-gain-tag">${expMsg}</div></div>`;
+          feedbackEl.innerHTML = `<div class="feedback-banner success"><div>🎉 <strong>正解！</strong> (${correctLetter}) ${correctWord}</div><div class="exp-gain-tag">${expMsg}</div></div>`;
         } else {
           feedbackEl.innerHTML = `<div class="feedback-banner error"><div>⚠️ <strong>答錯！</strong> 正確答案為 (${correctLetter}) ${correctWord}</div><div style="font-size:0.75rem;">📦 降回 Box 1</div></div>`;
         }
@@ -13253,9 +14213,7 @@
 
       const nextExp = lvlConfig.nextExp;
       const minExp = lvlConfig.minExp;
-      const currentLevelExp = p.exp - minExp;
-      const needed = nextExp - minExp;
-      const pct = Math.min(100, Math.max(0, Math.round((currentLevelExp / needed) * 100)));
+      const pct = Math.min(100, Math.max(0, Math.round(((p.exp - minExp) / (nextExp - minExp)) * 100)));
       document.getElementById('hudExpText').textContent = `${p.exp}/${nextExp}`;
       document.getElementById('hudExpFill').style.width = `${pct}%`;
 
@@ -13271,50 +14229,147 @@
       document.getElementById('filterDueCount').textContent = dueCount;
       document.getElementById('filterBox1Count').textContent = box1Count;
       document.getElementById('filterStarCount').textContent = starCount;
+
+      updateDailyBanner();
     }
 
-    function initRestoreUI() {
-      document.querySelectorAll('.q-card').forEach(card => {
-        const qid = card.getAttribute('data-id');
-        const qState = appState.questions[qid];
-        if (qState) {
-          if (qState.bookmarked) {
-            const starBtn = document.getElementById('starBtn_' + qid);
-            if (starBtn) starBtn.classList.add('active');
-            card.classList.add('bookmarked');
-          }
-          if (qState.answered) {
-            const correctLetter = card.getAttribute('data-ans');
-            const correctWord = card.getAttribute('data-word');
-            renderQuestionCardUI(card, qid, qState, correctLetter, correctWord, 0, "已作答");
-          }
-        }
+    // --- Daily Quest Controller ---
+    function toggleDailyQuestMode() {
+      isDailyQuestMode = !isDailyQuestMode;
+      const pill = document.getElementById('modePill');
+      const banner = document.getElementById('dailyQuestBanner');
+      if (isDailyQuestMode) {
+        pill.textContent = `📅 每日任務 [Day ${appState.profile.currentDay || 1}]`;
+        pill.style.background = '#0284c7';
+        banner.classList.add('active');
+      } else {
+        pill.textContent = '♾️ 全庫自由模式';
+        pill.style.background = '#64748b';
+        banner.classList.remove('active');
+      }
+      filterQuestions();
+    }
+
+    function changeDay(delta) {
+      let curr = appState.profile.currentDay || 1;
+      curr += delta;
+      if (curr < 1) curr = 1;
+      if (curr > 13) curr = 13;
+      appState.profile.currentDay = curr;
+      saveState();
+      filterQuestions();
+    }
+
+    function updateDailyBanner() {
+      const day = appState.profile.currentDay || 1;
+      document.getElementById('currentDayText').textContent = day;
+      
+      const dayCards = document.querySelectorAll(`.q-card[data-day="${day}"]`);
+      let answered = 0;
+      dayCards.forEach(c => {
+        if (c.getAttribute('data-answered') === 'true') answered++;
       });
-      updateHUD();
+      
+      document.getElementById('dayCompletedText').textContent = `${answered} / ${dayCards.length} 題`;
+      const statusEl = document.getElementById('dailyQuestStatus');
+      if (answered === dayCards.length && dayCards.length > 0) {
+        statusEl.textContent = '✅ 本日任務已達成！';
+        statusEl.style.background = '#10b981';
+      } else {
+        statusEl.textContent = '進行中 (限時 5 分鐘)';
+        statusEl.style.background = '#f59e0b';
+      }
     }
 
-    function setSpecialFilter(type, btn) {
-      currentSpecialFilter = type;
-      btn.closest('.filter-group').querySelectorAll('.c-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterQuestions();
+    function checkDailyCompletion() {
+      const day = appState.profile.currentDay || 1;
+      const dayCards = document.querySelectorAll(`.q-card[data-day="${day}"]`);
+      let answered = 0;
+      dayCards.forEach(c => {
+        if (c.getAttribute('data-answered') === 'true') answered++;
+      });
+      if (answered === dayCards.length && dayCards.length > 0) {
+        alert(`🎉 恭喜完成 Day ${day} 每日任務！獲得打卡獎勵！`);
+      }
     }
 
-    function filterPOS(pos, btn) {
-      currentPOS = pos;
-      btn.closest('.filter-group').querySelectorAll('.c-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterQuestions();
+    // --- Keyboard Navigation & Jumping ---
+    function jumpToNextQuestion(currIdx) {
+      const cards = Array.from(document.querySelectorAll('.q-card')).filter(c => c.style.display !== 'none');
+      const currentPos = cards.findIndex(c => parseInt(c.getAttribute('data-idx')) === currIdx);
+      if (currentPos !== -1 && currentPos + 1 < cards.length) {
+        setActiveQuestion(cards[currentPos + 1]);
+      }
     }
 
+    function navStep(dir) {
+      const cards = Array.from(document.querySelectorAll('.q-card')).filter(c => c.style.display !== 'none');
+      if (cards.length === 0) return;
+      activeQuestionIdx += dir;
+      if (activeQuestionIdx < 0) activeQuestionIdx = 0;
+      if (activeQuestionIdx >= cards.length) activeQuestionIdx = cards.length - 1;
+      setActiveQuestion(cards[activeQuestionIdx]);
+    }
+
+    function setActiveQuestion(cardEl) {
+      document.querySelectorAll('.q-card').forEach(c => c.classList.remove('is-active'));
+      cardEl.classList.add('is-active');
+      cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      const cards = Array.from(document.querySelectorAll('.q-card')).filter(c => c.style.display !== 'none');
+      const idx = cards.indexOf(cardEl);
+      activeQuestionIdx = idx;
+      document.getElementById('activeQText').textContent = `第 ${idx + 1} / ${cards.length} 題`;
+    }
+
+    // Global Key Listener
+    window.addEventListener('keydown', (e) => {
+      // Ignore if typing in search
+      if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+
+      const cards = Array.from(document.querySelectorAll('.q-card')).filter(c => c.style.display !== 'none');
+      if (cards.length === 0) return;
+
+      const activeCard = cards[activeQuestionIdx] || cards[0];
+      const qid = activeCard.getAttribute('data-id');
+
+      // 1, 2, 3, 4 or A, B, C, D to answer
+      const key = e.key.toUpperCase();
+      let chosen = null;
+      if (key === 'A' || key === '1') chosen = 'A';
+      else if (key === 'B' || key === '2') chosen = 'B';
+      else if (key === 'C' || key === '3') chosen = 'C';
+      else if (key === 'D' || key === '4') chosen = 'D';
+
+      if (chosen) {
+        const optEl = activeCard.querySelector(`.opt-box[data-letter="${chosen}"]`);
+        if (optEl) handleOptionClick(optEl, qid, chosen);
+        return;
+      }
+
+      // Next / Previous Question
+      if (e.key === 'Enter' || e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        navStep(1);
+      } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        navStep(-1);
+      }
+    });
+
+    // --- Filtering ---
     function filterQuestions() {
       const q = document.getElementById('searchInput').value.toLowerCase().trim();
       const cards = document.querySelectorAll('.q-card');
       const now = new Date();
+      const currentDay = appState.profile.currentDay || 1;
+
+      let visible = [];
 
       cards.forEach(card => {
         const qid = card.getAttribute('data-id');
         const pos = card.getAttribute('data-pos');
+        const day = parseInt(card.getAttribute('data-day'));
         const text = card.textContent.toLowerCase();
         const qState = appState.questions[qid] || {};
 
@@ -13330,8 +14385,90 @@
           matchSpecial = qState.bookmarked;
         }
 
-        card.style.display = (matchPOS && matchSearch && matchSpecial) ? 'block' : 'none';
+        let matchDay = true;
+        if (isDailyQuestMode && currentSpecialFilter === 'all') {
+          matchDay = (day === currentDay);
+        }
+
+        if (matchPOS && matchSearch && matchSpecial && matchDay) {
+          card.style.display = 'block';
+          visible.push(card);
+        } else {
+          card.style.display = 'none';
+        }
       });
+
+      if (visible.length > 0) {
+        activeQuestionIdx = 0;
+        setActiveQuestion(visible[0]);
+      }
+      updateHUD();
+    }
+
+    function setSpecialFilter(type, btn) {
+      currentSpecialFilter = type;
+      if (type !== 'all') isDailyQuestMode = false;
+      btn.closest('.filter-group').querySelectorAll('.c-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterQuestions();
+    }
+
+    function filterPOS(pos, btn) {
+      currentPOS = pos;
+      btn.closest('.filter-group').querySelectorAll('.c-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterQuestions();
+    }
+
+    // --- Print Sheet System ---
+    function openPrintModal() {
+      document.getElementById('printModal').classList.add('active');
+    }
+    function closePrintModal() {
+      document.getElementById('printModal').classList.remove('active');
+    }
+    function setPrintScope(scope, btn) {
+      printScope = scope;
+      btn.closest('.print-btn-row').querySelectorAll('.btn-print-choice').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    function setPrintFormat(fmt, btn) {
+      printFormat = fmt;
+      btn.closest('.print-btn-row').querySelectorAll('.btn-print-choice').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function executePrint() {
+      closePrintModal();
+
+      // Temporarily set display based on printScope
+      const now = new Date();
+      const currentDay = appState.profile.currentDay || 1;
+      document.querySelectorAll('.q-card').forEach(card => {
+        const qid = card.getAttribute('data-id');
+        const day = parseInt(card.getAttribute('data-day'));
+        const qState = appState.questions[qid] || {};
+
+        let show = false;
+        if (printScope === 'daily') show = (day === currentDay);
+        else if (printScope === 'box1') show = qState.answered && (qState.box === 1);
+        else if (printScope === 'due') show = qState.answered && qState.nextReview && (new Date(qState.nextReview) <= now);
+        else if (printScope === 'starred') show = qState.bookmarked;
+
+        card.style.display = show ? 'block' : 'none';
+      });
+
+      // Set print format class on body
+      document.body.classList.remove('print-study-mode', 'print-exam-mode');
+      if (printFormat === 'study') document.body.classList.add('print-study-mode');
+      else document.body.classList.add('print-exam-mode');
+
+      // Trigger Print
+      setTimeout(() => {
+        window.print();
+        // Restore screen filter
+        filterQuestions();
+      }, 250);
     }
 
     function exportProgress() {
@@ -13342,7 +14479,6 @@
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
-      showToast("💾 匯出成功", "進度已存至裝置", "📥");
     }
 
     function importProgress(event) {
@@ -13362,38 +14498,64 @@
       reader.readAsText(file);
     }
 
-    function openBadgesModal() {
-      const grid = document.getElementById('badgesGrid');
-      grid.innerHTML = '';
-      BADGES.forEach(b => {
-        const isUnlocked = appState.profile.badges.includes(b.id);
-        const card = document.createElement('div');
-        card.className = `badge-card ${isUnlocked ? 'unlocked' : 'locked'}`;
-        card.innerHTML = `<div class="badge-icon">${b.icon}</div><div><div class="badge-name">${b.name} ${isUnlocked ? '✅' : '🔒'}</div><div class="badge-desc">${b.desc}</div></div>`;
-        grid.appendChild(card);
+    function initRestoreUI() {
+      document.querySelectorAll('.q-card').forEach(card => {
+        const qid = card.getAttribute('data-id');
+        const qState = appState.questions[qid];
+        if (qState) {
+          if (qState.bookmarked) {
+            const starBtn = document.getElementById('starBtn_' + qid);
+            if (starBtn) starBtn.classList.add('active');
+            card.classList.add('bookmarked');
+          }
+          if (qState.answered) {
+            const correctLetter = card.getAttribute('data-ans');
+            const correctWord = card.getAttribute('data-word');
+            renderQuestionCardUI(card, qid, qState, correctLetter, correctWord, 0, "已作答");
+          }
+        }
       });
-      document.getElementById('badgesModal').classList.add('active');
-    }
-
-    function closeBadgesModal() {
-      document.getElementById('badgesModal').classList.remove('active');
-    }
-
-    let toastTimer = null;
-    function showToast(title, msg, icon = "🎉") {
-      const toast = document.getElementById('toastPopup');
-      document.getElementById('toastIcon').textContent = icon;
-      document.getElementById('toastTitle').textContent = title;
-      document.getElementById('toastMsg').textContent = msg;
-      toast.classList.add('show');
-      if (toastTimer) clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+      filterQuestions();
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       loadState();
       initRestoreUI();
     });
+  
+    function openResetModal() {
+      document.getElementById('resetModal').classList.add('active');
+    }
+    function closeResetModal() {
+      document.getElementById('resetModal').classList.remove('active');
+    }
+    function confirmResetProgress() {
+      localStorage.removeItem(STORAGE_KEY);
+      location.reload();
+    }
+
   </script>
+
+  <!-- Reset Confirmation Modal (100% No Mojibake In-App Modal) -->
+  <div class="modal-overlay" id="resetModal">
+    <div class="modal-box" style="max-width: 460px; text-align: center;">
+      <div style="font-size: 2.8rem; margin-bottom: 6px;">⚠️</div>
+      <div class="modal-title" style="font-size: 1.25rem; font-weight: 900; color: #dc2626; margin-bottom: 10px; justify-content: center;">
+        確認重置所有學習進度？
+      </div>
+      <div style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin-bottom: 16px; text-align: left; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px;">
+        此動作將<strong>徹底清除</strong>：<br>
+        • 角色等級與 EXP 經驗值<br>
+        • 連勝紀錄與連續打卡進度<br>
+        • 艾賓浩斯 5 階記憶盒子與所有答題歷史<br><br>
+        <span style="color: #0284c7; font-weight: 800;">💡 建議：</span>在重置前，您可以先點擊「💾 匯出」備份進度檔案。
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <button class="c-btn" style="padding: 9px; font-size: 0.88rem; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;" onclick="closeResetModal()">取消（保留紀錄）</button>
+        <button class="c-btn" style="padding: 9px; font-size: 0.88rem; background: #dc2626; color: white; border: 1px solid #b91c1c; font-weight: 800;" onclick="confirmResetProgress()">確認重置（清除）</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
