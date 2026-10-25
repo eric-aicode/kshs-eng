@@ -1461,11 +1461,11 @@
         if (mode === 'study' || mode === 'mistakes') {
           html += `
             <div class="print-card">
-              <div style="font-weight:bold; margin-bottom:4px;">${idx+1}. ${q.stem}</div>
-              <div style="color:#059669; font-weight:bold;">★ 解答：(${ansKey}) ${ansWord} ${IS_COLLOC ? '['+q.pattern+']' : '['+q.pos+']'}</div>
-              <div style="font-size:0.85rem; color:#444;">${IS_COLLOC ? '中譯：' + q.chinese : '中譯：' + (q.gloss ? q.gloss[q.answer] : '')}</div>
-              <div style="font-size:0.8rem; color:#666; margin-top:2px;">${IS_COLLOC ? '例句：' + q.sentence : '線索：' + (q.clue || '')}</div>
-              <div style="font-size:0.8rem; color:#b91c1c; margin-top:2px;">陷阱：${IS_COLLOC ? q.tip : (q.writing ? q.writing.trap : '')}</div>
+              <div style="font-weight:bold; font-size:1.05rem; color:#0f172a; margin-bottom:6px;">${idx+1}. ${q.stem}</div>
+              <div style="color:#059669; font-weight:bold; margin-bottom:3px;">★ 解答：(${ansKey}) ${ansWord} ${IS_COLLOC ? '['+q.pattern+']' : '['+q.pos+']'}</div>
+              <div style="font-size:0.9rem; color:#334155; margin-bottom:2px;"><strong>中譯：</strong>${IS_COLLOC ? q.chinese : (q.gloss ? q.gloss[q.answer] : '')}</div>
+              <div style="font-size:0.85rem; color:#666; margin-bottom:2px;"><strong>${IS_COLLOC ? '範句：' : '線索：'}</strong>${IS_COLLOC ? q.sentence : (q.clue || '')}</div>
+              <div style="font-size:0.85rem; color:#b91c1c;"><strong>考點陷阱：</strong>${IS_COLLOC ? q.tip : (q.writing ? q.writing.trap : '')}</div>
             </div>
           `;
         } else if (mode === 'exam') {
@@ -1486,6 +1486,23 @@
       });
 
       html += `</div>`;
+      if (mode === 'exam') {
+        html += `
+          <div style="margin-top:28px; padding-top:14px; border-top:2px dashed #64748b; page-break-inside:avoid;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-weight:900; font-size:1.05rem; color:#0f172a;">✂ 參考答案速查（可撕下或對摺核對）：</span>
+              <span style="font-size:0.8rem; color:#64748b;">學測英文滿級分備考系統</span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:16px 24px; background:#f8fafc; padding:12px 18px; border:1px solid #cbd5e1; border-radius:6px; font-family:'JetBrains Mono', monospace; font-size:0.95rem;">
+              ${targetQs.map((q, idx) => {
+                const ansKey = IS_COLLOC ? q.ans : q.answer;
+                const ansWord = IS_COLLOC ? q.word : q.answer_word;
+                return `<span><strong>${idx+1}.</strong> (${ansKey}) ${ansWord}</span>`;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }
       pArea.innerHTML = html;
       setTimeout(() => window.print(), 100);
     }
