@@ -614,8 +614,8 @@
     #printArea { display: none; }
     @media print {
       @page {
-        size: A4;
-        margin: 12mm 15mm;
+        size: A4 portrait;
+        margin: 8mm 12mm 6mm 12mm;
       }
       html, body {
         height: auto !important;
@@ -624,6 +624,8 @@
         background: white !important;
         margin: 0 !important;
         padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
       /* Eliminate phantom body height to prevent extra blank pages */
       body > *:not(#printArea) {
@@ -637,16 +639,28 @@
         padding: 0 !important;
         background: white !important;
         color: black !important;
-        font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, serif;
+        font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+      }
+      .print-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-bottom: 2px solid #0f172a;
+        padding-bottom: 4px;
+        margin-bottom: 6px;
       }
       .print-title {
-        font-size: 1.35rem;
+        font-size: 1.05rem;
         font-weight: 800;
-        text-align: center;
-        margin-bottom: 12px;
-        border-bottom: 2px solid #0f172a;
-        padding-bottom: 8px;
         color: #0f172a;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      .print-meta {
+        font-size: 0.82rem;
+        color: #334155;
+        font-weight: 600;
       }
       .print-grid {
         display: block;
@@ -655,15 +669,18 @@
       .print-card {
         border: none !important;
         background: transparent !important;
-        padding: 4px 0 8px 0 !important;
-        margin: 0 0 8px 0 !important;
+        padding: 2.5px 0 3px 0 !important;
+        margin: 0 0 3px 0 !important;
         page-break-inside: avoid;
+        break-inside: avoid;
         width: 100%;
-        line-height: 1.5;
+        line-height: 1.32;
         border-bottom: 1px dashed #cbd5e1 !important;
       }
       .print-card:last-child {
         border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
       }
     }
 
@@ -1486,32 +1503,54 @@
         }
       }
 
-      let html = `<div class="print-title">${IS_COLLOC ? '學測英文 1,500 組滿級分搭配詞大典' : '學測英文 15 級分歷屆真題'} - Day ${currentDay} 離線研讀卷</div>`;
-      html += `<div style="text-align:right; font-size:0.85rem; margin-bottom:12px;">姓名：_____________ 計分：_____ / 100</div>`;
+      const titleText = IS_COLLOC ? '學測英文 1,500 組滿級分搭配詞大典' : '學測英文 15 級分歷屆真題';
+      const sheetName = mode === 'exam' ? '實戰模擬卷' : (mode === 'mistakes' ? '錯題弱點訂正單' : '離線研讀卷');
+      let html = `
+        <div class="print-header">
+          <div class="print-title">${titleText} · Day ${currentDay} ${sheetName}</div>
+          <div class="print-meta">姓名：_______________ &nbsp;&nbsp; 計分：_____ / 100</div>
+        </div>
+      `;
       html += `<div class="print-grid">`;
 
       targetQs.forEach((q, idx) => {
         const ansKey = IS_COLLOC ? q.ans : q.answer;
         const optDict = IS_COLLOC ? q.opts : q.options;
         const ansWord = IS_COLLOC ? q.word : q.answer_word;
+        const coreTerm = IS_COLLOC ? (q.phrase || q.word) : (q.phrase || ansWord);
 
         if (mode === 'study' || mode === 'mistakes') {
-          const fullSentence = IS_COLLOC ? q.sentence : q.stem.replace(/______+/g, `<u><strong>${ansWord}</strong></u>`);
+          let fullSentence = IS_COLLOC ? q.sentence : q.stem.replace(/______+/g, `<u><strong>${ansWord}</strong></u>`);
+          if (IS_COLLOC && q.phrase) {
+            const escPhrase = q.phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const pRe = new RegExp(`(${escPhrase})`, 'i');
+            if (pRe.test(fullSentence)) {
+              fullSentence = fullSentence.replace(pRe, '<u><strong>$1</strong></u>');
+            } else if (q.word) {
+              const escWord = q.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              const wRe = new RegExp(`\\b(${escWord}\\w*)\\b`, 'i');
+              if (wRe.test(fullSentence)) {
+                fullSentence = fullSentence.replace(wRe, '<u><strong>$1</strong></u>');
+              }
+            }
+          }
           const posText = IS_COLLOC ? `[${q.pattern}]` : `[${q.pos}]`;
           const chineseText = IS_COLLOC ? q.chinese : (q.gloss ? q.gloss[q.answer] : '');
-          const extraInfo = IS_COLLOC ? `<strong>範句翻譯：</strong>${q.trans} &nbsp;|&nbsp; <strong>搭配考點：</strong>${q.tip}` : `<strong>句意中譯：</strong>${q.stem_trans || ''} &nbsp;|&nbsp; <strong>考點陷阱：</strong>${q.writing ? q.writing.trap : ''}`;
+          const extraInfo = IS_COLLOC 
+            ? `<strong>【範句翻譯】</strong>${q.trans} &nbsp;|&nbsp; <strong>【搭配考點】</strong>${q.tip}` 
+            : `<strong>【句意中譯】</strong>${q.stem_trans || q.trans || ''} &nbsp;|&nbsp; <strong>【考點陷阱】</strong>${q.writing ? q.writing.trap : ''}`;
 
           html += `
             <div class="print-card">
-              <div style="font-size:1.05rem; font-weight:700; color:#0f172a; margin-bottom:4px; line-height:1.6;">
+              <div style="font-size:0.86rem; font-weight:700; color:#0f172a; margin-bottom:1px; line-height:1.28;">
                 ${idx+1}. ${fullSentence}
               </div>
-              <div style="font-size:0.88rem; padding-left:14px; line-height:1.5;">
-                <span style="color:#059669; font-weight:800; font-size:0.95rem;">★ 核心詞彙：${ansWord}</span>
-                <span style="color:#64748b; font-weight:700; margin-left:6px;">${posText}</span>
-                &nbsp;&nbsp;—&nbsp;&nbsp;
+              <div style="font-size:0.80rem; padding-left:8px; line-height:1.3;">
+                <span style="color:#059669; font-weight:800; font-size:0.84rem;">★ 核心詞：${coreTerm}</span>
+                <span style="color:#64748b; font-weight:700; margin-left:4px;">${posText}</span>
+                &nbsp;—&nbsp;
                 <span style="color:#1e293b; font-weight:700;">${chineseText}</span>
-                <div style="color:#475569; margin-top:3px; font-size:0.85rem;">
+                <div style="color:#475569; font-size:0.76rem; line-height:1.25; margin-top:1px;">
                   ${extraInfo}
                 </div>
               </div>
@@ -1520,9 +1559,9 @@
         } else if (mode === 'exam') {
           html += `
             <div class="print-card">
-              <div style="font-weight:bold; margin-bottom:6px;">${idx+1}. ${q.stem}</div>
-              <div style="font-size:0.9rem; margin-left:10px;">
-                <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:6px;">
+              <div style="font-weight:700; font-size:0.86rem; margin-bottom:2px; line-height:1.28;">${idx+1}. ${q.stem}</div>
+              <div style="font-size:0.82rem; margin-left:8px;">
+                <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:2px;">
                   <span>(A) ${optDict.A}</span>
                   <span>(B) ${optDict.B}</span>
                   <span>(C) ${optDict.C}</span>
@@ -1537,12 +1576,12 @@
       html += `</div>`;
       if (mode === 'exam') {
         html += `
-          <div style="margin-top:28px; padding-top:14px; border-top:2px dashed #64748b; page-break-inside:avoid;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-              <span style="font-weight:900; font-size:1.05rem; color:#0f172a;">✂ 參考答案速查（可撕下或對摺核對）：</span>
-              <span style="font-size:0.8rem; color:#64748b;">學測英文滿級分備考系統</span>
+          <div style="margin-top:12px; padding-top:6px; border-top:1.5px dashed #64748b; page-break-inside:avoid; break-inside:avoid;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <span style="font-weight:800; font-size:0.86rem; color:#0f172a;">✂ 參考答案速查（可撕下或對摺核對）：</span>
+              <span style="font-size:0.75rem; color:#64748b;">學測英文滿級分備考系統</span>
             </div>
-            <div style="display:flex; flex-wrap:wrap; gap:16px 24px; background:#f8fafc; padding:12px 18px; border:1px solid #cbd5e1; border-radius:6px; font-family:'JetBrains Mono', monospace; font-size:0.95rem;">
+            <div style="display:flex; flex-wrap:wrap; gap:6px 16px; background:#f8fafc; padding:6px 12px; border:1px solid #cbd5e1; border-radius:4px; font-family:'JetBrains Mono', monospace; font-size:0.82rem;">
               ${targetQs.map((q, idx) => {
                 const ansKey = IS_COLLOC ? q.ans : q.answer;
                 const ansWord = IS_COLLOC ? q.word : q.answer_word;
